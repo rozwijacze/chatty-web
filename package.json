@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -16,7 +16,8 @@
     "@mui/icons-material": "^5.14.3",
     "@mui/material": "^5.14.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.15.0"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -35,6 +36,7 @@
     "eslint-plugin-react-refresh": "^0.4.3",
     "jsdom": "^22.1.0",
     "prettier": "^3.0.1",
+    "sass": "^1.65.1",
     "typescript": "^5.0.2",
     "vite": "^4.4.5",
     "vitest": "^0.34.1"
