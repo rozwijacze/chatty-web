@@ -1,6 +1,16 @@
-import React from 'react';
 import './Login.scss';
 
-export const Login = () => {
-    return <div className="login">Login</div>;
+
+interface Props {
+    login: () => void;
+}
+
+export const Login = (props: Props) => {
+    return (
+        <>
+            <div className="login">
+                Login <button onClick={props.login}>zaloguj</button>
+            </div>
+        </>
+    );
 };
