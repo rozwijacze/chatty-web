@@ -1,5 +1,3 @@
 export const ChatWindow = () => {
-  return (
-    <div>ChatWindow</div>
-  )
-}
+    return <div>ChatWindow</div>;
+};
