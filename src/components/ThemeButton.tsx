@@ -1,7 +1,7 @@
-interface Props {
-    toggleMode: () => void;
-}
+import { useTheme } from '../hooks/useTheme';
 
-export const ThemeButton = ({ toggleMode }: Props) => {
-    return <button onClick={() => toggleMode()}>Toggle theme</button>;
+export const ThemeButton = () => {
+    const { toggle } = useTheme();
+
+    return <button onClick={() => toggle()}>Toggle theme</button>;
 };
