@@ -1,8 +1,19 @@
 .home {
     font-size: 40px;
     height: 100vh;
-    display: flex;
+    border: 1px solid black;
+    display: grid;
+    grid-template-rows: 100px 1fr;
+    grid-template-columns: 1fr 4fr;
     justify-content: center;
     align-items: center;
     background-color: var(--primary-50);
+    text-align: center;
+
+    div {
+        &:first-child {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
 }
