@@ -1,0 +1,13 @@
+/* global classes and styles definitions */
+
+@use 'sass:meta';
+@use './themes/light' as light;
+@use './themes/dark' as dark;
+
+@import './_mixins.scss';
+
+$light: meta.module-variables('light');
+$dark: meta.module-variables('dark');
+
+@include add-css-variables($light, 'light');
+@include add-css-variables($dark, 'dark');

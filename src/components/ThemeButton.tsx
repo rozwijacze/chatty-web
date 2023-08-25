@@ -1,3 +1,7 @@
-export const ThemeButton = ({ toggleMode }) => {
-    return <button onClick={() => toggleMode()}>click</button>;
+interface Props {
+    toggleMode: () => void;
+}
+
+export const ThemeButton = ({ toggleMode }: Props) => {
+    return <button onClick={() => toggleMode()}>Toggle theme</button>;
 };

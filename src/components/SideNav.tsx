@@ -1,5 +1,3 @@
-const SideNav = () => {
-    return <div>sidenav</div>;
+export const SideNav = () => {
+    return <div>SideNav</div>;
 };
-
-export default SideNav;

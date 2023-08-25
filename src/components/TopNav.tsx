@@ -1,5 +1,3 @@
-const TopNav = () => {
-    return ( <nav>nav</nav> );
-}
- 
-export default TopNav;
+export const TopNav = () => {
+    return <div>TopNav</div>;
+};

@@ -1,3 +1,7 @@
+/* element styles */
+
+@import './general.scss';
+
 :root {
     box-sizing: border-box;
 }
@@ -5,13 +9,4 @@
 body {
     margin: 0;
     padding: 0;
-}
-
-.light {
-    background-color: red;
-}
-
-
-.dark {
-    background-color: black;
 }
