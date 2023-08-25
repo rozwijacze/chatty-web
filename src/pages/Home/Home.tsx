@@ -1,15 +1,17 @@
-import { SideNav } from '../../components/SideNav';
-import { ChatWindow } from '../../components/ChatWindow';
+import { TopNav } from '../../components/TopNav/TopNav';
+import { SideNav } from '../../components/SideNav/SideNav';
+import { ChatWindow } from '../../components/ChatWindow/ChatWindow';
+import { Footer } from '../../components/Footer/Footer';
+import { ThemeButton } from '../../components/ThemeButton/ThemeButton';
 import './Home.scss';
-import { TopNav } from '../../components/TopNav';
-import { ThemeButton } from '../../components/ThemeButton';
 
 export const Home = () => {
     return (
-        <div className={`home`}>
+        <div className="home">
             <TopNav />
             <SideNav />
             <ChatWindow />
+            <Footer />
             <ThemeButton />
         </div>
     );

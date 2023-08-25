@@ -1,0 +1,40 @@
+.theme-btn {
+    position: relative;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--primary-A400);
+    border: 1px solid var(--primary-400);
+    height: 40px;
+    width: 70px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        top: 50%;
+        left: 8px;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in;
+        background-color: var(--primary-A100);
+
+        .dark & {
+            left: 50%;
+        }
+    }
+
+    &::after {
+        content: url('../../assets/sun.png');
+        position: absolute;
+        top: 55%;
+        left: 13px;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in;
+
+        .dark & {
+            content: url('../../assets/moon.png');
+            left: 58%;
+        }
+    }
+}
