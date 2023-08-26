@@ -5,10 +5,8 @@ import { useTheme } from '../../hooks/useTheme';
 import { TopNav } from '../../components/TopNav/TopNav';
 
 export const Home = () => {
-    const theme = useTheme();
-
     return (
-        <div className={`home ${theme.mode}`}>
+        <div className={`home`}>
             <TopNav />
             <SideNav />
             <ChatWindow />

@@ -5,6 +5,7 @@
     grid-template-rows: 100px 1fr;
     grid-template-columns: 1fr 4fr;
     background-color: var(--primary-50);
+    color: var(--primary-900);
     text-align: center;
 
     div {
@@ -14,4 +15,5 @@
             grid-column-end: 3;
         }
     }
+
 }
