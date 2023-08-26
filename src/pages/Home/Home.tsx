@@ -4,6 +4,7 @@ import { ChatWindow } from '../../components/ChatWindow/ChatWindow';
 import { Footer } from '../../components/Footer/Footer';
 import { ThemeButton } from '../../components/ThemeButton/ThemeButton';
 import './Home.scss';
+import { useTheme } from '../../hooks/useTheme';
 
 export const Home = () => {
     return (
@@ -11,8 +12,6 @@ export const Home = () => {
             <TopNav />
             <SideNav />
             <ChatWindow />
-            <Footer />
-            <ThemeButton />
         </div>
     );
 };
