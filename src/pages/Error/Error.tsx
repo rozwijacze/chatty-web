@@ -1,7 +1,5 @@
-import React from 'react'
+import React from 'react';
 
 export const Error = () => {
-  return (
-    <div>Error</div>
-  )
-}
+    return <main>Error</main>;
+};
