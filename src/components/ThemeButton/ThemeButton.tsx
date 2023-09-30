@@ -4,5 +4,5 @@ import './ThemeButton.scss';
 export const ThemeButton = () => {
     const { toggle } = useTheme();
 
-    return <button className="theme-btn" onClick={() => toggle()}></button>;
+    return <button className="theme-btn" title="Toggle theme" onClick={() => toggle()}></button>;
 };

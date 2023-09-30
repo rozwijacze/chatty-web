@@ -3,7 +3,11 @@
     background-color: var(--primary-50);
     color: var(--primary-900);
 
-    > *:not(:last-child) {
-        border-right: 1px solid var(--primary-100);
+    > * {
+        padding: 12px;
+
+        &:not(:last-child) {
+            border-right: 1px solid var(--primary-600);
+        }
     }
 }
