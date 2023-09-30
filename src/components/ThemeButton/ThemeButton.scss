@@ -17,10 +17,11 @@
         left: 8px;
         transform: translateY(-50%);
         transition: all 0.3s ease-in;
-        background-color: var(--primary-A100);
+        background-color: var(--primary-700);
 
         .dark & {
             left: 50%;
+            background-color: var(--primary-50);
         }
     }
 
@@ -28,13 +29,13 @@
         content: url('../../assets/sun.png');
         position: absolute;
         top: 55%;
-        left: 13px;
+        left: 14px;
         transform: translateY(-50%);
         transition: all 0.3s ease-in;
 
         .dark & {
             content: url('../../assets/moon.png');
-            left: 58%;
+            left: 40px;
         }
     }
 }

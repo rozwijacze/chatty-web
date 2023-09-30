@@ -1,19 +1,9 @@
 .home {
-    font-size: 40px;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: 100px 1fr;
-    grid-template-columns: 1fr 4fr;
+    display: flex;
     background-color: var(--primary-50);
     color: var(--primary-900);
-    text-align: center;
 
-    div {
-        border: 1px solid black;
-        &:first-child {
-            grid-column-start: 1;
-            grid-column-end: 3;
-        }
+    > *:not(:last-child) {
+        border-right: 1px solid var(--primary-100);
     }
-
 }

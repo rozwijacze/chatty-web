@@ -1,17 +1,14 @@
-import { TopNav } from '../../components/TopNav/TopNav';
 import { SideNav } from '../../components/SideNav/SideNav';
+import { SideWindow } from '../../components/SideWindow/SideWindow';
 import { ChatWindow } from '../../components/ChatWindow/ChatWindow';
-import { Footer } from '../../components/Footer/Footer';
-import { ThemeButton } from '../../components/ThemeButton/ThemeButton';
 import './Home.scss';
-import { useTheme } from '../../hooks/useTheme';
 
 export const Home = () => {
     return (
-        <div className="home">
-            <TopNav />
+        <main className="home">
             <SideNav />
+            <SideWindow />
             <ChatWindow />
-        </div>
+        </main>
     );
 };
