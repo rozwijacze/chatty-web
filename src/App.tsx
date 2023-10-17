@@ -1,8 +1,5 @@
-
 import { Home } from './pages/Home/Home';
-
 import { Route, Routes } from 'react-router-dom';
-
 import { AccountsLayout } from './layouts/AccountsLayout/AccountsLayout';
 
 export const App = () => {

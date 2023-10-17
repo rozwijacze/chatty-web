@@ -3,26 +3,26 @@ import './Login.scss';
 
 export const Login = () => {
 
-    const [formValue, setFormValue] = useState({loginValue: '', passwordValue: ''});
+    const [loginForm, setLoginForm] = useState({email: '', password: ''});
 
-    const handleLoginChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setFormValue({ ...formValue, loginValue: e.target.value });
-    };
 
-    const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setFormValue({ ...formValue, passwordValue: e.target.value });
-    };
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setLoginForm({ ...loginForm, [name]: value });
+    }
+
+    const {email, password} = loginForm;
 
     return (
         <>
             <div className="login-form">
                 <label>
                     Login:
-                    <input type="text" value={formValue.loginValue} onChange={handleLoginChange} />
+                    <input type="email" name="email" value={email} onChange={handleInputChange} />
                 </label>
                 <label>
                     Password:
-                    <input type="password" value={formValue.passwordValue} onChange={handlePasswordChange} />
+                    <input type="password" name="password" value={password} onChange={handleInputChange} />
                 </label>
                 <button>Zaloguj sie</button>
             </div>
