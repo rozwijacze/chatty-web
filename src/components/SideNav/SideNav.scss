@@ -4,7 +4,14 @@
     justify-content: center;
     align-items: center;
     width: 100px;
-    padding: 12px;
+
+    &__logo {
+        font-style: italic;
+        margin: 0;
+        letter-spacing: 1.4px;
+        color: var(--primary-A400);
+        transition: all 0.3s ease-out;
+    }
 
     &__menu {
         display: flex;
@@ -15,19 +22,24 @@
         margin: auto;
         padding: 0;
         list-style-type: none;
-
-        li svg {
-            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
-        }
+        gap: 6px;
     }
 
-    &__contacts {
-        width: 48px;
-        height: 48px;
-        background-color: var(--primary-A400);
-        border: 1px solid var(--primary-400);
-        border-radius: 12px;
-        padding: 8px;
-        fill: var(--primary-A100);
+    &__item {
+        svg {
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+            width: 48px;
+            height: 48px;
+            background-color: var(--primary-A400);
+            border: 1px solid var(--primary-400);
+            border-radius: 12px;
+            padding: 8px;
+            fill: var(--primary-A100);
+            transition: all 0.3s ease-out;
+        }
+
+        &--active svg {
+            background-color: var(--primary-900);
+        }
     }
 }
