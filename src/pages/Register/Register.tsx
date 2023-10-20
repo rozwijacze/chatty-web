@@ -1,7 +1,23 @@
 import { ChangeEvent, useState } from 'react';
 import './Register.scss';
+import AuthenticationService from '../../services/AuthenticationService';
 
 export const Register = () => {
+    const handleRegister = () => {
+        const { username, email, password } = registerForm;
+
+        AuthenticationService.register(username, email, password).then(
+            response => {
+                console.log(response);
+            },
+            error => {
+                console.log('error msg:');
+
+                console.log(error);
+            }
+        );
+    };
+
     const [registerForm, setRegisterForm] = useState({
         username: '',
         email: '',
@@ -35,7 +51,7 @@ export const Register = () => {
                     Repeat Password:
                     <input type="password" name="repeatPassword" value={repeatPassword} onChange={handleInputChange} />
                 </label>
-                <button>Zarejestruj się</button>
+                <button onClick={handleRegister}>Zarejestruj się</button>
             </div>
         </>
     );

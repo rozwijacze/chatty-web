@@ -1,17 +1,32 @@
 import { ChangeEvent, useState } from 'react';
 import './Login.scss';
+import AuthenticationService from '../../services/AuthenticationService';
 
 export const Login = () => {
 
-    const [loginForm, setLoginForm] = useState({email: '', password: ''});
+    const handleLogin = () => {
+        const { email, password } = loginForm;
 
+        AuthenticationService.login(email, password).then(
+            response => {
+                console.log(response);
+            },
+            error => {
+                console.log('error msg:');
+                
+                console.log(error);
+            }
+        );
+    };
+
+    const [loginForm, setLoginForm] = useState({ email: '', password: '' });
 
     const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
         setLoginForm({ ...loginForm, [name]: value });
-    }
+    };
 
-    const {email, password} = loginForm;
+    const { email, password } = loginForm;
 
     return (
         <>
