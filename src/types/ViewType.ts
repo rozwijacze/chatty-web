@@ -1,5 +1,7 @@
 export const enum ViewType {
     MESSAGES = 'Messages',
     CONTACTS = 'Contacts',
-    SETTINGS = 'Settings'
+    SETTINGS = 'Settings',
+    LOGIN = 'Login',
+    REGISTER = 'Register'
 }
