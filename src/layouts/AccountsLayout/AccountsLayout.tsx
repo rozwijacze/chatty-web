@@ -1,26 +1,10 @@
-import { Login } from '../../pages/Login/Login';
-import { Register } from '../../pages/Register/Register';
 import './AccountsLayout.scss';
-import { ViewType } from '../../types/ViewType';
 
 interface Props {
-    form: ViewType; // Specifies the type of form to render (e.g., "Login" or "Register").
-}
-
-interface ListOfComponents {
-    [key: string]: JSX.Element;
+    form: JSX.Element;
 }
 
 export const AccountsLayout = (props: Props) => {
-    const formComponents: ListOfComponents = {
-        Login: <Login />,
-        Register: <Register />
-    };
-
-    const renderForm = (type: ViewType) => {
-        return formComponents[type] || formComponents[ViewType.LOGIN];
-    };
-
     return (
         <div className="form-layout">
             <div className="form-layout__left">
@@ -31,7 +15,7 @@ export const AccountsLayout = (props: Props) => {
                 <div className="form-layout__form-name">
                     <h2>Title - register, login, change password etc</h2>
                 </div>
-                <div className="form-layout__form-container">{renderForm(props.form)}</div>
+                <div className="form-layout__form-container">{props.form}</div>
             </div>
         </div>
     );
