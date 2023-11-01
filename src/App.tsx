@@ -1,21 +1,15 @@
-import { useState } from 'react';
 import { Home } from './pages/Home/Home';
-import { Login } from './pages/Login/Login';
 import { Route, Routes } from 'react-router-dom';
-import Register from './pages/Register/Register';
+import { AccountsLayout } from './layouts/AccountsLayout/AccountsLayout';
+import { Register } from './pages/Register/Register';
+import { Login } from './pages/Login/Login';
 
 export const App = () => {
-    const [auth, setAuth] = useState(false);
-
-    const handleAuthChange = () => {
-        setAuth(!auth);
-    };
-
     return (
         <Routes>
-            <Route path="/" element={auth ? <Home /> : <Login login={handleAuthChange} />} />
-            <Route path="/login" element={<Login login={handleAuthChange} />} />
-            <Route path="/register" element={auth ? <Home /> : <Register />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<AccountsLayout form={<Login />} />} />
+            <Route path="/register" element={<AccountsLayout form={<Register />} />} />
         </Routes>
     );
 };
