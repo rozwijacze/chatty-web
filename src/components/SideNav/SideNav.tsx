@@ -13,9 +13,10 @@ interface Props {
 export const SideNav = ({ view, setView }: Props) => {
     return (
         <nav className="side-nav">
-            <h1 className="side-nav__logo" title="Chatty">
+            <h1 className="logo-title" title="Chatty">
                 Chatty
             </h1>
+
             <ul className="side-nav__menu">
                 <li
                     className={`side-nav__item ${view === ViewType.MESSAGES ? 'side-nav__item--active' : ''}`}
@@ -42,6 +43,7 @@ export const SideNav = ({ view, setView }: Props) => {
                     <SettingsIcon />
                 </li>
             </ul>
+
             <ThemeButton />
         </nav>
     );

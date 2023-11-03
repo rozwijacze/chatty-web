@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from 'react';
 import './Register.scss';
 import AuthenticationService from '../../services/AuthenticationService';
+import { Link } from 'react-router-dom';
 
 export const Register = () => {
     const handleRegister = () => {
@@ -33,26 +34,36 @@ export const Register = () => {
     const { username, email, password, repeatPassword } = registerForm;
 
     return (
-        <>
-            <div className="register-form">
-                <label>
-                    Username:
-                    <input type="text" name="username" value={username} onChange={handleInputChange} />
-                </label>
-                <label>
-                    Email:
-                    <input type="email" name="email" value={email} onChange={handleInputChange} />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" name="password" value={password} onChange={handleInputChange} />
-                </label>
-                <label>
-                    Repeat Password:
-                    <input type="password" name="repeatPassword" value={repeatPassword} onChange={handleInputChange} />
-                </label>
-                <button onClick={handleRegister}>Zarejestruj się</button>
+        <form className="register">
+            <div className="register__input">
+                <label htmlFor="username">Username:</label>
+                <input type="text" name="username" value={username} onChange={handleInputChange} />
             </div>
-        </>
+
+            <div className="register__input">
+                <label htmlFor="email">Email:</label>
+                <input type="email" name="email" value={email} onChange={handleInputChange} />
+            </div>
+
+            <div className="register__input">
+                <label htmlFor="password">Password:</label>
+                <input type="password" name="password" value={password} onChange={handleInputChange} />
+            </div>
+
+            <div className="register__input">
+                <label htmlFor="repeatPassword">Repeat password:</label>
+                <input type="password" name="repeatPassword" value={repeatPassword} onChange={handleInputChange} />
+            </div>
+
+            <div className="register__buttons">
+                <button className="button" onClick={handleRegister}>
+                    Register
+                </button>
+
+                <Link to="/login" className="button">
+                    Back
+                </Link>
+            </div>
+        </form>
     );
 };
