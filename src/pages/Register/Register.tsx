@@ -4,7 +4,8 @@ import AuthenticationService from '../../services/AuthenticationService';
 import { Link } from 'react-router-dom';
 
 export const Register = () => {
-    const handleRegister = () => {
+    const handleRegister = (e: React.FormEvent) => {
+        e.preventDefault();
         const { username, email, password } = registerForm;
 
         AuthenticationService.register(username, email, password).then(
@@ -34,7 +35,7 @@ export const Register = () => {
     const { username, email, password, repeatPassword } = registerForm;
 
     return (
-        <form className="register">
+        <form className="register" onSubmit={handleRegister}>
             <div className="register__input">
                 <label htmlFor="username">Username:</label>
                 <input type="text" name="username" value={username} onChange={handleInputChange} />
@@ -56,7 +57,7 @@ export const Register = () => {
             </div>
 
             <div className="register__buttons">
-                <button className="button" onClick={handleRegister}>
+                <button className="button" type="submit">
                     Register
                 </button>
 
