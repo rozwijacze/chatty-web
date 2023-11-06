@@ -44,16 +44,17 @@ a:link {
     text-decoration: none;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
     font-family: Roboto-Bold;
+    color: var(--text-100);
 }
 
 input {
     font-size: 1.2rem;
     padding: 0.5rem 0.75rem;
-    border-radius: 12px;
-    border: 1px solid var(--primary-400);
-    background: var(--primary-A100);
+    border-radius: 8px;
+    border: 1px solid var(--primary-200);
+    background: var(--bg-200);
 
     &:-webkit-autofill {
         font-size: 1.2rem;
