@@ -1,11 +1,12 @@
 import { ChangeEvent, useState } from 'react';
+import { ReactComponent as UserIcon } from '/src/assets/username.svg';
+import { ReactComponent as PasswordIcon } from '/src/assets/password.svg';
 import './Login.scss';
 import AuthenticationService from '../../services/AuthenticationService';
 
 export const Login = () => {
-
-    const handleLogin = () => {
-        const { email, password } = loginForm;
+    const handleLogin = (e: React.FormEvent) => {
+        e.preventDefault();
 
         AuthenticationService.login(email, password).then(
             response => {
@@ -13,7 +14,7 @@ export const Login = () => {
             },
             error => {
                 console.log('error msg:');
-                
+
                 console.log(error);
             }
         );
@@ -29,18 +30,22 @@ export const Login = () => {
     const { email, password } = loginForm;
 
     return (
-        <>
-            <div className="login-form">
-                <label>
-                    Login:
-                    <input type="email" name="email" value={email} onChange={handleInputChange} />
-                </label>
-                <label>
-                    Password:
-                    <input type="password" name="password" value={password} onChange={handleInputChange} />
-                </label>
-                <button>Zaloguj sie</button>
+        <form className="login" onSubmit={handleLogin}>
+            <div className="login__input">
+                <UserIcon />
+
+                <input type="email" name="email" value={email} placeholder="E-mail" onChange={handleInputChange} />
             </div>
-        </>
+
+            <div className="login__input">
+                <PasswordIcon />
+
+                <input type="password" name="password" value={password} placeholder="Password" onChange={handleInputChange} />
+            </div>
+
+            <button className="button" type="submit">
+                Login
+            </button>
+        </form>
     );
 };

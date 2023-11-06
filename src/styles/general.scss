@@ -15,3 +15,24 @@ $dark: meta.module-variables('dark');
 
 @include add-css-variables($light, 'light');
 @include add-css-variables($dark, 'dark');
+
+.logo-title {
+    font-style: italic;
+    margin: 0;
+    letter-spacing: 1.4px;
+    color: var(--primary-A400);
+    transition: all 0.3s ease-out;
+}
+
+.button {
+    font-size: 1.1rem;
+    font-family: Roboto-Bold;
+    letter-spacing: 1px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary-400);
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    background: var(--primary-900);
+    color: var(--primary-50);
+    text-transform: uppercase;
+}

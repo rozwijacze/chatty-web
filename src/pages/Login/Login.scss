@@ -1,8 +1,22 @@
-.login-form {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 30px;
-    gap: 10px;
+.login {
+    &__input {
+        position: relative;
+
+        svg {
+            position: absolute;
+            left: 8px;
+            top: 8px;
+        }
+    }
+
+    input {
+        padding: 0.75rem 1rem 0.75rem 2.75rem;
+
+        &::placeholder {
+            font-size: 1rem;
+            font-family: Roboto-Bold;
+            text-transform: uppercase;
+            color: var(--primary-600);
+        }
+    }
 }

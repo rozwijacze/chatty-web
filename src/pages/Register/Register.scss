@@ -1,8 +1,18 @@
-.register-form {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex-direction: column;
-    padding: 30px;
-    gap: 10px;
+.register {
+    &__input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__buttons {
+        display: flex;
+        gap: 1rem;
+    }
+
+    label {
+        font-family: Roboto-Bold;
+        color: var(--primary-100);
+    }
 }

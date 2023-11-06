@@ -5,25 +5,25 @@ import './SideWindow.scss';
 import { ViewType } from '../../types/ViewType';
 
 interface Props {
-    view: ViewType;
+    view: ViewType.MESSAGES | ViewType.CONTACTS | ViewType.SETTINGS;
 }
 
-export const SideWindow = ({ view }: Props) => {
-    let viewType;
+export const SideWindow = (props: Props) => {
+    let viewEl: JSX.Element;
 
-    switch (view) {
-        case ViewType.MESSAGES:
-            viewType = <SideMessages />;
-            break;
-
+    switch (props.view) {
         case ViewType.CONTACTS:
-            viewType = <SideContacts />;
+            viewEl = <SideContacts />;
             break;
 
         case ViewType.SETTINGS:
-            viewType = <SideSettings />;
+            viewEl = <SideSettings />;
+            break;
+
+        default:
+            viewEl = <SideMessages />;
             break;
     }
 
-    return <div className="side-window">{viewType}</div>;
+    return <div className="side-window">{viewEl}</div>;
 };
