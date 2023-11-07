@@ -44,14 +44,8 @@ a:link {
     text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1 {
     font-family: Roboto-Bold;
-    color: var(--text-100);
 }
 
 input {
@@ -60,15 +54,21 @@ input {
     border-radius: 8px;
     border: 1px solid var(--primary-200);
     background: var(--bg-200);
+    color: var(--text-100);
 
     &:-webkit-autofill {
         font-size: 1.2rem;
+    }
+
+    &::placeholder {
+        color: var(--text-200);
     }
 }
 
 @for $i from 1 through 6 {
     h#{$i} {
         margin: 0;
+        color: var(--text-100);
     }
 }
 
