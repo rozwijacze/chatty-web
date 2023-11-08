@@ -6,22 +6,20 @@ import { Link } from 'react-router-dom';
 export const Register = () => {
     const handleRegister = (e: React.FormEvent) => {
         e.preventDefault();
-        const { username, email, password } = registerForm;
+        const { nickname, email, password } = registerForm;
 
-        AuthenticationService.register(username, email, password).then(
+        AuthenticationService.register(nickname, email, password).then(
             response => {
                 console.log(response);
             },
             error => {
-                console.log('error msg:');
-
-                console.log(error);
+                console.log('error msg:', error);
             }
         );
     };
 
     const [registerForm, setRegisterForm] = useState({
-        username: '',
+        nickname: '',
         email: '',
         password: '',
         repeatPassword: ''
@@ -32,28 +30,38 @@ export const Register = () => {
         setRegisterForm({ ...registerForm, [name]: value });
     };
 
-    const { username, email, password, repeatPassword } = registerForm;
+    const { nickname, email, password, repeatPassword } = registerForm;
 
     return (
         <form className="register" onSubmit={handleRegister}>
             <div className="register__input">
-                <label htmlFor="username">Username:</label>
-                <input type="text" name="username" value={username} onChange={handleInputChange} />
+                <label htmlFor="nickname">Nickname:</label>
+
+                <input type="text" name="nickname" value={nickname} onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">E-mail:</label>
+
                 <input type="email" name="email" value={email} onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
                 <label htmlFor="password">Password:</label>
-                <input type="password" name="password" value={password} onChange={handleInputChange} />
+
+                <input type="password" name="password" value={password} autoComplete="password" onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
                 <label htmlFor="repeatPassword">Repeat password:</label>
-                <input type="password" name="repeatPassword" value={repeatPassword} onChange={handleInputChange} />
+
+                <input
+                    type="password"
+                    name="repeatPassword"
+                    value={repeatPassword}
+                    autoComplete="repeatPassword"
+                    onChange={handleInputChange}
+                />
             </div>
 
             <div className="register__buttons">
