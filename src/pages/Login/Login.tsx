@@ -13,9 +13,7 @@ export const Login = () => {
                 console.log(response);
             },
             error => {
-                console.log('error msg:');
-
-                console.log(error);
+                console.log('error msg:', error);
             }
         );
     };
@@ -34,13 +32,20 @@ export const Login = () => {
             <div className="login__input">
                 <UserIcon />
 
-                <input type="email" name="email" value={email} placeholder="E-mail" onChange={handleInputChange} />
+                <input type="email" name="email" value={email} placeholder="E-mail" autoComplete="email" onChange={handleInputChange} />
             </div>
 
             <div className="login__input">
                 <PasswordIcon />
 
-                <input type="password" name="password" value={password} placeholder="Password" onChange={handleInputChange} />
+                <input
+                    type="password"
+                    name="password"
+                    value={password}
+                    placeholder="Password"
+                    autoComplete="password"
+                    onChange={handleInputChange}
+                />
             </div>
 
             <button className="button" type="submit">
