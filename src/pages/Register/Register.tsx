@@ -57,6 +57,8 @@ export const Register = () => {
                     autoComplete="current-password"
                     onChange={handleInputChange}
                 />
+
+                <input type="password" name="password" value={password} autoComplete="password" onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
