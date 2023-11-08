@@ -6,6 +6,7 @@
             position: absolute;
             left: 8px;
             top: 8px;
+            fill: var(--primary-200);
         }
     }
 
@@ -16,7 +17,8 @@
             font-size: 1rem;
             font-family: Roboto-Bold;
             text-transform: uppercase;
-            color: var(--primary-600);
+            color: var(--primary-200);
+            opacity: 0.6;
         }
     }
 }

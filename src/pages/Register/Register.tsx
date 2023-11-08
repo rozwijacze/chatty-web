@@ -61,7 +61,7 @@ export const Register = () => {
                     Register
                 </button>
 
-                <Link to="/login" className="button">
+                <Link to="/login" className="button button--flat">
                     Back
                 </Link>
             </div>

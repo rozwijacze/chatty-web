@@ -51,18 +51,24 @@ h1 {
 input {
     font-size: 1.2rem;
     padding: 0.5rem 0.75rem;
-    border-radius: 12px;
-    border: 1px solid var(--primary-400);
-    background: var(--primary-A100);
+    border-radius: 8px;
+    border: 1px solid var(--primary-200);
+    background: var(--bg-200);
+    color: var(--text-100);
 
     &:-webkit-autofill {
         font-size: 1.2rem;
+    }
+
+    &::placeholder {
+        color: var(--text-200);
     }
 }
 
 @for $i from 1 through 6 {
     h#{$i} {
         margin: 0;
+        color: var(--text-100);
     }
 }
 

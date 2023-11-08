@@ -1,18 +1,16 @@
 /* variables */
-$background-gradient: linear-gradient(45deg, hsla(0, 0%, 0%, 1) 0%, hsla(216, 83%, 2%, 1) 0%, hsla(214, 90%, 51%, 1) 85%);
+$background-gradient: linear-gradient(120deg, rgba(232, 234, 246, 1) 10%, rgba(125, 137, 204, 1) 60%);
 
-/* light mode / dark mode */
-$primary-50: #e8eaf6; // #000000
-$primary-100: #c5cae9; // #000000
-$primary-200: #9fa8da; // #000000
-$primary-300: #7986cb; // #000000
-$primary-400: #5c6bc0; // #ffffff
-$primary-500: #3f51b5; // #ffffff
-$primary-600: #3949ab; // #ffffff
-$primary-700: #303f9f; // #ffffff
-$primary-800: #283593; // #ffffff
-$primary-900: #1a237e; // #ffffff
-$primary-A100: #8c9eff; // #000000
-$primary-A200: #536dfe; // #000000
-$primary-A400: #3d5afe; // #ffffff
-$primary-A700: #304ffe; // #ffffff
+$primary-100: #0066cc;
+$primary-200: #5c93ff;
+$primary-300: #ccf6ff;
+$accent-100: #00a8e8;
+$accent-200: #004e7b;
+$text-100: #333333;
+$text-200: #5c5c5c;
+$bg-100: #e6f2ff;
+$bg-200: #dce8f5;
+$bg-300: #b4bfcc;
+
+$white-color: #ffffff;
+$primary-logo: #00a8e8;
