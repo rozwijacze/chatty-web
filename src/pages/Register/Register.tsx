@@ -37,19 +37,26 @@ export const Register = () => {
             <div className="register__input">
                 <label htmlFor="nickname">Nickname:</label>
 
-                <input type="text" name="nickname" value={nickname} onChange={handleInputChange} />
+                <input type="text" id="nickname" name="nickname" value={nickname} autoComplete="given-name" onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
                 <label htmlFor="email">E-mail:</label>
 
-                <input type="email" name="email" value={email} onChange={handleInputChange} />
+                <input type="email" id="email" name="email" value={email} autoComplete="email" onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
                 <label htmlFor="password">Password:</label>
 
-                <input type="password" name="password" value={password} autoComplete="password" onChange={handleInputChange} />
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={password}
+                    autoComplete="current-password"
+                    onChange={handleInputChange}
+                />
             </div>
 
             <div className="register__input">
@@ -57,9 +64,10 @@ export const Register = () => {
 
                 <input
                     type="password"
+                    id="repeatPassword"
                     name="repeatPassword"
                     value={repeatPassword}
-                    autoComplete="repeatPassword"
+                    autoComplete="current-password"
                     onChange={handleInputChange}
                 />
             </div>
