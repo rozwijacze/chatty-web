@@ -43,7 +43,7 @@ export const Login = () => {
                     name="password"
                     value={password}
                     placeholder="Password"
-                    autoComplete="password"
+                    autoComplete="current-password"
                     onChange={handleInputChange}
                 />
             </div>
