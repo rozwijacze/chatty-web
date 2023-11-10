@@ -1,6 +1,7 @@
 import axios from 'axios';
+import { ViteEnv } from '../types/ViteEnv';
 
-const API_URL = 'http://localhost:5000/';
+const API_URL: ViteEnv = import.meta.env.VITE_API_URL;
 
 class AuthService {
     login(email: string, password: string) {
