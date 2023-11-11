@@ -1,15 +1,17 @@
 $background-gradient: linear-gradient(120deg, rgba(51, 73, 116, 1) 25%, rgba(15, 22, 36, 1) 80%);
 
-$primary-100: #1a237e;
-$primary-200: #534bae;
-$primary-300: #b8a6ff;
-$accent-100: #ff4081;
-$accent-200: #d37c99;
-$text-100: #ffffff;
-$text-200: #e0e0e0;
-$bg-100: #0f1624;
-$bg-200: #1e2533;
-$bg-300: #353c4c;
+// dark / light
+$primary-100: #1a237e; // #0066cc
+$primary-200: #534bae; // #5c93ff
+$primary-300: #b8a6ff; // #ccf6ff
+$accent-100: #ff4081; // #00a8e8
+$accent-200: #d37c99; // #004e7b
+$text-100: #ffffff; // #333333
+$text-200: #e0e0e0; // #5c5c5c
+$bg-100: #0f1624; // #e6f2ff
+$bg-200: #1e2533; // #dce8f5
+$bg-300: #353c4c; // #b4bfcc
 
+// constant colors
 $white-color: #ffffff;
 $primary-logo: #00a8e8;

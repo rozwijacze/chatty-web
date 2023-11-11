@@ -2,8 +2,11 @@ import { ChangeEvent, useState } from 'react';
 import './Register.scss';
 import AuthenticationService from '../../services/AuthenticationService';
 import { Link } from 'react-router-dom';
+import { useLabels } from '../../hooks/useLabels';
 
 export default function Register() {
+    const labels = useLabels();
+
     function handleRegister(e: React.FormEvent) {
         e.preventDefault();
         const { nickname, email, password } = registerForm;
@@ -35,19 +38,19 @@ export default function Register() {
     return (
         <form className="register" onSubmit={handleRegister}>
             <div className="register__input">
-                <label htmlFor="nickname">Nickname:</label>
+                <label htmlFor="nickname">{labels.register.labels.nickname}</label>
 
                 <input type="text" id="nickname" name="nickname" value={nickname} autoComplete="given-name" onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
-                <label htmlFor="email">E-mail:</label>
+                <label htmlFor="email">{labels.register.labels.email}</label>
 
                 <input type="email" id="email" name="email" value={email} autoComplete="email" onChange={handleInputChange} />
             </div>
 
             <div className="register__input">
-                <label htmlFor="password">Password:</label>
+                <label htmlFor="password">{labels.register.labels.password}</label>
 
                 <input
                     type="password"
@@ -60,7 +63,7 @@ export default function Register() {
             </div>
 
             <div className="register__input">
-                <label htmlFor="repeatPassword">Repeat password:</label>
+                <label htmlFor="repeatPassword">{labels.register.labels.repeatPassword}</label>
 
                 <input
                     type="password"
@@ -74,11 +77,11 @@ export default function Register() {
 
             <div className="register__buttons">
                 <button className="button" type="submit">
-                    Register
+                    {labels.register.buttons.register}
                 </button>
 
                 <Link to="/login" className="button button--flat">
-                    Back
+                    {labels.register.buttons.link}
                 </Link>
             </div>
         </form>

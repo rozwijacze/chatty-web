@@ -5,12 +5,15 @@ import Login from '../../pages/Login/Login';
 import Register from '../../pages/Register/Register';
 import ThemeButton from '../../components/ThemeButton/ThemeButton';
 import { ViteEnv } from '../../types/ViteEnv';
+import { useLabels } from '../../hooks/useLabels';
+import LocaleButton from '../../components/LocaleButton/LocaleButton';
 
 interface Props {
     view: ViewType.LOGIN | ViewType.REGISTER;
 }
 
 export default function FormLayout(props: Props) {
+    const labels = useLabels();
     const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
     let formEl: JSX.Element;
 
@@ -26,19 +29,24 @@ export default function FormLayout(props: Props) {
 
     return (
         <main className="form-layout">
-            <ThemeButton />
             <div className="form-layout__wrapper">
                 <div className="form-layout__title">
                     <h1 className="logo-title">{APP_NAME}</h1>
-                    <h2>It is not a messenger clone</h2>
+                    <h2>{labels.formLayout.subtitle}</h2>
                     {props.view === ViewType.LOGIN && (
                         <p>
-                            Create an account <Link to="/register">here</Link>
+                            {labels.formLayout.description.label}
+                            <Link to="/register">{labels.formLayout.description.link}</Link>
                         </p>
                     )}
                 </div>
 
                 <div className="form-layout__content">{formEl}</div>
+            </div>
+
+            <div className="form-layout__buttons">
+                <LocaleButton />
+                <ThemeButton />
             </div>
         </main>
     );
