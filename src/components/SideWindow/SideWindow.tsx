@@ -5,7 +5,7 @@ import './SideWindow.scss';
 import { ViewType } from '../../types/ViewType';
 
 interface Props {
-    view: ViewType.MESSAGES | ViewType.CONTACTS | ViewType.SETTINGS;
+    view: ViewType;
 }
 
 export const SideWindow = (props: Props) => {
