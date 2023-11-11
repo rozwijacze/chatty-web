@@ -3,6 +3,7 @@ import { ReactComponent as ContactsIcon } from '/src/assets/contacts.svg';
 import { ReactComponent as MessagesIcon } from '/src/assets/messages.svg';
 import { ReactComponent as SettingsIcon } from '/src/assets/settings.svg';
 import { ViewType } from '../../types/ViewType';
+import { ViteEnv } from '../../types/ViteEnv';
 import './SideNav.scss';
 
 interface Props {
@@ -11,10 +12,12 @@ interface Props {
 }
 
 export const SideNav = ({ view, setView }: Props) => {
+    const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
+
     return (
         <nav className="side-nav">
-            <h1 className="logo-title" title="Chatty">
-                Chatty
+            <h1 className="logo-title" title={APP_NAME}>
+                {APP_NAME}
             </h1>
 
             <ul className="side-nav__menu">
