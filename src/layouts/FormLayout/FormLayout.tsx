@@ -1,16 +1,16 @@
 import { Link } from 'react-router-dom';
 import './FormLayout.scss';
 import { ViewType } from '../../types/ViewType';
-import { Login } from '../../pages/Login/Login';
-import { Register } from '../../pages/Register/Register';
-import { ThemeButton } from '../../components/ThemeButton/ThemeButton';
+import Login from '../../pages/Login/Login';
+import Register from '../../pages/Register/Register';
+import ThemeButton from '../../components/ThemeButton/ThemeButton';
 import { ViteEnv } from '../../types/ViteEnv';
 
 interface Props {
     view: ViewType.LOGIN | ViewType.REGISTER;
 }
 
-export const FormLayout = (props: Props) => {
+export default function FormLayout(props: Props) {
     const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
     let formEl: JSX.Element;
 
@@ -42,4 +42,4 @@ export const FormLayout = (props: Props) => {
             </div>
         </main>
     );
-};
+}

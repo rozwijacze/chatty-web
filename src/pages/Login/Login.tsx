@@ -4,8 +4,8 @@ import { ReactComponent as PasswordIcon } from '/src/assets/password.svg';
 import './Login.scss';
 import AuthenticationService from '../../services/AuthenticationService';
 
-export const Login = () => {
-    const handleLogin = (e: React.FormEvent) => {
+export default function Login() {
+    function handleLogin(e: React.FormEvent) {
         e.preventDefault();
 
         AuthenticationService.login(email, password).then(
@@ -16,14 +16,14 @@ export const Login = () => {
                 console.log('error msg:', error);
             }
         );
-    };
+    }
 
     const [loginForm, setLoginForm] = useState({ email: '', password: '' });
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target;
         setLoginForm({ ...loginForm, [name]: value });
-    };
+    }
 
     const { email, password } = loginForm;
 
@@ -53,4 +53,4 @@ export const Login = () => {
             </button>
         </form>
     );
-};
+}

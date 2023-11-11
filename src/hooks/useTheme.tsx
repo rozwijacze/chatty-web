@@ -5,17 +5,15 @@ interface ThemeHook {
     toggle: () => void;
 }
 
-export const useTheme = (): ThemeHook => {
+export default function useTheme(): ThemeHook {
     const [mode, setMode] = useState('light');
 
     useEffect(() => {
-        document.body.classList.value = "";
+        document.body.classList.value = '';
         document.body.classList.add(mode);
-    }, [mode])
-    
-    const toggle = () => {
-        setMode(mode === 'light' ? 'dark' : 'light');
-    };
+    }, [mode]);
+
+    const toggle = () => setMode(mode === 'light' ? 'dark' : 'light');
 
     return { mode, toggle };
-};
+}

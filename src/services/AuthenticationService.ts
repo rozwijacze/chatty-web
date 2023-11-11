@@ -4,7 +4,7 @@ import { ViteEnv } from '../types/ViteEnv';
 const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
 
 class AuthService {
-    login(email: string, password: string) {
+    public login(email: string, password: string) {
         return axios
             .post(API_URL + 'login', {
                 email,
@@ -19,11 +19,11 @@ class AuthService {
             });
     }
 
-    logout() {
+    public logout() {
         localStorage.removeItem('user');
     }
 
-    register(nickname: string, email: string, password: string) {
+    public register(nickname: string, email: string, password: string) {
         return axios.post(
             API_URL + 'register',
             {
@@ -39,7 +39,7 @@ class AuthService {
         );
     }
 
-    getCurrentUser() {
+    public getCurrentUser() {
         const userStr = localStorage.getItem('user');
         if (userStr) return JSON.parse(userStr);
 

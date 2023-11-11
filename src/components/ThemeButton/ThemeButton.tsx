@@ -1,8 +1,8 @@
-import { useTheme } from '../../hooks/useTheme';
+import useTheme from '../../hooks/useTheme';
 import './ThemeButton.scss';
 
-export const ThemeButton = () => {
+export default function ThemeButton() {
     const { toggle } = useTheme();
 
     return <button className="theme-btn" title="Toggle theme" onClick={() => toggle()}></button>;
-};
+}

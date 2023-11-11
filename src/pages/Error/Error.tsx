@@ -1,3 +1,3 @@
-export const Error = () => {
+export default function Error() {
     return <main>Error</main>;
-};
+}

@@ -3,8 +3,8 @@ import './Register.scss';
 import AuthenticationService from '../../services/AuthenticationService';
 import { Link } from 'react-router-dom';
 
-export const Register = () => {
-    const handleRegister = (e: React.FormEvent) => {
+export default function Register() {
+    function handleRegister(e: React.FormEvent) {
         e.preventDefault();
         const { nickname, email, password } = registerForm;
 
@@ -16,7 +16,7 @@ export const Register = () => {
                 console.log('error msg:', error);
             }
         );
-    };
+    }
 
     const [registerForm, setRegisterForm] = useState({
         nickname: '',
@@ -25,10 +25,10 @@ export const Register = () => {
         repeatPassword: ''
     });
 
-    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
         const { name, value } = e.target;
         setRegisterForm({ ...registerForm, [name]: value });
-    };
+    }
 
     const { nickname, email, password, repeatPassword } = registerForm;
 
@@ -85,4 +85,4 @@ export const Register = () => {
             </div>
         </form>
     );
-};
+}

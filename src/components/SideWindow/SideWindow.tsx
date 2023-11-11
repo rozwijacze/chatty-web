@@ -1,6 +1,6 @@
-import { SideMessages } from './SideMessages/SideMessages';
-import { SideContacts } from './SideContacts/SideContacts';
-import { SideSettings } from './SideSettings/SideSettings';
+import SideMessages from './SideMessages/SideMessages';
+import SideContacts from './SideContacts/SideContacts';
+import SideSettings from './SideSettings/SideSettings';
 import './SideWindow.scss';
 import { ViewType } from '../../types/ViewType';
 
@@ -8,7 +8,7 @@ interface Props {
     view: ViewType;
 }
 
-export const SideWindow = (props: Props) => {
+export default function SideWindow(props: Props) {
     let viewEl: JSX.Element;
 
     switch (props.view) {
@@ -26,4 +26,4 @@ export const SideWindow = (props: Props) => {
     }
 
     return <div className="side-window">{viewEl}</div>;
-};
+}

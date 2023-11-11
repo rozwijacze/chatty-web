@@ -1,4 +1,4 @@
-import { ThemeButton } from '../ThemeButton/ThemeButton';
+import ThemeButton from '../ThemeButton/ThemeButton';
 import { ReactComponent as ContactsIcon } from '/src/assets/contacts.svg';
 import { ReactComponent as MessagesIcon } from '/src/assets/messages.svg';
 import { ReactComponent as SettingsIcon } from '/src/assets/settings.svg';
@@ -11,7 +11,7 @@ interface Props {
     setView: (view: ViewType) => void;
 }
 
-export const SideNav = ({ view, setView }: Props) => {
+export default function SideNav({ view, setView }: Props) {
     const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
 
     return (
@@ -50,4 +50,4 @@ export const SideNav = ({ view, setView }: Props) => {
             <ThemeButton />
         </nav>
     );
-};
+}
