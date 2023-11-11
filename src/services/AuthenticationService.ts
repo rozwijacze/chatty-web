@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { ViteEnv } from '../types/ViteEnv';
 
-const API_URL: ViteEnv = import.meta.env.VITE_API_URL;
+const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
 
 class AuthService {
     login(email: string, password: string) {
