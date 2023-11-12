@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { Locale } from '../types/Locale';
 
 interface LocaleContext {
@@ -6,7 +6,7 @@ interface LocaleContext {
     toggle: () => void;
 }
 
-export const LocaleContext = createContext<LocaleContext | undefined>(undefined);
+export const LocaleContext = createContext<LocaleContext | null>(null);
 
 // TODO
 // Saving currentLocale to a cookie
@@ -18,4 +18,15 @@ export default function LocaleContextProvider({ children }: React.PropsWithChild
     }
 
     return <LocaleContext.Provider value={{ currentLocale, toggle }}>{children}</LocaleContext.Provider>;
+}
+
+// eslint-disable-next-line react-refresh/only-export-components
+export function useLocaleContext() {
+    const context = useContext(LocaleContext);
+
+    if (!context) {
+        throw Error('Component that uses LocaleContext is not wrapped by a provider.');
+    }
+
+    return context;
 }
