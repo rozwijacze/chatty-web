@@ -33,6 +33,7 @@ Run the container
 docker run --rm -p 3000:3000 --name chatty-web chatty-web
 ```
 omit `--rm` if you don't want container to be removed after stopping it
+
 Container will start on
 ```bash
 http://localhost:3000/
