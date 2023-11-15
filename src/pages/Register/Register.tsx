@@ -1,13 +1,23 @@
-import { ChangeEvent, useState } from 'react';
 import './Register.scss';
 import AuthenticationService from '../../services/AuthenticationService';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+
+interface RegisterForm {
+    nickname: string;
+    email: string;
+    password: string;
+    repeatPassword: string;
+}
 
 export default function Register() {
-    function handleRegister(e: React.FormEvent) {
-        e.preventDefault();
-        const { nickname, email, password } = registerForm;
+    const {
+        register,
+        handleSubmit
+    } = useForm<RegisterForm>();
 
+    function onSubmit(data: RegisterForm) {
+        const { nickname, email, password } = data;
         AuthenticationService.register(nickname, email, password).then(
             response => {
                 console.log(response);
@@ -18,57 +28,35 @@ export default function Register() {
         );
     }
 
-    const [registerForm, setRegisterForm] = useState({
-        nickname: '',
-        email: '',
-        password: '',
-        repeatPassword: ''
-    });
-
-    function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-        const { name, value } = e.target;
-        setRegisterForm({ ...registerForm, [name]: value });
-    }
-
-    const { nickname, email, password, repeatPassword } = registerForm;
-
     return (
-        <form className="register" onSubmit={handleRegister}>
+        <form className="register" onSubmit={handleSubmit(onSubmit)}>
             <div className="register__input">
                 <label htmlFor="nickname">Nickname:</label>
 
-                <input type="text" id="nickname" name="nickname" value={nickname} autoComplete="given-name" onChange={handleInputChange} />
+                <input {...register('nickname')} required type="text" id="nickname" name="nickname" autoComplete="given-name" />
             </div>
 
             <div className="register__input">
                 <label htmlFor="email">E-mail:</label>
 
-                <input type="email" id="email" name="email" value={email} autoComplete="email" onChange={handleInputChange} />
+                <input {...register('email')} type="email" id="email" name="email" autoComplete="email" />
             </div>
 
             <div className="register__input">
                 <label htmlFor="password">Password:</label>
 
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    value={password}
-                    autoComplete="current-password"
-                    onChange={handleInputChange}
-                />
+                <input {...register('password')} type="password" id="password" name="password" autoComplete="current-password" />
             </div>
 
             <div className="register__input">
                 <label htmlFor="repeatPassword">Repeat password:</label>
 
                 <input
+                    {...register('repeatPassword')}
                     type="password"
                     id="repeatPassword"
                     name="repeatPassword"
-                    value={repeatPassword}
                     autoComplete="current-password"
-                    onChange={handleInputChange}
                 />
             </div>
 
