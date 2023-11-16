@@ -1,16 +1,18 @@
 /* variables */
 $background-gradient: linear-gradient(120deg, rgba(232, 234, 246, 1) 10%, rgba(125, 137, 204, 1) 60%);
 
-$primary-100: #0066cc;
-$primary-200: #5c93ff;
-$primary-300: #ccf6ff;
-$accent-100: #00a8e8;
-$accent-200: #004e7b;
-$text-100: #333333;
-$text-200: #5c5c5c;
-$bg-100: #e6f2ff;
-$bg-200: #dce8f5;
-$bg-300: #b4bfcc;
+// light / dark
+$primary-100: #0066cc; // #1a237e
+$primary-200: #5c93ff; // #534bae
+$primary-300: #ccf6ff; // #b8a6ff
+$accent-100: #00a8e8; // #ff4081
+$accent-200: #004e7b; // #d37c99
+$text-100: #333333; // #ffffff
+$text-200: #5c5c5c; // #e0e0e0
+$bg-100: #e6f2ff; // #0f1624
+$bg-200: #dce8f5; // #1e2533
+$bg-300: #b4bfcc; // #353c4c
 
+// constant colors
 $white-color: #ffffff;
 $primary-logo: #00a8e8;
