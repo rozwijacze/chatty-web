@@ -1,3 +1,7 @@
+import { useLabels } from '../../hooks/useLabels';
+
 export default function Error() {
-    return <main>Error</main>;
+    const labels = useLabels();
+
+    return <main>{labels.error.title}</main>;
 }

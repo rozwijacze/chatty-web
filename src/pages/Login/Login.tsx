@@ -4,6 +4,7 @@ import './Login.scss';
 import AuthenticationService from '../../services/AuthenticationService';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
+import { useLabels } from '../../hooks/useLabels';
 
 interface LoginForm {
     email: string;
@@ -14,6 +15,7 @@ export default function Login() {
     const [serverError, setServerError] = useState('');
 
     const { register, handleSubmit } = useForm<LoginForm>();
+    const labels = useLabels();
 
     function onSubmit(data: LoginForm) {
         const { email, password } = data;
@@ -30,7 +32,7 @@ export default function Login() {
             <form className="login" onSubmit={handleSubmit(onSubmit)}>
                 <div className="login__input">
                     <UserIcon />
-                    <input {...register('email')} type="email" name="email" placeholder="E-mail" autoComplete="email" />
+                    <input {...register('email')} type="email" name="email" placeholder={labels.login.placeholder.email} autoComplete="email" />
                 </div>
 
                 <div className="login__input">
@@ -39,13 +41,13 @@ export default function Login() {
                         {...register('password')}
                         type="password"
                         name="password"
-                        placeholder="Password"
+                        placeholder={labels.login.placeholder.password}
                         autoComplete="current-password"
                     />
                 </div>
 
                 <button className="button" type="submit">
-                    Login
+                     {labels.login.button}
                 </button>
             </form>
             {serverError && <p className="login__error">{serverError}</p>}

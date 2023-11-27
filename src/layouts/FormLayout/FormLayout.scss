@@ -46,4 +46,13 @@
         padding: 2rem;
         gap: 1rem;
     }
+
+    &__buttons {
+        position: absolute;
+        bottom: 1rem;
+        left: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 }

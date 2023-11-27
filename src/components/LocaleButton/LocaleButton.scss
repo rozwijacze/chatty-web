@@ -1,0 +1,19 @@
+.locale-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 100px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-200);
+    border: 1px solid var(--primary-200);
+    height: 40px;
+    width: 70px;
+    text-transform: uppercase;
+    color: var(--text-100);
+
+    &__item--active {
+        font-weight: bold;
+        color: var(--primary-200);
+    }
+}

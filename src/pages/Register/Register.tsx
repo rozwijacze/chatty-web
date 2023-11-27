@@ -5,10 +5,12 @@ import { FieldValues, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
+import { useLabels } from '../../hooks/useLabels';
 
 export default function Register() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [serverError, setServerError] = useState('');
+    const labels = useLabels();
 
     const registerSchema = yup.object().shape({
         nickname: yup.string().min(3).required(),
@@ -49,25 +51,24 @@ export default function Register() {
         <div>
             <form className="register" onSubmit={handleSubmit(onSubmit)}>
                 <div className="register__input">
-                    <label htmlFor="nickname">Nickname:</label>
+                    <label htmlFor="nickname">{labels.register.labels.nickname}</label>
                     <p>{errors.nickname?.message}</p>
                     <input {...register('nickname')} required type="text" id="nickname" name="nickname" autoComplete="given-name" />
                 </div>
 
                 <div className="register__input">
-                    <label htmlFor="email">E-mail:</label>
+                    <label htmlFor="email">{labels.register.labels.email}</label>
                     <p>{errors.email?.message?.toUpperCase()}</p>
                     <input {...register('email')} type="email" id="email" name="email" autoComplete="email" />
                 </div>
 
                 <div className="register__input">
-                    <label htmlFor="password">Password:</label>
+                    <label htmlFor="password">{labels.register.labels.password}</label>
                     <p>{errors.password?.message?.toUpperCase()}</p>
                     <input {...register('password')} type="password" id="password" name="password" autoComplete="current-password" />
                 </div>
-
                 <div className="register__input">
-                    <label htmlFor="repeatPassword">Repeat password:</label>
+                    <label htmlFor="repeatPassword">{labels.register.labels.repeatPassword}</label>
                     <p>{errors.repeatPassword?.message?.toUpperCase()}</p>
                     <input
                         {...register('repeatPassword')}
@@ -80,11 +81,11 @@ export default function Register() {
 
                 <div className="register__buttons">
                     <button className="button" type="submit">
-                        Register
+                        {labels.register.buttons.register}
                     </button>
 
                     <Link to="/login" className="button button--flat">
-                        Back
+                        {labels.register.buttons.link}
                     </Link>
                 </div>
             </form>
