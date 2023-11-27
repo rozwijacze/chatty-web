@@ -32,7 +32,13 @@ export default function Login() {
             <form className="login" onSubmit={handleSubmit(onSubmit)}>
                 <div className="login__input">
                     <UserIcon />
-                    <input {...register('email')} type="email" name="email" placeholder={labels.login.placeholder.email} autoComplete="email" />
+                    <input
+                        {...register('email')}
+                        type="email"
+                        name="email"
+                        placeholder={labels.login.placeholder.email}
+                        autoComplete="email"
+                    />
                 </div>
 
                 <div className="login__input">
@@ -47,7 +53,7 @@ export default function Login() {
                 </div>
 
                 <button className="button" type="submit">
-                     {labels.login.button}
+                    {labels.login.button}
                 </button>
             </form>
             {serverError && <p className="login__error">{serverError}</p>}

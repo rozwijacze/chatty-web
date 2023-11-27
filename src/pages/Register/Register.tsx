@@ -84,7 +84,7 @@ export default function Register() {
                         {labels.register.buttons.register}
                     </button>
 
-                    <Link to="/login" className="button button--flat">
+                    <Link to="/" className="button button--flat">
                         {labels.register.buttons.link}
                     </Link>
                 </div>

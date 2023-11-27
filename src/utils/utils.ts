@@ -4,8 +4,7 @@ export function logString(value: string) {
     console.log(value);
 }
 
-
-export function isTokenExpired(token: string) {  
+export function isTokenExpired(token: string) {
     try {
         const decodedToken = jwtDecode(token);
         return decodedToken.exp! < Date.now() / 1000;
