@@ -6,9 +6,13 @@ import Register from '../../pages/Register/Register';
 import ThemeButton from '../../components/ThemeButton/ThemeButton';
 import { ViteEnv } from '../../types/ViteEnv';
 
-interface Props {
+interface LoginProps {}
+
+interface RegisterProps {}
+
+type Props = {
     view: ViewType.LOGIN | ViewType.REGISTER;
-}
+} & (LoginProps | RegisterProps);
 
 export default function FormLayout(props: Props) {
     const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;

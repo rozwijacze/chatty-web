@@ -4,11 +4,31 @@
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
+
+        p {
+            color: red;
+            font-weight: bold;
+            font-size: 0.7rem;
+        }
     }
 
     &__buttons {
         display: flex;
         gap: 1rem;
+    }
+
+    &__result {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+
+        &--success {
+            color: var(--accent-200);
+        }
+        &--fail {
+            color:red;
+        }
+
     }
 
     label {
