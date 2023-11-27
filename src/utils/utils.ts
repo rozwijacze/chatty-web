@@ -1,9 +1,5 @@
 import { jwtDecode } from 'jwt-decode';
 
-export function logString(value: string) {
-    console.log(value);
-}
-
 export function isTokenExpired(token: string) {
     try {
         const decodedToken = jwtDecode(token);
@@ -21,6 +17,5 @@ export function getToken() {
 
 export function isUserLoggedIn() {
     const token = getToken();
-    const isTokenValid = !isTokenExpired(token);
-    return token && isTokenValid;
+    return token && !isTokenExpired(token);
 }

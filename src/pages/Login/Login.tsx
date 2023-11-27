@@ -1,10 +1,10 @@
 import { ReactComponent as UserIcon } from '/src/assets/username.svg';
 import { ReactComponent as PasswordIcon } from '/src/assets/password.svg';
 import './Login.scss';
-import AuthenticationService from '../../services/AuthenticationService';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useLabels } from '../../hooks/useLabels';
+import { useAuth } from '../../contexts/AuthContext';
 
 interface LoginForm {
     email: string;
@@ -16,15 +16,17 @@ export default function Login() {
 
     const { register, handleSubmit } = useForm<LoginForm>();
     const labels = useLabels();
+    const { login } = useAuth();
 
     function onSubmit(data: LoginForm) {
         const { email, password } = data;
-        AuthenticationService.login(email, password).then(
-            () => {},
-            error => {
-                setServerError(error.message);
+        login(email, password).then(response => {
+            if (response.success) {
+                console.log('Zalogowano pomyślnie');
+            } else {
+                setServerError(response.error || 'Wystąpił nieoczekiwany błąd.');
             }
-        );
+        });
     }
 
     return (

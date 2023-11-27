@@ -1,16 +1,17 @@
 import './Register.scss';
-import AuthenticationService from '../../services/AuthenticationService';
 import { Link } from 'react-router-dom';
 import { FieldValues, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useLabels } from '../../hooks/useLabels';
+import { useAuth } from '../../contexts/AuthContext';
 
 export default function Register() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [serverError, setServerError] = useState('');
     const labels = useLabels();
+    const auth = useAuth();
 
     const registerSchema = yup.object().shape({
         nickname: yup.string().min(3).required(),
@@ -31,15 +32,14 @@ export default function Register() {
     function onSubmit(data: FieldValues) {
         resetStatus();
         const { nickname, email, password } = data;
-        AuthenticationService.register(nickname, email, password).then(
-            () => {
+        auth.register(nickname, email, password).then(response => {
+            if (response.success) {
                 setIsRegistered(true);
                 reset();
-            },
-            error => {
-                setServerError(error.message);
+            } else {
+                setServerError(response.error || 'Wystąpił nieoczekiwany błąd.');
             }
-        );
+        });
     }
 
     function resetStatus() {
