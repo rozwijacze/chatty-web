@@ -14,10 +14,10 @@ export default function Register() {
     const auth = useAuth();
 
     const registerSchema = yup.object().shape({
-        nickname: yup.string().min(3).required(),
+        nickname: yup.string().min(3, ).required(),
         email: yup.string().email().required(),
         password: yup.string().min(7).max(32).required(),
-        repeatPassword: yup.string().oneOf([yup.ref('password')], 'Passwords are not the same.')
+        repeatPassword: yup.string().oneOf([yup.ref('password')], labels.register.formErrors.repeatPassword)
     });
 
     const {
@@ -37,7 +37,7 @@ export default function Register() {
                 setIsRegistered(true);
                 reset();
             } else {
-                setServerError(response.error || 'Wystąpił nieoczekiwany błąd.');
+                setServerError(response.error || labels.register.results.unusualError);
             }
         });
     }
@@ -48,7 +48,7 @@ export default function Register() {
     }
 
     return (
-        <div>
+        <>
             <form className="register" onSubmit={handleSubmit(onSubmit)}>
                 <div className="register__input">
                     <label htmlFor="nickname">{labels.register.labels.nickname}</label>
@@ -89,8 +89,8 @@ export default function Register() {
                     </Link>
                 </div>
             </form>
-            {isRegistered && <p className="register__result register__result--success">Registration successful!</p>}
+            {isRegistered && <p className="register__result register__result--success">{labels.register.results.succeed}</p>}
             {serverError && <p className="register__result register__result--fail">{serverError}</p>}
-        </div>
+        </>
     );
 }

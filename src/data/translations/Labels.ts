@@ -1,4 +1,13 @@
 export default interface Labels {
+    authContext: {
+        login: {
+            invalidToken: string;
+            resultError: string;
+        };
+        register: {
+            resultError: string;
+        }
+    };
     error: { title: string };
     chatWindow: { title: string };
     sideContacts: { title: string };
@@ -17,6 +26,9 @@ export default interface Labels {
             password: string;
         };
         button: string;
+        results: {
+            unusualError: string;
+        };
     };
     register: {
         labels: {
@@ -28,6 +40,13 @@ export default interface Labels {
         buttons: {
             register: string;
             link: string;
+        };
+        formErrors: {
+            repeatPassword: string;
+        };
+        results: {
+            succeed: string;
+            unusualError: string;
         };
     };
 }

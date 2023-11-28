@@ -2,6 +2,7 @@ import { createContext, useContext, useLayoutEffect, useState } from 'react';
 import { isTokenExpired, isUserLoggedIn } from '../utils/utils';
 import axios from 'axios';
 import { ViteEnv } from '../types/ViteEnv';
+import { useLabels } from '../hooks/useLabels';
 
 interface AuthContext {
     isAuthenticated: boolean;
@@ -15,6 +16,7 @@ const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
 export const AuthContext = createContext<AuthContext | null>(null);
 
 export const AuthProvider = ({ children }: React.PropsWithChildren) => {
+    const labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useLayoutEffect(() => {
@@ -35,11 +37,11 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
                     setIsAuthenticated(true);
                     return { success: true };
                 } else {
-                    return { success: false, error: 'Niepoprawny token.' };
+                    return { success: false, error: labels.authContext.login.invalidToken };
                 }
             })
             .catch(() => {
-                return { success: false, error: 'Wystąpił błąd podczas logowania.' };
+                return { success: false, error: labels.authContext.login.resultError };
             });
     }
 
@@ -59,7 +61,7 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
                 return { success: true };
             })
             .catch(() => {
-                return { success: false, error: 'Blad podczas rejestracji.' };
+                return { success: false, error: labels.authContext.register.resultError };
             });
     }
 
