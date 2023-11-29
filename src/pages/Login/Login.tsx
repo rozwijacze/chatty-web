@@ -1,66 +1,69 @@
-import { ChangeEvent, useState } from 'react';
 import { ReactComponent as UserIcon } from '/src/assets/username.svg';
 import { ReactComponent as PasswordIcon } from '/src/assets/password.svg';
 import './Login.scss';
-import AuthenticationService from '../../services/AuthenticationService';
+import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { useLabels } from '../../hooks/useLabels';
+import { useAuth } from '../../contexts/AuthContext';
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+
+interface LoginForm {
+    email: string;
+    password: string;
+}
 
 export default function Login() {
     const labels = useLabels();
+    const { login } = useAuth();
+    const [serverError, setServerError] = useState('');
+    const loginSchema = yup.object().shape({
+        email: yup.string().email().required(),
+        password: yup.string().required()
+    });
 
-    function handleLogin(e: React.FormEvent) {
-        e.preventDefault();
+    const { register, handleSubmit } = useForm<LoginForm>({
+        resolver: yupResolver(loginSchema)
+    });
 
-        AuthenticationService.login(email, password).then(
-            response => {
-                console.log(response);
-            },
-            error => {
-                console.log('error msg:', error);
-            }
-        );
+
+    function onSubmit(data: LoginForm) {
+        const { email, password } = data;
+        login(email, password).then(response => {
+            if (!response.success) setServerError(response.error || labels.login.results.unusualError);
+        });
     }
-
-    const [loginForm, setLoginForm] = useState({ email: '', password: '' });
-
-    function handleInputChange(e: ChangeEvent<HTMLInputElement>) {
-        const { name, value } = e.target;
-        setLoginForm({ ...loginForm, [name]: value });
-    }
-
-    const { email, password } = loginForm;
 
     return (
-        <form className="login" onSubmit={handleLogin}>
-            <div className="login__input">
-                <UserIcon />
+        <>
+            <form className="login" onSubmit={handleSubmit(onSubmit)}>
+                <div className="login__input">
+                    <UserIcon />
+                    <input
+                        {...register('email')}
+                        type="email"
+                        name="email"
+                        placeholder={labels.login.placeholder.email}
+                        autoComplete="email"
+                    />
+                </div>
 
-                <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    placeholder={labels.login.placeholder.email}
-                    autoComplete="email"
-                    onChange={handleInputChange}
-                />
-            </div>
+                <div className="login__input">
+                    <PasswordIcon />
+                    <input
+                        {...register('password')}
+                        type="password"
+                        name="password"
+                        placeholder={labels.login.placeholder.password}
+                        autoComplete="current-password"
+                    />
+                </div>
 
-            <div className="login__input">
-                <PasswordIcon />
-
-                <input
-                    type="password"
-                    name="password"
-                    value={password}
-                    placeholder={labels.login.placeholder.password}
-                    autoComplete="current-password"
-                    onChange={handleInputChange}
-                />
-            </div>
-
-            <button className="button" type="submit">
-                {labels.login.button}
-            </button>
-        </form>
+                <button className="button" type="submit">
+                    {labels.login.button}
+                </button>
+            </form>
+            {serverError && <p className="login__error">{serverError}</p>}
+        </>
     );
 }

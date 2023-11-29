@@ -1,6 +1,15 @@
 import Labels from './Labels';
 
 export const labels_EN: Labels = {
+    authContext: {
+        login: {
+            invalidToken: 'Invalid token.',
+            resultError: 'An error occurred while logging in.'
+        },
+        register: {
+            resultError: 'An error occured while signing up.'
+        }
+    },
     error: {
         title: 'We are sorry, this page does not exist.'
     },
@@ -28,7 +37,10 @@ export const labels_EN: Labels = {
             email: 'E-mail',
             password: 'Password'
         },
-        button: 'Login'
+        button: 'Login',
+        results: {
+            unusualError: 'An unexpected error occurred.'
+        }
     },
     register: {
         labels: {
@@ -40,6 +52,13 @@ export const labels_EN: Labels = {
         buttons: {
             register: 'Register',
             link: 'Back'
+        },
+        formErrors: {
+            repeatPassword: 'Passwords are not the same.'
+        },
+        results: {
+            succeed: 'Registration successful!',
+            unusualError: 'An unexpected error occurred.'
         }
     }
 };

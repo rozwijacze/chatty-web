@@ -1,4 +1,5 @@
 import ThemeButton from '../ThemeButton/ThemeButton';
+import LogoutButton from '../LogoutButton/LogoutButton';
 import { ReactComponent as ContactsIcon } from '/src/assets/contacts.svg';
 import { ReactComponent as MessagesIcon } from '/src/assets/messages.svg';
 import { ReactComponent as SettingsIcon } from '/src/assets/settings.svg';
@@ -46,7 +47,7 @@ export default function SideNav({ view, setView }: Props) {
                     <SettingsIcon />
                 </li>
             </ul>
-
+            <LogoutButton />
             <ThemeButton />
         </nav>
     );

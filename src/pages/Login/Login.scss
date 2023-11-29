@@ -10,6 +10,13 @@
         }
     }
 
+    &__error {
+        text-align: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: red;
+    }
+
     input {
         padding: 0.75rem 1rem 0.75rem 2.75rem;
 

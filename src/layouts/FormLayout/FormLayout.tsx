@@ -8,9 +8,13 @@ import { ViteEnv } from '../../types/ViteEnv';
 import { useLabels } from '../../hooks/useLabels';
 import LocaleButton from '../../components/LocaleButton/LocaleButton';
 
-interface Props {
+interface LoginProps {}
+
+interface RegisterProps {}
+
+type Props = {
     view: ViewType.LOGIN | ViewType.REGISTER;
-}
+} & (LoginProps | RegisterProps);
 
 export default function FormLayout(props: Props) {
     const labels = useLabels();

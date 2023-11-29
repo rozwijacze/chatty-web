@@ -1,6 +1,15 @@
 import Labels from './Labels';
 
 export const labels_PL: Labels = {
+    authContext: {
+        login: {
+            invalidToken: 'Niepoprawny token.',
+            resultError: 'Wystąpił błąd podczas logowania.'
+        },
+        register: {
+            resultError: 'Wystąpił błąd podczas rejestracji.'
+        }
+    },
     error: {
         title: 'Przepraszamy, ta strona nie istnieje.'
     },
@@ -28,7 +37,10 @@ export const labels_PL: Labels = {
             email: 'E-mail',
             password: 'Hasło'
         },
-        button: 'Zaloguj się'
+        button: 'Zaloguj się',
+        results: {
+            unusualError: 'Wystąpił nieoczekiwany błąd.'
+        }
     },
     register: {
         labels: {
@@ -40,6 +52,13 @@ export const labels_PL: Labels = {
         buttons: {
             register: 'Zarejestruj się',
             link: 'Powrót'
+        },
+        formErrors: {
+            repeatPassword: 'Hasła nie są identyczne.'
+        },
+        results: {
+            succeed: 'Zarejestrowano pomyślnie!',
+            unusualError: 'Wystąpił nieoczekiwany błąd.'
         }
     }
 };
