@@ -47,8 +47,11 @@ export default function SideNav({ view, setView }: Props) {
                     <SettingsIcon />
                 </li>
             </ul>
-            <LogoutButton />
-            <ThemeButton />
+
+            <div className="side-nav__buttons">
+                <LogoutButton />
+                <ThemeButton />
+            </div>
         </nav>
     );
 }

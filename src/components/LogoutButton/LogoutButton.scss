@@ -1,0 +1,9 @@
+@import '../SideNav/SideNav.scss';
+
+.logout-btn {
+    @extend .side-nav__item;
+
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+}
