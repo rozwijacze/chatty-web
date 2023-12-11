@@ -1,5 +1,14 @@
+// Creates css variables from scss variables
+@mixin add-css-variables($module) {
+    :root {
+        @each $name, $value in $module {
+            --#{$name}: #{$value};
+        }
+    }
+}
+
 // Creates css variables from scss variables depending on mode
-@mixin add-css-variables($module, $mode) {
+@mixin add-theme-css-variables($module, $mode) {
     :root .#{$mode} {
         @each $name, $value in $module {
             --#{$name}: #{$value};
