@@ -1,5 +1,5 @@
 import { createContext, useContext, useLayoutEffect, useState } from 'react';
-import { isTokenExpired, isUserLoggedIn } from '../utils/utils';
+import { getToken, isTokenExpired } from '../utils/utils';
 import axios from 'axios';
 import { ViteEnv } from '../types/ViteEnv';
 import { useLabels } from '../hooks/useLabels';
@@ -20,10 +20,31 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useLayoutEffect(() => {
-        if (isUserLoggedIn()) {
-            setIsAuthenticated(true);
-        }
-    }, [isAuthenticated]);
+        const checkTokenValidity = async () => {
+            const tokenString = getToken();
+
+            if (tokenString && isTokenExpired(tokenString)) {
+                try {
+                    const response = await axios.post(API_URL + 'refresh-token', {
+                        // TODO: Check which token should be passed
+                        refreshToken: getToken().refreshToken
+                    });
+
+                    const { accessToken } = response.data;
+
+                    localStorage.setItem('user', JSON.stringify(accessToken));
+                    setIsAuthenticated(true);
+                } catch (error) {
+                    logout();
+                }
+            }
+        };
+
+        checkTokenValidity();
+        const intervalId = setInterval(checkTokenValidity, 10 * 60 * 1000);
+
+        return () => clearInterval(intervalId);
+    }, []);
 
     function login(email: string, password: string) {
         return axios
@@ -46,8 +67,8 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     }
 
     function logout() {
-        localStorage.removeItem('user');
         setIsAuthenticated(false);
+        localStorage.removeItem('user');
     }
 
     function register(nickname: string, email: string, password: string) {
