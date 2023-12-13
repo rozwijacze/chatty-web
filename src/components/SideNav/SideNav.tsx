@@ -3,9 +3,11 @@ import LogoutButton from '../LogoutButton/LogoutButton';
 import { ReactComponent as ContactsIcon } from '/src/assets/contacts.svg';
 import { ReactComponent as MessagesIcon } from '/src/assets/messages.svg';
 import { ReactComponent as SettingsIcon } from '/src/assets/settings.svg';
+import { ReactComponent as UserIcon } from '/src/assets/user.svg';
 import { ViewType } from '../../types/ViewType';
 import { ViteEnv } from '../../types/ViteEnv';
 import './SideNav.scss';
+import { getUsername } from '../../utils/utils';
 
 interface Props {
     view: ViewType;
@@ -14,12 +16,18 @@ interface Props {
 
 export default function SideNav({ view, setView }: Props) {
     const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
+    const username = getUsername();
 
     return (
         <nav className="side-nav">
             <h1 className="logo-title" title={APP_NAME}>
                 {APP_NAME}
             </h1>
+
+            <div className="side-nav__user">
+                <UserIcon />
+                <p>{username}</p>
+            </div>
 
             <ul className="side-nav__menu">
                 <li

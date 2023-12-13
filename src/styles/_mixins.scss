@@ -17,7 +17,8 @@
 }
 
 @mixin for-link {
-    &:active &:link,
+    &:active,
+    &:link,
     &:visited {
         @content;
     }
@@ -49,4 +50,20 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+@mixin customScroll {
+    ::-webkit-scrollbar {
+        width: 8px;
+        background: var(--primary-200);
+        background-clip: content-box;
+        border-radius: 100px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border: 1px solid transparent;
+        background: var(--accent-200);
+        background-clip: content-box;
+        border-radius: 100px;
+    }
 }

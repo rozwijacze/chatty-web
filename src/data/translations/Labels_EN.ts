@@ -60,5 +60,12 @@ export const labels_EN: Labels = {
             succeed: 'Registration successful!',
             unusualError: 'An unexpected error occurred.'
         }
+    },
+    optionsList: {
+        close: 'Close',
+        open: 'Open chat',
+        block: 'Block',
+        hide: 'Hide',
+        delete: 'Delete'
     }
 };

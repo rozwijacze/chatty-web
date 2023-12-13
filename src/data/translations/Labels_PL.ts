@@ -60,5 +60,12 @@ export const labels_PL: Labels = {
             succeed: 'Zarejestrowano pomyślnie!',
             unusualError: 'Wystąpił nieoczekiwany błąd.'
         }
+    },
+    optionsList: {
+        close: 'Zamknij',
+        open: 'Otwórz czat',
+        block: 'Zablokuj',
+        hide: 'Ukryj',
+        delete: 'Usuń'
     }
 };

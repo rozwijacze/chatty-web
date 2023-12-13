@@ -1,7 +1,7 @@
-@import '../SideNav/SideNav.scss';
+@import '/src/styles/placeholders.scss';
 
 .logout-btn {
-    @extend .side-nav__item;
+    @extend %sidenav-item;
 
     padding: 0;
     border: none;
