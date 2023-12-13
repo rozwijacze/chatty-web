@@ -14,3 +14,15 @@ export function getToken() {
     const tokenString = localStorage.getItem('user');
     return tokenString ? JSON.parse(tokenString) : null;
 }
+
+export function getUsername() {
+    const username = '';
+    const token = getToken();
+
+    if (!token) {
+        return username;
+    }
+
+    const decodedToken = jwtDecode(token);
+    return String(decodedToken.sub);
+}

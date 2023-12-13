@@ -1,4 +1,4 @@
-import { ReactComponent as UserIcon } from '/src/assets/username.svg';
+import { ReactComponent as UserIcon } from '/src/assets/user.svg';
 import { ReactComponent as PasswordIcon } from '/src/assets/password.svg';
 import './Login.scss';
 import { useForm } from 'react-hook-form';
@@ -25,7 +25,6 @@ export default function Login() {
     const { register, handleSubmit } = useForm<LoginForm>({
         resolver: yupResolver(loginSchema)
     });
-
 
     function onSubmit(data: LoginForm) {
         const { email, password } = data;

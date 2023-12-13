@@ -7,14 +7,17 @@
 @use 'sass:meta';
 @use './themes/light' as light;
 @use './themes/dark' as dark;
+@use './colors' as general;
 
 @import './_mixins.scss';
 
+$general: meta.module-variables('general');
 $light: meta.module-variables('light');
 $dark: meta.module-variables('dark');
 
-@include add-css-variables($light, 'light');
-@include add-css-variables($dark, 'dark');
+@include add-css-variables($general);
+@include add-theme-css-variables($light, 'light');
+@include add-theme-css-variables($dark, 'dark');
 
 .logo-title {
     font-style: italic;

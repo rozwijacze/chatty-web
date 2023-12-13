@@ -6,7 +6,7 @@ export default interface Labels {
         };
         register: {
             resultError: string;
-        }
+        };
     };
     error: { title: string };
     chatWindow: { title: string };
@@ -48,5 +48,12 @@ export default interface Labels {
             succeed: string;
             unusualError: string;
         };
+    };
+    optionsList: {
+        close: string;
+        open: string;
+        block: string;
+        hide: string;
+        delete: string;
     };
 }

@@ -1,0 +1,67 @@
+@import '/src/styles/_mixins.scss';
+
+.options-list {
+    position: relative;
+
+    &__button {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        gap: 2px;
+        border: none;
+        background: none;
+        padding: 0.5rem;
+        transition: all 0.3s ease-out;
+
+        span {
+            display: block;
+            background: var(--accent-200);
+            border-radius: 100px;
+            width: 16px;
+            height: 3px;
+        }
+
+        &--active,
+        &:hover {
+            background: var(--primary-200);
+        }
+    }
+
+    &__content {
+        @include reset;
+
+        display: none;
+        position: absolute;
+        top: 32px;
+        right: 0;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem;
+        background: var(--primary-200);
+        border: 3px solid var(--accent-200);
+        z-index: 2;
+
+        li {
+            width: 100px;
+            text-align: center;
+            font-weight: 600;
+            color: var(--accent-200);
+            transition: all 0.3s ease-out;
+
+            &:hover:not(:first-of-type) {
+                background-color: var(--bg-100);
+            }
+
+            &:first-of-type {
+                color: var(--primary-white);
+            }
+        }
+
+        &--show {
+            display: flex;
+        }
+    }
+}
