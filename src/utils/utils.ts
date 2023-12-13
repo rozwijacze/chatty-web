@@ -14,8 +14,3 @@ export function getToken() {
     const tokenString = localStorage.getItem('user');
     return tokenString ? JSON.parse(tokenString) : null;
 }
-
-export function isUserLoggedIn() {
-    const token = getToken();
-    return token && !isTokenExpired(token);
-}
