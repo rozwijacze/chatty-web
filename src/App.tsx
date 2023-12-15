@@ -3,10 +3,10 @@ import Error from './pages/Error/Error';
 import Home from './pages/Home/Home';
 import FormLayout from './layouts/FormLayout/FormLayout';
 import { ViewType } from './types/ViewType';
-import { useAuth } from './contexts/AuthContext';
+import { AuthContext, useAuthContext } from './contexts/AuthContext';
 
 export default function App() {
-    const { isAuthenticated } = useAuth();
+    const { isAuthenticated }: AuthContext = useAuthContext();
 
     return (
         <BrowserRouter>

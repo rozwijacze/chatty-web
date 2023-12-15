@@ -1,22 +1,25 @@
-import { createContext, useContext, useLayoutEffect, useState } from 'react';
+import { createContext, useLayoutEffect, useState } from 'react';
 import { getToken, isTokenExpired } from '../utils/utils';
 import axios from 'axios';
 import { ViteEnv } from '../types/ViteEnv';
 import { useLabels } from '../hooks/useLabels';
+import { useContextHook } from '../helpers/ContextHelper';
+import Labels from '../data/translations/Labels';
 
-interface AuthContext {
+export interface AuthContext {
     isAuthenticated: boolean;
     logout: () => void;
     login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
     register: (nickname: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
 }
 
-const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
+const AuthContext = createContext<AuthContext | null>(null);
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuthContext = () => useContextHook(AuthContext);
 
-export const AuthContext = createContext<AuthContext | null>(null);
-
-export const AuthProvider = ({ children }: React.PropsWithChildren) => {
-    const labels = useLabels();
+export default function AuthContextProvider({ children }: React.PropsWithChildren) {
+    const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
+    const labels: Labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useLayoutEffect(() => {
@@ -87,15 +90,4 @@ export const AuthProvider = ({ children }: React.PropsWithChildren) => {
     }
 
     return <AuthContext.Provider value={{ isAuthenticated, logout, login, register }}>{children}</AuthContext.Provider>;
-};
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const useAuth = () => {
-    const context = useContext(AuthContext);
-
-    if (!context) {
-        throw Error('Component that uses AuthContext is not wrapped by a provider.');
-    }
-
-    return context;
-};
+}
