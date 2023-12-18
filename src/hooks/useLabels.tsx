@@ -6,12 +6,12 @@ import { Locale } from '../types/Locale';
 import Labels from '../data/translations/Labels';
 
 // custom hook for using labels based on currently selected locale
-export function useLabels() {
-    const { currentLocale }: LocaleContext = useLocaleContext();
+export function useLabels(): Labels {
+    const { locale }: LocaleContext = useLocaleContext();
     const [labels, setLabels] = useState<Labels>(labels_EN);
 
     useEffect(() => {
-        switch (currentLocale) {
+        switch (locale) {
             case Locale.POLISH:
                 setLabels(labels_PL);
                 break;
@@ -19,7 +19,7 @@ export function useLabels() {
                 setLabels(labels_EN);
                 break;
         }
-    }, [currentLocale]);
+    }, [locale]);
 
     return labels;
 }
