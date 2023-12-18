@@ -3,12 +3,20 @@
 .side-nav {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 100px;
 
-    h1 {
-        margin-bottom: 1rem;
+    &__logo {
+        @extend %logo-title;
+        @extend %window-title;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.75rem;
+        height: 100%;
     }
 
     &__menu {

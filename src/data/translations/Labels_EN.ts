@@ -14,7 +14,7 @@ export const labels_EN: Labels = {
         title: 'We are sorry, this page does not exist.'
     },
     chatWindow: {
-        title: 'ChatWindow'
+        title: 'Chat'
     },
     sideContacts: {
         title: 'Contacts'
@@ -66,6 +66,8 @@ export const labels_EN: Labels = {
         open: 'Open chat',
         block: 'Block',
         hide: 'Hide',
-        delete: 'Delete'
+        delete: 'Delete',
+        mute: 'Mute notifications',
+        archive: 'Archive'
     }
 };

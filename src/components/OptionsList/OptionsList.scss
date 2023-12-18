@@ -1,10 +1,15 @@
 @import '/src/styles/_mixins.scss';
 
 .options-list {
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__wrapper {
+        position: relative;
+    }
 
     &__button {
-        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -22,11 +27,16 @@
             border-radius: 100px;
             width: 16px;
             height: 3px;
+            transition: all 0.3s ease-out;
         }
 
-        &--active,
-        &:hover {
-            background: var(--primary-200);
+        &--active span {
+            position: absolute;
+            transform: rotate(45deg);
+
+            &:nth-child(2) {
+                transform: rotate(-45deg);
+            }
         }
     }
 
@@ -34,21 +44,22 @@
         @include reset;
 
         display: none;
+        flex-direction: column;
         position: absolute;
         top: 32px;
         right: 0;
-        flex-direction: column;
+        z-index: 2;
+        min-width: 100px;
         gap: 0.5rem;
         padding: 0.5rem;
         background: var(--primary-200);
         border: 3px solid var(--accent-200);
-        z-index: 2;
 
         li {
-            width: 100px;
             text-align: center;
             font-weight: 600;
             color: var(--accent-200);
+            white-space: nowrap;
             transition: all 0.3s ease-out;
 
             &:hover:not(:first-of-type) {

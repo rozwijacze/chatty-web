@@ -1,3 +1,11 @@
+@import '/src/styles/placeholders.scss';
+
 .chat-window {
     flex-grow: 1;
+
+    &__title {
+        @extend %window-title;
+
+        color: var(--bg-200);
+    }
 }

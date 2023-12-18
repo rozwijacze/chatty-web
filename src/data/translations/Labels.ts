@@ -9,7 +9,9 @@ export default interface Labels {
         };
     };
     error: { title: string };
-    chatWindow: { title: string };
+    chatWindow: {
+        title: string;
+    };
     sideContacts: { title: string };
     sideMessages: { title: string };
     sideSettings: { title: string };
@@ -54,6 +56,8 @@ export default interface Labels {
         open: string;
         block: string;
         hide: string;
+        mute: string;
+        archive: string;
         delete: string;
     };
 }
