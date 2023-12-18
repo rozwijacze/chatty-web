@@ -12,6 +12,8 @@
     &__logo {
         @extend %logo-title;
 
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         transition: all 0.2s ease-out;
     }
 
@@ -28,11 +30,6 @@
         flex-direction: column;
         gap: 0.5rem;
         align-items: center;
-
-        h1 {
-            font-size: 3rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
 
         p {
             color: var(--primary-200);

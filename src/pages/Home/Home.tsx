@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SideNav from '../../components/SideNav/SideNav';
+import SideMenu from '../../components/SideMenu/SideMenu';
 import SideWindow from '../../components/SideWindow/SideWindow';
 import ChatWindow from '../../components/ChatWindow/ChatWindow';
 import { ViewType } from '../../types/ViewType';
@@ -12,7 +12,7 @@ export default function Home() {
     return (
         <main className="home">
             <ChatContextProvider>
-                <SideNav view={view} setView={setView} />
+                <SideMenu view={view} setView={setView} />
                 <SideWindow view={view} />
                 <ChatWindow />
             </ChatContextProvider>

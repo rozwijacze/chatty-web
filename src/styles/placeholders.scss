@@ -19,15 +19,3 @@
     border-radius: 100px;
     object-fit: cover;
 }
-
-%sidenav-item svg {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    width: 48px;
-    height: 48px;
-    background-color: var(--bg-200);
-    border: 1px solid var(--primary-200);
-    border-radius: 8px;
-    padding: 0.5rem;
-    fill: var(--accent-200);
-    transition: all 0.3s ease-out;
-}
