@@ -61,7 +61,7 @@ export default function Login() {
                 </div>
 
                 <button className="button" type="submit">
-                    {labels.login.button}
+                    {labels.buttons.login}
                 </button>
             </form>
             {serverError && <p className="login__error">{serverError}</p>}

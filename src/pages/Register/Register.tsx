@@ -83,11 +83,11 @@ export default function Register() {
 
                 <div className="register__buttons">
                     <button className="button" type="submit">
-                        {labels.register.buttons.register}
+                        {labels.buttons.register}
                     </button>
 
                     <Link to="/" className="button button--flat">
-                        {labels.register.buttons.link}
+                        {labels.buttons.back}
                     </Link>
                 </div>
             </form>
