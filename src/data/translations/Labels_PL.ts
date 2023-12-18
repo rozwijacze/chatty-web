@@ -14,7 +14,7 @@ export const labels_PL: Labels = {
         title: 'Przepraszamy, ta strona nie istnieje.'
     },
     chatWindow: {
-        title: 'OknoCzatu'
+        title: 'Czat'
     },
     sideContacts: {
         title: 'Kontakty'
@@ -66,6 +66,8 @@ export const labels_PL: Labels = {
         open: 'Otwórz czat',
         block: 'Zablokuj',
         hide: 'Ukryj',
-        delete: 'Usuń'
+        delete: 'Usuń',
+        mute: 'Wycisz powiadomienia',
+        archive: 'Zarchiwizuj'
     }
 };

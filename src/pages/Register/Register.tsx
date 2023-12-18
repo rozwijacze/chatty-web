@@ -5,16 +5,17 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useLabels } from '../../hooks/useLabels';
-import { useAuth } from '../../contexts/AuthContext';
+import { AuthContext, useAuthContext } from '../../contexts/AuthContext';
+import Labels from '../../data/translations/Labels';
 
 export default function Register() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [serverError, setServerError] = useState('');
-    const labels = useLabels();
-    const auth = useAuth();
+    const labels: Labels = useLabels();
+    const authContextValues: AuthContext = useAuthContext();
 
     const registerSchema = yup.object().shape({
-        nickname: yup.string().min(3, ).required(),
+        nickname: yup.string().min(3).required(),
         email: yup.string().email().required(),
         password: yup.string().min(7).max(32).required(),
         repeatPassword: yup.string().oneOf([yup.ref('password')], labels.register.formErrors.repeatPassword)
@@ -32,7 +33,8 @@ export default function Register() {
     function onSubmit(data: FieldValues) {
         resetStatus();
         const { nickname, email, password } = data;
-        auth.register(nickname, email, password).then(response => {
+
+        authContextValues.register(nickname, email, password).then(response => {
             if (response.success) {
                 setIsRegistered(true);
                 reset();

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-interface ThemeHook {
+export interface ThemeHook {
     mode: string;
     toggle: () => void;
 }

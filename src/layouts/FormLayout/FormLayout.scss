@@ -1,4 +1,5 @@
 @import '/src/styles/mixins';
+@import '/src/styles/placeholders.scss';
 
 .form-layout {
     display: flex;
@@ -7,6 +8,12 @@
     align-items: center;
     justify-content: center;
     background: var(--background-gradient);
+
+    &__logo {
+        @extend %logo-title;
+
+        transition: all 0.2s ease-out;
+    }
 
     &__wrapper {
         padding: 2rem;
@@ -28,6 +35,8 @@
         }
 
         p {
+            color: var(--primary-200);
+
             a {
                 text-decoration: underline;
 

@@ -2,8 +2,13 @@ import { useRef, useState } from 'react';
 import './OptionsList.scss';
 import useOnClickOutside from '../../hooks/useOnOutsideClick';
 import { useLabels } from '../../hooks/useLabels';
+import { ViewType } from '../../types/ViewType';
 
-export default function OptionsList() {
+interface Props {
+    view: ViewType;
+}
+
+export default function OptionsList({ view }: Props) {
     const labels = useLabels();
     const [showList, setShowList] = useState(false);
     const toggleList = () => setShowList(!showList);
@@ -18,18 +23,26 @@ export default function OptionsList() {
 
     return (
         <div className="options-list">
-            <button className={`options-list__button ${buttonActiveClass}`} ref={buttonRef} onClick={toggleList}>
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul className={`options-list__content ${showListClass}`} ref={listRef}>
-                <li onClick={hideList}>{labels.optionsList.close}</li>
-                <li>{labels.optionsList.open}</li>
-                <li>{labels.optionsList.block}</li>
-                <li>{labels.optionsList.hide}</li>
-                <li>{labels.optionsList.delete}</li>
-            </ul>
+            <div className="options-list__wrapper">
+                <button className={`options-list__button ${buttonActiveClass}`} ref={buttonRef} onClick={toggleList}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul className={`options-list__content ${showListClass}`} ref={listRef}>
+                    <li onClick={hideList}>{labels.optionsList.close}</li>
+                    <li>{labels.optionsList.open}</li>
+                    {view === ViewType.CONTACTS && (
+                        <>
+                            <li>{labels.optionsList.block}</li>
+                            <li>{labels.optionsList.hide}</li>
+                        </>
+                    )}
+                    {view === ViewType.MESSAGES && <li>{labels.optionsList.archive}</li>}
+                    <li>{labels.optionsList.mute}</li>
+                    <li>{labels.optionsList.delete}</li>
+                </ul>
+            </div>
         </div>
     );
 }

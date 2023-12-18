@@ -4,9 +4,10 @@ import './Login.scss';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
 import { useLabels } from '../../hooks/useLabels';
-import { useAuth } from '../../contexts/AuthContext';
+import { AuthContext, useAuthContext } from '../../contexts/AuthContext';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import Labels from '../../data/translations/Labels';
 
 interface LoginForm {
     email: string;
@@ -14,9 +15,10 @@ interface LoginForm {
 }
 
 export default function Login() {
-    const labels = useLabels();
-    const { login } = useAuth();
+    const labels: Labels = useLabels();
+    const { login }: AuthContext = useAuthContext();
     const [serverError, setServerError] = useState('');
+
     const loginSchema = yup.object().shape({
         email: yup.string().email().required(),
         password: yup.string().required()

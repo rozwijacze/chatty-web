@@ -19,14 +19,6 @@ $dark: meta.module-variables('dark');
 @include add-theme-css-variables($light, 'light');
 @include add-theme-css-variables($dark, 'dark');
 
-.logo-title {
-    font-style: italic;
-    margin: 0;
-    letter-spacing: 1.4px;
-    color: var(--accent-100);
-    transition: all 0.2s ease-out;
-}
-
 .button {
     font-size: 1.1rem;
     font-family: Roboto-Bold;
