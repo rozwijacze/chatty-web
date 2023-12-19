@@ -11,22 +11,22 @@ interface Props {
 
 export default function SideWindow({ view }: Props) {
     const labels = useLabels();
-    let elements: JSX.Element;
+    let viewElement: JSX.Element;
     let title = '';
 
     switch (view) {
         default:
-            elements = <Messages />;
+            viewElement = <Messages />;
             title = labels.sideMessages.title;
             break;
 
         case ViewType.CONTACTS:
-            elements = <Contacts />;
+            viewElement = <Contacts />;
             title = labels.sideContacts.title;
             break;
 
         case ViewType.SETTINGS:
-            elements = <Settings />;
+            viewElement = <Settings />;
             title = labels.sideSettings.title;
             break;
     }
@@ -34,7 +34,7 @@ export default function SideWindow({ view }: Props) {
     return (
         <div className="side-window">
             <h2 className="side-window__title">{title}</h2>
-            <ul className="side-window__list">{elements}</ul>
+            {viewElement}
         </div>
     );
 }
