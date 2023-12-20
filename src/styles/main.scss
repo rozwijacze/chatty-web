@@ -55,6 +55,7 @@ input {
     border: 1px solid var(--primary-200);
     background: var(--bg-200);
     color: var(--text-100);
+    outline: none;
 
     &:-webkit-autofill {
         font-size: 1.2rem;

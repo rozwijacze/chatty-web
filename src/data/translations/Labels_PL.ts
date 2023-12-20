@@ -69,5 +69,9 @@ export const labels_PL: Labels = {
         delete: 'Usuń',
         mute: 'Wycisz powiadomienia',
         archive: 'Zarchiwizuj'
+    },
+    searchbar: {
+        placeholder: 'Wyszukaj',
+        clear: 'Wyczyść'
     }
 };

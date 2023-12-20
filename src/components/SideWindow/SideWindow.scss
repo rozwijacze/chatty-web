@@ -15,7 +15,7 @@
         color: var(--bg-200);
     }
 
-    &__list {
+    &-list {
         @include reset;
 
         display: flex;

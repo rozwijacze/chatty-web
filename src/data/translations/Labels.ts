@@ -60,4 +60,8 @@ export default interface Labels {
         archive: string;
         delete: string;
     };
+    searchbar: {
+        placeholder: string;
+        clear: string;
+    };
 }
