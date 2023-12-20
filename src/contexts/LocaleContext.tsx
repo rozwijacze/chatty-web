@@ -1,9 +1,9 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { Locale } from '../types/Locale';
 import { useContextHook } from '../helpers/ContextHelper';
 
 export interface LocaleContext {
-    currentLocale: Locale;
+    locale: string;
     toggle: () => void;
 }
 
@@ -11,11 +11,13 @@ const LocaleContext = createContext<LocaleContext | null>(null);
 // eslint-disable-next-line react-refresh/only-export-components
 export const useLocaleContext = () => useContextHook(LocaleContext);
 
-// TODO
-// Saving currentLocale to a cookie
 export default function LocaleContextProvider({ children }: React.PropsWithChildren) {
-    const [currentLocale, setCurrentLocale] = useState(Locale.ENGLISH);
-    const toggle = () => setCurrentLocale(currentLocale === Locale.ENGLISH ? Locale.POLISH : Locale.ENGLISH);
+    const storageLocale = localStorage.getItem('locale');
+    const [locale, setLocale] = useState(storageLocale ? storageLocale : Locale.ENGLISH);
 
-    return <LocaleContext.Provider value={{ currentLocale, toggle }}>{children}</LocaleContext.Provider>;
+    useEffect(() => localStorage.setItem('locale', locale), [locale]);
+
+    const toggle = () => setLocale(locale === Locale.ENGLISH ? Locale.POLISH : Locale.ENGLISH);
+
+    return <LocaleContext.Provider value={{ locale, toggle }}>{children}</LocaleContext.Provider>;
 }

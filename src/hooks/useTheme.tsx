@@ -1,19 +1,22 @@
 import { useState, useEffect } from 'react';
+import { Theme } from '../types/Theme';
 
 export interface ThemeHook {
-    mode: string;
+    themeClass: string;
     toggle: () => void;
 }
 
 export default function useTheme(): ThemeHook {
-    const [mode, setMode] = useState('light');
+    const storageTheme = localStorage.getItem('theme');
+    const [themeClass, setThemeClass] = useState(storageTheme ? storageTheme : Theme.LIGHT);
 
     useEffect(() => {
         document.body.classList.value = '';
-        document.body.classList.add(mode);
-    }, [mode]);
+        document.body.classList.add(themeClass);
+        localStorage.setItem('theme', themeClass);
+    }, [themeClass]);
 
-    const toggle = () => setMode(mode === 'light' ? 'dark' : 'light');
+    const toggle = () => setThemeClass(themeClass === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
 
-    return { mode, toggle };
+    return { themeClass, toggle };
 }
