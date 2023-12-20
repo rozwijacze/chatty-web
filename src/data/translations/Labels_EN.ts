@@ -37,7 +37,6 @@ export const labels_EN: Labels = {
             email: 'E-mail',
             password: 'Password'
         },
-        button: 'Login',
         results: {
             unusualError: 'An unexpected error occurred.'
         }
@@ -49,10 +48,6 @@ export const labels_EN: Labels = {
             password: 'Password:',
             repeatPassword: 'Repeat password:'
         },
-        buttons: {
-            register: 'Register',
-            link: 'Back'
-        },
         formErrors: {
             repeatPassword: 'Passwords are not the same.'
         },
@@ -60,6 +55,12 @@ export const labels_EN: Labels = {
             succeed: 'Registration successful!',
             unusualError: 'An unexpected error occurred.'
         }
+    },
+    buttons: {
+        login: 'Login',
+        logout: 'Logout',
+        register: 'Register',
+        back: 'Back'
     },
     optionsList: {
         close: 'Close',

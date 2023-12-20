@@ -1,9 +1,0 @@
-@import '/src/styles/placeholders.scss';
-
-.logout-btn {
-    @extend %sidenav-item;
-
-    padding: 0;
-    border: none;
-    border-radius: 8px;
-}

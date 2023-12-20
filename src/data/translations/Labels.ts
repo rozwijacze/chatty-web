@@ -27,7 +27,6 @@ export default interface Labels {
             email: string;
             password: string;
         };
-        button: string;
         results: {
             unusualError: string;
         };
@@ -39,10 +38,6 @@ export default interface Labels {
             password: string;
             repeatPassword: string;
         };
-        buttons: {
-            register: string;
-            link: string;
-        };
         formErrors: {
             repeatPassword: string;
         };
@@ -50,6 +45,12 @@ export default interface Labels {
             succeed: string;
             unusualError: string;
         };
+    };
+    buttons: {
+        login: string;
+        logout: string;
+        register: string;
+        back: string;
     };
     optionsList: {
         close: string;

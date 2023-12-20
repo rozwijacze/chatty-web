@@ -1,6 +1,6 @@
 @import '/src/styles/placeholders.scss';
 
-.side-nav {
+.side-menu {
     display: flex;
     flex-direction: column;
     width: 100px;
@@ -8,6 +8,8 @@
     &__logo {
         @extend %logo-title;
         @extend %window-title;
+
+        font-size: 1.5rem;
     }
 
     &__content {
@@ -19,24 +21,14 @@
         height: 100%;
     }
 
-    &__menu {
+    &__nav {
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
         cursor: pointer;
         margin: auto;
-        padding: 0;
-        list-style-type: none;
         gap: 0.5rem;
-    }
-
-    &__item {
-        @extend %sidenav-item;
-
-        &--active svg {
-            background-color: var(--primary-200);
-        }
     }
 
     &__buttons {

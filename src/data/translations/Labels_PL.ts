@@ -37,7 +37,6 @@ export const labels_PL: Labels = {
             email: 'E-mail',
             password: 'Hasło'
         },
-        button: 'Zaloguj się',
         results: {
             unusualError: 'Wystąpił nieoczekiwany błąd.'
         }
@@ -49,10 +48,6 @@ export const labels_PL: Labels = {
             password: 'Hasło:',
             repeatPassword: 'Powtórz hasło:'
         },
-        buttons: {
-            register: 'Zarejestruj się',
-            link: 'Powrót'
-        },
         formErrors: {
             repeatPassword: 'Hasła nie są identyczne.'
         },
@@ -60,6 +55,12 @@ export const labels_PL: Labels = {
             succeed: 'Zarejestrowano pomyślnie!',
             unusualError: 'Wystąpił nieoczekiwany błąd.'
         }
+    },
+    buttons: {
+        login: 'Zaloguj się',
+        logout: 'Wyloguj się',
+        register: 'Zarejestruj się',
+        back: 'Wróć'
     },
     optionsList: {
         close: 'Zamknij',
