@@ -26,28 +26,34 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
         const checkTokenValidity = async () => {
             const tokenString = getToken();
 
-            if (tokenString && isTokenExpired(tokenString)) {
-                try {
-                    const response = await axios.post(API_URL + 'refresh-token', {
-                        // TODO: Check which token should be passed
-                        refreshToken: getToken().refreshToken
-                    });
+            if (!tokenString) {
+                setIsAuthenticated(false);
+                return;
+            }
 
+            if (!isTokenExpired(tokenString)) {
+                setIsAuthenticated(true);
+                return;
+            }
+
+            axios
+                .post(API_URL + 'refresh-token', {
+                    // TODO: Check which token should be passed
+                    refreshToken: tokenString.refreshToken
+                })
+                .then(response => {
                     const { accessToken } = response.data;
-
                     localStorage.setItem('user', JSON.stringify(accessToken));
                     setIsAuthenticated(true);
-                } catch (error) {
-                    logout();
-                }
-            }
+                })
+                .catch(() => logout());
         };
 
         checkTokenValidity();
-        const intervalId = setInterval(checkTokenValidity, 10 * 60 * 1000);
+        const intervalId = setInterval(checkTokenValidity, 1000);
 
         return () => clearInterval(intervalId);
-    }, []);
+    }, [API_URL]);
 
     function login(email: string, password: string) {
         return axios
@@ -64,9 +70,7 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
                     return { success: false, error: labels.authContext.login.invalidToken };
                 }
             })
-            .catch(() => {
-                return { success: false, error: labels.authContext.login.resultError };
-            });
+            .catch(() => ({ success: false, error: labels.authContext.login.resultError }));
     }
 
     function logout() {
@@ -81,12 +85,8 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
                 email,
                 password
             })
-            .then(() => {
-                return { success: true };
-            })
-            .catch(() => {
-                return { success: false, error: labels.authContext.register.resultError };
-            });
+            .then(() => ({ success: true }))
+            .catch(() => ({ success: false, error: labels.authContext.register.resultError }));
     }
 
     return <AuthContext.Provider value={{ isAuthenticated, logout, login, register }}>{children}</AuthContext.Provider>;
