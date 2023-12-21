@@ -1,9 +1,7 @@
     name: "tagged-release" 
 
     on:
-      push:
-        tags:
-          - "v*"
+      workflow_dispatch:
     
     jobs:
       tagged-release:
