@@ -1,4 +1,5 @@
 import { jwtDecode } from 'jwt-decode';
+import { JwtData } from '../types/JwtData';
 
 export function isTokenExpired(token: string) {
     try {
@@ -15,14 +16,20 @@ export function getToken() {
     return tokenString ? JSON.parse(tokenString) : null;
 }
 
-export function getUsername() {
-    const username = '';
+export function getUserData() {
     const token = getToken();
 
     if (!token) {
-        return username;
+        return null;
     }
 
-    const decodedToken = jwtDecode(token);
-    return String(decodedToken.sub);
+    const decodedToken: JwtData = jwtDecode(token);
+    const userData = {
+        id: decodedToken.id,
+        email: decodedToken.email,
+        name: decodedToken.name,
+        surname: decodedToken.surname
+    };
+
+    return userData;
 }

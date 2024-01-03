@@ -10,7 +10,7 @@ export interface AuthContext {
     isAuthenticated: boolean;
     logout: () => void;
     login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
-    register: (nickname: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+    register: (name: string, surname: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
 }
 
 const AuthContext = createContext<AuthContext | null>(null);
@@ -78,10 +78,11 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
         localStorage.removeItem('user');
     }
 
-    function register(nickname: string, email: string, password: string) {
+    function register(name: string, surname: string, email: string, password: string) {
         return axios
             .post(API_URL + 'register', {
-                nickname,
+                name,
+                surname,
                 email,
                 password
             })
