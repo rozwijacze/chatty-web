@@ -15,7 +15,8 @@ export default function Register() {
     const authContextValues: AuthContext = useAuthContext();
 
     const registerSchema = yup.object().shape({
-        nickname: yup.string().min(3).required(),
+        name: yup.string().min(3).required(),
+        surname: yup.string().min(3).required(),
         email: yup.string().email().required(),
         password: yup.string().min(7).max(32).required(),
         repeatPassword: yup.string().oneOf([yup.ref('password')], labels.register.formErrors.repeatPassword)
@@ -32,9 +33,9 @@ export default function Register() {
 
     function onSubmit(data: FieldValues) {
         resetStatus();
-        const { nickname, email, password } = data;
+        const { name, surname, email, password } = data;
 
-        authContextValues.register(nickname, email, password).then(response => {
+        authContextValues.register(name, surname, email, password).then(response => {
             if (response.success) {
                 setIsRegistered(true);
                 reset();
@@ -53,9 +54,15 @@ export default function Register() {
         <>
             <form className="register" onSubmit={handleSubmit(onSubmit)}>
                 <div className="register__input">
-                    <label htmlFor="nickname">{labels.register.labels.nickname}</label>
-                    <p>{errors.nickname?.message}</p>
-                    <input {...register('nickname')} required type="text" id="nickname" name="nickname" autoComplete="given-name" />
+                    <label htmlFor="name">{labels.register.labels.name}</label>
+                    <p>{errors.name?.message}</p>
+                    <input {...register('name')} required type="text" id="name" name="name" autoComplete="given-name" />
+                </div>
+
+                <div className="register__input">
+                    <label htmlFor="surname">{labels.register.labels.surname}</label>
+                    <p>{errors.surname?.message}</p>
+                    <input {...register('surname')} required type="text" id="surname" name="surname" autoComplete="given-name" />
                 </div>
 
                 <div className="register__input">
@@ -69,6 +76,7 @@ export default function Register() {
                     <p>{errors.password?.message?.toUpperCase()}</p>
                     <input {...register('password')} type="password" id="password" name="password" autoComplete="current-password" />
                 </div>
+
                 <div className="register__input">
                     <label htmlFor="repeatPassword">{labels.register.labels.repeatPassword}</label>
                     <p>{errors.repeatPassword?.message?.toUpperCase()}</p>

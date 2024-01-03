@@ -33,7 +33,8 @@ export default interface Labels {
     };
     register: {
         labels: {
-            nickname: string;
+            name: string;
+            surname: string;
             email: string;
             password: string;
             repeatPassword: string;

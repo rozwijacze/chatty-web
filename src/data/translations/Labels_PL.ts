@@ -43,7 +43,8 @@ export const labels_PL: Labels = {
     },
     register: {
         labels: {
-            nickname: 'Nickname:',
+            name: 'Imię:',
+            surname: 'Nazwisko:',
             email: 'E-mail:',
             password: 'Hasło:',
             repeatPassword: 'Powtórz hasło:'
