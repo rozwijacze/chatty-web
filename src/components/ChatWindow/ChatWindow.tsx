@@ -1,7 +1,7 @@
 import './ChatWindow.scss';
-import { ChatContext, useChatContext } from '../../contexts/ChatContext';
-import { useLabels } from '../../hooks/useLabels';
-import Labels from '../../data/translations/Labels';
+import { ChatContext, useChatContext } from '@contexts/ChatContext';
+import { useLabels } from '@hooks/useLabels';
+import Labels from '@data/translations/Labels';
 
 export default function ChatWindow() {
     const labels: Labels = useLabels();

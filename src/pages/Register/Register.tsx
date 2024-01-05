@@ -4,9 +4,9 @@ import { FieldValues, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-import { useLabels } from '../../hooks/useLabels';
-import { AuthContext, useAuthContext } from '../../contexts/AuthContext';
-import Labels from '../../data/translations/Labels';
+import { useLabels } from '@hooks/useLabels';
+import { AuthContext, useAuthContext } from '@contexts/AuthContext';
+import Labels from '@data/translations/Labels';
 
 export default function Register() {
     const [isRegistered, setIsRegistered] = useState(false);

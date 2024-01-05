@@ -1,9 +1,9 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Error from './pages/Error/Error';
-import Home from './pages/Home/Home';
-import FormLayout from './layouts/FormLayout/FormLayout';
-import { ViewType } from './types/ViewType';
-import { AuthContext, useAuthContext } from './contexts/AuthContext';
+import Error from '@pages/Error/Error';
+import Home from '@pages/Home/Home';
+import FormLayout from '@layouts/FormLayout/FormLayout';
+import { ViewType } from '@customTypes/ViewType';
+import { AuthContext, useAuthContext } from '@contexts/AuthContext';
 
 export default function App() {
     const { isAuthenticated }: AuthContext = useAuthContext();

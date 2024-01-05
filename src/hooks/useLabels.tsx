@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { LocaleContext, useLocaleContext } from '../contexts/LocaleContext';
-import { labels_EN } from '../data/translations/Labels_EN';
-import { labels_PL } from '../data/translations/Labels_PL';
-import { Locale } from '../types/Locale';
-import Labels from '../data/translations/Labels';
+import { LocaleContext, useLocaleContext } from '@contexts/LocaleContext';
+import { labels_EN } from '@data/translations/Labels_EN';
+import { labels_PL } from '@data/translations/Labels_PL';
+import { Locale } from '@customTypes/Locale';
+import Labels from '@data/translations/Labels';
 
 // custom hook for using labels based on currently selected locale
 export function useLabels(): Labels {

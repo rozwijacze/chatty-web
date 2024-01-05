@@ -1,13 +1,13 @@
 import { Link } from 'react-router-dom';
 import './FormLayout.scss';
-import { ViewType } from '../../types/ViewType';
-import Login from '../../pages/Login/Login';
-import Register from '../../pages/Register/Register';
-import ThemeButton from '../../components/ThemeButton/ThemeButton';
-import { ViteEnv } from '../../types/ViteEnv';
-import { useLabels } from '../../hooks/useLabels';
-import LocaleButton from '../../components/LocaleButton/LocaleButton';
-import Labels from '../../data/translations/Labels';
+import { ViewType } from '@customTypes/ViewType';
+import Login from '@pages/Login/Login';
+import Register from '@pages/Register/Register';
+import ThemeButton from '@components/ThemeButton/ThemeButton';
+import { ViteEnv } from '@customTypes/ViteEnv';
+import { useLabels } from '@hooks/useLabels';
+import LocaleButton from '@components/LocaleButton/LocaleButton';
+import Labels from '@data/translations/Labels';
 
 type Props = {
     view: ViewType;

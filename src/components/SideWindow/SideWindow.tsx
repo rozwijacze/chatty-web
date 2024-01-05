@@ -2,8 +2,8 @@ import Messages from './Messages/Messages';
 import Contacts from './Contacts/Contacts';
 import Settings from './Settings/Settings';
 import './SideWindow.scss';
-import { ViewType } from '../../types/ViewType';
-import { useLabels } from '../../hooks/useLabels';
+import { ViewType } from '@customTypes/ViewType';
+import { useLabels } from '@hooks/useLabels';
 
 interface Props {
     view: ViewType;

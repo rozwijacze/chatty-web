@@ -1,10 +1,10 @@
 import { createContext, useLayoutEffect, useState } from 'react';
-import { getToken, isTokenExpired } from '../utils/utils';
+import { getToken, isTokenExpired } from '@utils/utils';
 import axios from 'axios';
-import { ViteEnv } from '../types/ViteEnv';
-import { useLabels } from '../hooks/useLabels';
-import { useContextHook } from '../helpers/ContextHelper';
-import Labels from '../data/translations/Labels';
+import { ViteEnv } from '@customTypes/ViteEnv';
+import { useLabels } from '@hooks/useLabels';
+import { useContextHook } from '@helpers/ContextHelper';
+import Labels from '@data/translations/Labels';
 
 export interface AuthContext {
     isAuthenticated: boolean;
