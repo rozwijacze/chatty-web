@@ -1,9 +1,9 @@
-import data from '../../../data/mocks/Messages/data';
-import { Message } from '../../../types/Message';
-import OptionsList from '../../OptionsList/OptionsList';
-import { ViewType } from '../../../types/ViewType';
-import { ChatContext, useChatContext } from '../../../contexts/ChatContext';
-import Searchbar from '../Searchbar/Searchbar';
+import data from '@data/mocks/Messages/data';
+import { Message } from '@customTypes/Message';
+import OptionsList from '@components/OptionsList/OptionsList';
+import { ViewType } from '@customTypes/ViewType';
+import { ChatContext, useChatContext } from '@contexts/ChatContext';
+import Searchbar from '@components/SideWindow/Searchbar/Searchbar';
 import { useState } from 'react';
 
 export default function Messages() {

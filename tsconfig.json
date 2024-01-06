@@ -8,6 +8,20 @@
         "noImplicitAny": true,
         "noImplicitThis": true,
         "strictNullChecks": true,
+        "baseUrl": "./src",
+        "paths": {
+            "@data/*": ["data/*"],
+            "@components/*": ["components/*"],
+            "@layouts/*": ["layouts/*"],
+            "@pages/*": ["pages/*"],
+            "@customTypes/*": ["types/*"],
+            "@contexts/*": ["contexts/*"],
+            "@hooks/*": ["hooks/*"],
+            "@helpers/*": ["helpers/*"],
+            "@styles/*": ["styles/*"],
+            "@utils/*": ["utils/*"],
+            "@assets/*": ["assets/*"]
+        },
 
         /* Bundler mode */
         "moduleResolution": "bundler",
@@ -24,6 +38,6 @@
         "noUnusedParameters": true,
         "noFallthroughCasesInSwitch": true
     },
-    "include": ["src", "/src/types/svg.module.d.ts"],
+    "include": ["src", "types/svg.module.d.ts"],
     "references": [{ "path": "./tsconfig.node.json" }]
 }

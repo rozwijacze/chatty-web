@@ -1,16 +1,16 @@
-import ThemeButton from '../ThemeButton/ThemeButton';
-import ButtonItem from '../ButtonItem/ButtonItem';
-import { ReactComponent as ContactsIcon } from '/src/assets/contacts.svg';
-import { ReactComponent as MessagesIcon } from '/src/assets/messages.svg';
-import { ReactComponent as SettingsIcon } from '/src/assets/settings.svg';
-import { ReactComponent as LogoutIcon } from '/src/assets/logout.svg';
-import { ReactComponent as UserIcon } from '/src/assets/user.svg';
-import { ViewType } from '../../types/ViewType';
-import { ViteEnv } from '../../types/ViteEnv';
+import ThemeButton from '@components/ThemeButton/ThemeButton';
+import ButtonItem from '@components/ButtonItem/ButtonItem';
+import { ReactComponent as ContactsIcon } from '@assets/contacts.svg';
+import { ReactComponent as MessagesIcon } from '@assets/messages.svg';
+import { ReactComponent as SettingsIcon } from '@assets/settings.svg';
+import { ReactComponent as LogoutIcon } from '@assets/logout.svg';
+import { ReactComponent as UserIcon } from '@assets/user.svg';
+import { ViewType } from '@customTypes/ViewType';
+import { ViteEnv } from '@customTypes/ViteEnv';
 import './SideMenu.scss';
-import { getUserData } from '../../utils/utils';
-import { AuthContext, useAuthContext } from '../../contexts/AuthContext';
-import { useLabels } from '../../hooks/useLabels';
+import { getUserData } from '@utils/utils';
+import { AuthContext, useAuthContext } from '@contexts/AuthContext';
+import { useLabels } from '@hooks/useLabels';
 
 interface Props {
     view: ViewType;

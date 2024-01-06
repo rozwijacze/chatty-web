@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
-import { Contact } from '../types/Contact';
-import { useContextHook } from '../helpers/ContextHelper';
+import { Contact } from '@customTypes/Contact';
+import { useContextHook } from '@helpers/ContextHelper';
 
 export interface ChatContext {
     selectedChat: Contact | null;

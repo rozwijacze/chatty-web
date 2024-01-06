@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Theme } from '../types/Theme';
+import { Theme } from '@customTypes/Theme';
 
 export interface ThemeHook {
     themeClass: string;

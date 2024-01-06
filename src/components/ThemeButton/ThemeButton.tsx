@@ -1,4 +1,4 @@
-import useTheme, { ThemeHook } from '../../hooks/useTheme';
+import useTheme, { ThemeHook } from '@hooks/useTheme';
 import './ThemeButton.scss';
 
 export default function ThemeButton() {

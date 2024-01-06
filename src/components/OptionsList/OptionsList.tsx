@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import './OptionsList.scss';
-import useOnClickOutside from '../../hooks/useOnOutsideClick';
-import { useLabels } from '../../hooks/useLabels';
-import { ViewType } from '../../types/ViewType';
+import useOnClickOutside from '@hooks/useOnOutsideClick';
+import { useLabels } from '@hooks/useLabels';
+import { ViewType } from '@customTypes/ViewType';
 
 interface Props {
     view: ViewType;

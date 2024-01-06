@@ -1,6 +1,6 @@
 import './LocaleButton.scss';
-import { Locale } from '../../types/Locale';
-import { LocaleContext, useLocaleContext } from '../../contexts/LocaleContext';
+import { Locale } from '@customTypes/Locale';
+import { LocaleContext, useLocaleContext } from '@contexts/LocaleContext';
 
 export default function LocaleButton() {
     const { locale, toggle }: LocaleContext = useLocaleContext();

@@ -1,13 +1,13 @@
-import { ReactComponent as UserIcon } from '/src/assets/user.svg';
-import { ReactComponent as PasswordIcon } from '/src/assets/password.svg';
+import { ReactComponent as UserIcon } from '@assets/user.svg';
+import { ReactComponent as PasswordIcon } from '@assets/password.svg';
 import './Login.scss';
 import { useForm } from 'react-hook-form';
 import { useState } from 'react';
-import { useLabels } from '../../hooks/useLabels';
-import { AuthContext, useAuthContext } from '../../contexts/AuthContext';
+import { useLabels } from '@hooks/useLabels';
+import { AuthContext, useAuthContext } from '@contexts/AuthContext';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Labels from '../../data/translations/Labels';
+import Labels from '@data/translations/Labels';
 
 interface LoginForm {
     email: string;
