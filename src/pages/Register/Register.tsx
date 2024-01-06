@@ -54,31 +54,31 @@ export default function Register() {
         <>
             <form className="register" onSubmit={handleSubmit(onSubmit)}>
                 <div className="register__input">
-                    <label htmlFor="name">{labels.register.labels.name}</label>
+                    <label htmlFor="name">{labels.formLabels.name}</label>
                     <p>{errors.name?.message}</p>
                     <input {...register('name')} required type="text" id="name" name="name" autoComplete="given-name" />
                 </div>
 
                 <div className="register__input">
-                    <label htmlFor="surname">{labels.register.labels.surname}</label>
+                    <label htmlFor="surname">{labels.formLabels.surname}</label>
                     <p>{errors.surname?.message}</p>
                     <input {...register('surname')} required type="text" id="surname" name="surname" autoComplete="given-name" />
                 </div>
 
                 <div className="register__input">
-                    <label htmlFor="email">{labels.register.labels.email}</label>
+                    <label htmlFor="email">{labels.formLabels.email}</label>
                     <p>{errors.email?.message?.toUpperCase()}</p>
                     <input {...register('email')} type="email" id="email" name="email" autoComplete="email" />
                 </div>
 
                 <div className="register__input">
-                    <label htmlFor="password">{labels.register.labels.password}</label>
+                    <label htmlFor="password">{labels.formLabels.password}</label>
                     <p>{errors.password?.message?.toUpperCase()}</p>
                     <input {...register('password')} type="password" id="password" name="password" autoComplete="current-password" />
                 </div>
 
                 <div className="register__input">
-                    <label htmlFor="repeatPassword">{labels.register.labels.repeatPassword}</label>
+                    <label htmlFor="repeatPassword">{labels.formLabels.repeatPassword}</label>
                     <p>{errors.repeatPassword?.message?.toUpperCase()}</p>
                     <input
                         {...register('repeatPassword')}
@@ -90,11 +90,11 @@ export default function Register() {
                 </div>
 
                 <div className="register__buttons">
-                    <button className="button" type="submit">
+                    <button className="button button--text-large" type="submit">
                         {labels.buttons.register}
                     </button>
 
-                    <Link to="/" className="button button--flat">
+                    <Link to="/" className="button button--text-large button--flat">
                         {labels.buttons.back}
                     </Link>
                 </div>

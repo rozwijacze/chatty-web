@@ -56,8 +56,9 @@
         border: 3px solid var(--accent-200);
 
         li {
+            font-family: Roboto-Bold;
+            padding: 0.125rem 0.5rem;
             text-align: center;
-            font-weight: 600;
             color: var(--accent-200);
             white-space: nowrap;
             transition: all 0.3s ease-out;
