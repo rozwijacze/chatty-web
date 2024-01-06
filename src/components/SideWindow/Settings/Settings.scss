@@ -1,2 +1,94 @@
+@import '/src/styles/mixins.scss';
+@import '/src/styles/placeholders.scss';
+
 .settings {
+    $c: &;
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0.75rem;
+
+    h4 {
+        margin-bottom: 1rem;
+        color: var(--accent-100);
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        li {
+            font-family: Roboto-Bold;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-200);
+
+            span {
+                color: var(--text-100);
+            }
+        }
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        margin: 3rem 0;
+        height: 156px;
+
+        svg,
+        img {
+            @extend %profile-image;
+
+            position: absolute;
+            cursor: pointer;
+            width: 156px;
+            height: 156px;
+            fill: var(--accent-200);
+            transition: all 0.2s ease-out;
+        }
+    }
+
+    &__icon {
+        padding: 0.5rem;
+
+        #{$c}__image:hover & {
+            opacity: 0;
+        }
+
+        #{$c}__image:hover &--edit {
+            opacity: 1;
+        }
+
+        &--edit {
+            opacity: 0;
+            padding: 1rem;
+        }
+    }
+
+    &__content button {
+        background-color: var(--accent-200);
+        border-color: var(--accent-200);
+        color: var(--bg-200);
+    }
+
+    &__preferences {
+        @include reset;
+
+        margin-bottom: 2rem;
+    }
+
+    &__account {
+        @include reset;
+
+        background: var(--bg-300);
+        border-radius: 8px;
+        padding: 1rem;
+
+        button {
+            margin-left: auto;
+        }
+    }
 }

@@ -23,7 +23,16 @@ export const labels_EN: Labels = {
         title: 'Messages'
     },
     sideSettings: {
-        title: 'Settings'
+        title: 'Settings',
+        details: 'Account details',
+        image: 'Change your profile picture',
+        preferences: {
+            title: 'Preferences',
+            offline: 'Always offline',
+            theme: 'Set preferred theme',
+            locale: 'Set preferred locale',
+            delete: 'Delete account'
+        }
     },
     formLayout: {
         subtitle: 'It is not a messenger clone',
@@ -31,6 +40,13 @@ export const labels_EN: Labels = {
             label: 'Create an account ',
             link: 'here'
         }
+    },
+    formLabels: {
+        name: 'Name:',
+        surname: 'Surname:',
+        email: 'E-mail:',
+        password: 'Password:',
+        repeatPassword: 'Repeat password:'
     },
     login: {
         placeholder: {
@@ -42,13 +58,6 @@ export const labels_EN: Labels = {
         }
     },
     register: {
-        labels: {
-            name: 'Name:',
-            surname: 'Surname:',
-            email: 'E-mail:',
-            password: 'Password:',
-            repeatPassword: 'Repeat password:'
-        },
         formErrors: {
             repeatPassword: 'Passwords are not the same.'
         },
@@ -61,7 +70,8 @@ export const labels_EN: Labels = {
         login: 'Login',
         logout: 'Logout',
         register: 'Register',
-        back: 'Back'
+        back: 'Back',
+        edit: 'Edit'
     },
     optionsList: {
         close: 'Close',
