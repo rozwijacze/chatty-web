@@ -19,6 +19,16 @@
         align-items: center;
         padding: 0.75rem;
         height: 100%;
+
+        button {
+            padding: 0.5rem;
+
+            svg {
+                width: 32px;
+                height: 32px;
+                fill: var(--accent-200);
+            }
+        }
     }
 
     &__nav {
@@ -50,8 +60,8 @@
         }
 
         p {
+            font-family: Roboto-Bold;
             text-align: center;
-            font-weight: 600;
             color: var(--text-100);
         }
     }

@@ -23,7 +23,16 @@ export const labels_PL: Labels = {
         title: 'Wiadomości'
     },
     sideSettings: {
-        title: 'Ustawienia'
+        title: 'Ustawienia',
+        details: 'Dane konta',
+        image: 'Zmień swoje zdjęcie',
+        preferences: {
+            title: 'Preferencje',
+            offline: 'Zawsze niedostępny',
+            theme: 'Ustaw preferowany motyw',
+            locale: 'Ustaw preferowany język',
+            delete: 'Usuń konto'
+        }
     },
     formLayout: {
         subtitle: 'To nie klon messengera',
@@ -31,6 +40,13 @@ export const labels_PL: Labels = {
             label: 'Utwórz swoje konto ',
             link: 'tutaj'
         }
+    },
+    formLabels: {
+        name: 'Imię:',
+        surname: 'Nazwisko:',
+        email: 'E-mail:',
+        password: 'Hasło:',
+        repeatPassword: 'Powtórz hasło:'
     },
     login: {
         placeholder: {
@@ -42,13 +58,6 @@ export const labels_PL: Labels = {
         }
     },
     register: {
-        labels: {
-            name: 'Imię:',
-            surname: 'Nazwisko:',
-            email: 'E-mail:',
-            password: 'Hasło:',
-            repeatPassword: 'Powtórz hasło:'
-        },
         formErrors: {
             repeatPassword: 'Hasła nie są identyczne.'
         },
@@ -61,7 +70,8 @@ export const labels_PL: Labels = {
         login: 'Zaloguj się',
         logout: 'Wyloguj się',
         register: 'Zarejestruj się',
-        back: 'Wróć'
+        back: 'Wróć',
+        edit: 'Edytuj'
     },
     optionsList: {
         close: 'Zamknij',

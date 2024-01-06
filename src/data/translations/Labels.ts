@@ -14,13 +14,31 @@ export default interface Labels {
     };
     sideContacts: { title: string };
     sideMessages: { title: string };
-    sideSettings: { title: string };
+    sideSettings: {
+        title: string;
+        details: string;
+        image: string;
+        preferences: {
+            title: string;
+            offline: string;
+            theme: string;
+            locale: string;
+            delete: string;
+        };
+    };
     formLayout: {
         subtitle: string;
         description: {
             label: string;
             link: string;
         };
+    };
+    formLabels: {
+        name: string;
+        surname: string;
+        email: string;
+        password: string;
+        repeatPassword: string;
     };
     login: {
         placeholder: {
@@ -32,13 +50,6 @@ export default interface Labels {
         };
     };
     register: {
-        labels: {
-            name: string;
-            surname: string;
-            email: string;
-            password: string;
-            repeatPassword: string;
-        };
         formErrors: {
             repeatPassword: string;
         };
@@ -52,6 +63,7 @@ export default interface Labels {
         logout: string;
         register: string;
         back: string;
+        edit: string;
     };
     optionsList: {
         close: string;

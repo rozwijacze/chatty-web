@@ -1,5 +1,4 @@
 import { ReactNode } from 'react';
-import './ButtonItem.scss';
 
 interface Props {
     clickHandler?: () => void;
@@ -10,10 +9,10 @@ interface Props {
 }
 
 export default function ButtonItem({ clickHandler, title, isActive, children, modificators }: Props) {
-    let classNames = 'btn-item';
+    let classNames = 'button';
 
     if (isActive) classNames += ' active';
-    if (modificators && modificators.length > 0) modificators.forEach(modificator => (classNames += ` btn-item--${modificator}`));
+    if (modificators && modificators.length > 0) modificators.forEach(modificator => (classNames += ` button--${modificator}`));
 
     return (
         <button className={classNames} onClick={clickHandler} title={title}>

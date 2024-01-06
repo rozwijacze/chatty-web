@@ -60,7 +60,7 @@ export default function Login() {
                     />
                 </div>
 
-                <button className="button" type="submit">
+                <button className="button button--text-large" type="submit">
                     {labels.buttons.login}
                 </button>
             </form>

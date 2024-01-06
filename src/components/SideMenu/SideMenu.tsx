@@ -41,31 +41,23 @@ export default function SideMenu({ view, setView }: Props) {
                         title={ViewType.MESSAGES}
                         children={<MessagesIcon />}
                         isActive={view === ViewType.MESSAGES}
-                        modificators={['sidenav']}
                     />
                     <ButtonItem
                         clickHandler={() => setView(ViewType.CONTACTS)}
                         title={ViewType.CONTACTS}
                         children={<ContactsIcon />}
                         isActive={view === ViewType.CONTACTS}
-                        modificators={['sidenav']}
                     />
                     <ButtonItem
                         clickHandler={() => setView(ViewType.SETTINGS)}
                         title={ViewType.SETTINGS}
                         children={<SettingsIcon />}
                         isActive={view === ViewType.SETTINGS}
-                        modificators={['sidenav']}
                     />
                 </nav>
 
                 <div className="side-menu__buttons">
-                    <ButtonItem
-                        clickHandler={logout}
-                        title={labels.buttons.logout}
-                        children={<LogoutIcon />}
-                        modificators={['sidenav', labels.buttons.logout.toLowerCase()]}
-                    />
+                    <ButtonItem clickHandler={logout} title={labels.buttons.logout} children={<LogoutIcon />} />
                     <ThemeButton />
                 </div>
             </div>
