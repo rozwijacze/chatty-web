@@ -13,7 +13,7 @@ export default interface Labels {
         title: string;
     };
     sideContacts: { title: string };
-    sideMessages: { title: string };
+    sideConversations: { title: string };
     sideSettings: {
         title: string;
         details: string;
@@ -77,5 +77,9 @@ export default interface Labels {
     searchbar: {
         placeholder: string;
         clear: string;
+    };
+    chatControls: {
+        inputPlaceholder: string;
+        buttonTitle: string;
     };
 }

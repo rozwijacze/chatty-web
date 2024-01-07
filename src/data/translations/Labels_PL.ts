@@ -14,13 +14,13 @@ export const labels_PL: Labels = {
         title: 'Przepraszamy, ta strona nie istnieje.'
     },
     chatWindow: {
-        title: 'Czat'
+        title: 'Okno czatu'
     },
     sideContacts: {
         title: 'Kontakty'
     },
-    sideMessages: {
-        title: 'Wiadomości'
+    sideConversations: {
+        title: 'Czaty'
     },
     sideSettings: {
         title: 'Ustawienia',
@@ -85,5 +85,9 @@ export const labels_PL: Labels = {
     searchbar: {
         placeholder: 'Wyszukaj',
         clear: 'Wyczyść'
+    },
+    chatControls: {
+        inputPlaceholder: 'Aa',
+        buttonTitle: 'Wyślij wiadomość'
     }
 };

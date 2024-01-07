@@ -1,10 +1,10 @@
 import { createContext, useState } from 'react';
-import { Contact } from '@customTypes/Contact';
 import { useContextHook } from '@helpers/ContextHelper';
+import { Conversation } from '@customTypes/Conversation';
 
 export interface ChatContext {
-    selectedChat: Contact | null;
-    handleChatSelect: (contact: Contact) => void;
+    selectedChat: Conversation | null;
+    handleChatSelect: (conversation: Conversation) => void;
 }
 
 const ChatContext = createContext<ChatContext | null>(null);
@@ -12,8 +12,8 @@ const ChatContext = createContext<ChatContext | null>(null);
 export const useChatContext = () => useContextHook(ChatContext);
 
 export default function ChatContextProvider({ children }: React.PropsWithChildren) {
-    const [selectedChat, setSelectedChat] = useState<Contact | null>(null);
-    const handleChatSelect = (contact: Contact) => setSelectedChat(contact);
+    const [selectedChat, setSelectedChat] = useState<Conversation | null>(null);
+    const handleChatSelect = (conversation: Conversation) => setSelectedChat(conversation);
 
     return <ChatContext.Provider value={{ selectedChat, handleChatSelect }}>{children}</ChatContext.Provider>;
 }

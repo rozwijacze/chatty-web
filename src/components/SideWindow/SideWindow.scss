@@ -2,12 +2,11 @@
 @import '/src/styles/placeholders.scss';
 
 .side-window {
-    @include customScroll;
-
     display: flex;
     flex-direction: column;
     width: 400px;
     height: 100%;
+    flex-shrink: 0;
 
     &__title {
         @extend %window-title;

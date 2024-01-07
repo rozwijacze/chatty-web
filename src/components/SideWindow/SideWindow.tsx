@@ -1,4 +1,4 @@
-import Messages from './Messages/Messages';
+import Conversations from './Conversations/Conversations';
 import Contacts from './Contacts/Contacts';
 import Settings from './Settings/Settings';
 import './SideWindow.scss';
@@ -16,8 +16,8 @@ export default function SideWindow({ view }: Props) {
 
     switch (view) {
         default:
-            viewElement = <Messages />;
-            title = labels.sideMessages.title;
+            viewElement = <Conversations />;
+            title = labels.sideConversations.title;
             break;
 
         case ViewType.CONTACTS:

@@ -14,13 +14,13 @@ export const labels_EN: Labels = {
         title: 'We are sorry, this page does not exist.'
     },
     chatWindow: {
-        title: 'Chat'
+        title: 'Chat window'
     },
     sideContacts: {
         title: 'Contacts'
     },
-    sideMessages: {
-        title: 'Messages'
+    sideConversations: {
+        title: 'Chats'
     },
     sideSettings: {
         title: 'Settings',
@@ -85,5 +85,9 @@ export const labels_EN: Labels = {
     searchbar: {
         placeholder: 'Search',
         clear: 'Clear'
+    },
+    chatControls: {
+        inputPlaceholder: 'Aa',
+        buttonTitle: 'Send message'
     }
 };
