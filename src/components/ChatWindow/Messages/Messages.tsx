@@ -6,7 +6,7 @@ export default function Messages() {
 
     return (
         <ul className="messages">
-            {selectedChat?.conversationPage.messages.map(message => {
+            {selectedChat?.page.messages.map(message => {
                 // TODO: change mocked current user id to current user id
                 const isReceived = message.contact.id !== 1;
                 return (

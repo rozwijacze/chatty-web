@@ -2,13 +2,14 @@ import data from '@data/mocks/Contacts/data';
 import { Contact } from '@customTypes/Contact';
 import OptionsList from '@components/OptionsList/OptionsList';
 import { ViewType } from '@customTypes/ViewType';
-import { ChatContext, useChatContext } from '@contexts/ChatContext';
 import Searchbar from '@components/SideWindow/Searchbar/Searchbar';
 import { useState } from 'react';
 
 export default function Contacts() {
     const [searchInputVal, setSearchInputVal] = useState('');
-    const { handleChatSelect }: ChatContext = useChatContext();
+
+    // TODO: Should create chatroom with that user if it doesnt exits.
+    // const { handleChatSelect }: ChatContext = useChatContext();
 
     const filteredContactData = data.filter(contact => {
         const username = contact.name + ' ' + contact.surname;
@@ -26,7 +27,7 @@ export default function Contacts() {
 
                     return (
                         <li key={contact.id} className="side-window-item side-window-item--contact" title={username}>
-                            <div className="side-window-item__wrapper" onClick={() => handleChatSelect(contact)}>
+                            <div className="side-window-item__wrapper" onClick={() => {}}>
                                 <div className="side-window-item__profile">
                                     <img src={contact.img_src} alt="profile image" />
                                     <div className={`side-window-item__status ${statusModifierClass}`}></div>

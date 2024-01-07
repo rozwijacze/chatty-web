@@ -11,7 +11,7 @@ export default function Messages() {
     const { handleChatSelect }: ChatContext = useChatContext();
 
     const filteredConversationsData = conversationsData.filter((conversation: Conversation) => {
-        const conversationName = conversation.conversationName;
+        const conversationName = conversation.name;
 
         if (conversationName.toLowerCase().includes(searchInputVal.toLowerCase())) return conversation;
     });
@@ -21,7 +21,7 @@ export default function Messages() {
             <Searchbar inputVal={searchInputVal} setInputVal={setSearchInputVal} />
             <ul className="side-window-list">
                 {filteredConversationsData.map((conversation: Conversation) => {
-                    const username = conversation.conversationName;
+                    const username = conversation.name;
                     // TODO: should we show status in conversation list?
                     // const statusModifierClass = conversation.contact.online ? 'side-window-item__status--online' : '';
 
@@ -29,7 +29,7 @@ export default function Messages() {
                         <li key={conversation.id} className="side-window-item" title={username}>
                             <div className="side-window-item__wrapper" onClick={() => handleChatSelect(conversation)}>
                                 <div className="side-window-item__profile">
-                                    <img src={conversation.conversationImg} alt="profile image" />
+                                    <img src={conversation.img} alt="profile image" />
                                     {/* <div className={`side-window-item__status ${statusModifierClass}`}></div> */}
                                 </div>
                                 <div className="side-window-item__content">

@@ -11,7 +11,7 @@ export default function ChatWindow() {
 
     return (
         <div className="chat-window">
-            <h2 className="chat-window__title">{selectedChat ? selectedChat.conversationName : labels.chatWindow.title}</h2>
+            <h2 className="chat-window__title">{selectedChat ? selectedChat.name : labels.chatWindow.title}</h2>
             <div className="chat-window__wrapper">
                 <Messages />
                 <ChatControls />

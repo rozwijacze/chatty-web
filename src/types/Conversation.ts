@@ -3,8 +3,8 @@ import { ConversationPage } from './ConversationPage';
 export interface Conversation {
     id: number;
     userIds: number[];
-    conversationName: string;
-    conversationImg: string;
-    conversationPage: ConversationPage;
+    name: string;
+    img: string;
+    page: ConversationPage;
     lastMessage?: string;
 }

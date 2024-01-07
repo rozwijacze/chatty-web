@@ -1,7 +1,7 @@
 import { ConversationPage } from '@customTypes/ConversationPage';
 import contactsData from '@data/mocks/Contacts/data';
 
-const conversationPageData: ConversationPage = {
+const conversationPageData: ConversationPage[] = [{
     guid: 123,
     messages: [
         {
@@ -40,6 +40,25 @@ const conversationPageData: ConversationPage = {
             content: 'I have some ideas for it'
         }
     ]
-};
+}, 
+{
+    guid: 123123,
+    messages: [
+        {
+            id: 32164876879,
+            contact: contactsData[1],
+            date_of_send: new Date('1995-12-17T03:24:00'),
+            date_of_receive: new Date(99, 5, 24),
+            content: 'remember about a present'
+        },
+        {
+            id: 123123123123,
+            contact: contactsData[0],
+            date_of_send: new Date('1995-12-17T03:24:30'),
+            date_of_receive: new Date(99, 5, 24),
+            content: 'sure thing'
+        },
+    ]
+}];
 
 export default conversationPageData;
