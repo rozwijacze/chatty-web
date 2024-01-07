@@ -3,19 +3,19 @@ import './Searchbar.scss';
 import { useLabels } from '@hooks/useLabels';
 
 interface Props {
-    inputVal: string;
-    setInputVal: (inputVal: string) => void;
+    searchedValue: string;
+    setSearchedValue: (inputVal: string) => void;
 }
 
-export default function Searchbar({ inputVal, setInputVal }: Props) {
+export default function Searchbar({ searchedValue, setSearchedValue }: Props) {
     const labels = useLabels();
-    const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => setInputVal(event.currentTarget.value);
-    const handleInputClear = () => setInputVal('');
+    const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => setSearchedValue(event.currentTarget.value);
+    const handleInputClear = () => setSearchedValue('');
 
     return (
         <div className="searchbar">
-            <input type="text" placeholder={labels.searchbar.placeholder} value={inputVal} onChange={handleInputChange} />
-            {inputVal.length > 0 ? (
+            <input type="text" placeholder={labels.searchbar.placeholder} value={searchedValue} onChange={handleInputChange} />
+            {searchedValue ? (
                 <div className="searchbar__icon searchbar__icon--clear" onClick={handleInputClear} title={labels.searchbar.clear}>
                     <span></span>
                     <span></span>
