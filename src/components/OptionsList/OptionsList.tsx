@@ -38,7 +38,7 @@ export default function OptionsList({ view }: Props) {
                             <li>{labels.optionsList.hide}</li>
                         </>
                     )}
-                    {view === ViewType.MESSAGES && <li>{labels.optionsList.archive}</li>}
+                    {view === ViewType.CONVERSATIONS && <li>{labels.optionsList.archive}</li>}
                     <li>{labels.optionsList.mute}</li>
                     <li>{labels.optionsList.delete}</li>
                 </ul>

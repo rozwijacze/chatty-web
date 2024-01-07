@@ -37,10 +37,10 @@ export default function SideMenu({ view, setView }: Props) {
 
                 <nav className="side-menu__nav">
                     <ButtonItem
-                        clickHandler={() => setView(ViewType.MESSAGES)}
-                        title={ViewType.MESSAGES}
+                        clickHandler={() => setView(ViewType.CONVERSATIONS)}
+                        title={ViewType.CONVERSATIONS}
                         children={<MessagesIcon />}
-                        isActive={view === ViewType.MESSAGES}
+                        isActive={view === ViewType.CONVERSATIONS}
                     />
                     <ButtonItem
                         clickHandler={() => setView(ViewType.CONTACTS)}

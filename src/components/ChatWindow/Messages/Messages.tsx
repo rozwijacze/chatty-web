@@ -9,6 +9,7 @@ export default function Messages() {
             {selectedChat?.page.messages.map(message => {
                 // TODO: change mocked current user id to current user id
                 const isReceived = message.contact.id !== 1;
+
                 return (
                     <li key={message.id} className={`messages-item ${isReceived ? 'messages-item--received' : ''}`}>
                         <img src={message.contact.img_src} alt="profile image" />

@@ -1,7 +1,7 @@
-import { Message } from '../../../types/Message';
-import contactsData from '../Contacts/data';
+import { Message } from '@customTypes/Message';
+import contactsData from './contactsData';
 
-const data: Message[] = [
+const messagesData: Message[] = [
     {
         id: 1,
         contact: contactsData[0],
@@ -32,4 +32,4 @@ const data: Message[] = [
     }
 ];
 
-export default data;
+export default messagesData;

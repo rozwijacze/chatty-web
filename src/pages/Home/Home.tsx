@@ -7,7 +7,7 @@ import './Home.scss';
 import ChatContextProvider from '@contexts/ChatContext';
 
 export default function Home() {
-    const [view, setView] = useState<ViewType>(ViewType.MESSAGES);
+    const [view, setView] = useState<ViewType>(ViewType.CONVERSATIONS);
 
     return (
         <main className="home">

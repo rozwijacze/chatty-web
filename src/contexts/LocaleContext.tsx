@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from 'react';
 import { Locale } from '@customTypes/Locale';
-import { useContextHook } from '@helpers/ContextHelper';
+import { useContextHook } from '@hooks/useContextHook';
 
 export interface LocaleContext {
     locale: string;

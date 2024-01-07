@@ -3,7 +3,7 @@ import { getToken, isTokenExpired } from '@utils/utils';
 import axios from 'axios';
 import { ViteEnv } from '@customTypes/ViteEnv';
 import { useLabels } from '@hooks/useLabels';
-import { useContextHook } from '@helpers/ContextHelper';
+import { useContextHook } from '@hooks/useContextHook';
 import Labels from '@data/translations/Labels';
 
 export interface AuthContext {

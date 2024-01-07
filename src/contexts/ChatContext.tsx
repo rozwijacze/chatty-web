@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react';
-import { useContextHook } from '@helpers/ContextHelper';
+import { useContextHook } from '@hooks/useContextHook';
 import { Conversation } from '@customTypes/Conversation';
 
 export interface ChatContext {
