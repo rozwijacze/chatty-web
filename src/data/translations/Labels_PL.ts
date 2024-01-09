@@ -20,7 +20,7 @@ export const labels_PL: Labels = {
         title: 'Kontakty'
     },
     sideConversations: {
-        title: 'Czaty'
+        title: 'Konwersacje'
     },
     sideSettings: {
         title: 'Ustawienia',

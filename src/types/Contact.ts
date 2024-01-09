@@ -2,6 +2,6 @@ export interface Contact {
     id: number;
     name: string;
     surname: string;
-    img_src: string;
+    img: string;
     online: boolean;
 }
