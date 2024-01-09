@@ -1,5 +1,5 @@
-@import '/src/styles/mixins.scss';
-@import '/src/styles/placeholders.scss';
+@import '@styles/mixins';
+@import '@styles/placeholders';
 
 .settings {
     $c: &;
@@ -33,8 +33,8 @@
     }
 
     &__image {
-        display: flex;
-        justify-content: center;
+        @include flexCenterBothAxis;
+
         margin: 3rem 0;
         height: 156px;
 

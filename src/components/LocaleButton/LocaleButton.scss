@@ -1,7 +1,8 @@
+@import '@styles/mixins';
+
 .locale-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexCenterBothAxis;
+
     gap: 0.25rem;
     border-radius: 100px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);

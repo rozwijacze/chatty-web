@@ -1,6 +1,6 @@
 /* font definition */
 
-@use './font.scss';
+@use './font';
 
 /* global classes and styles definitions */
 
@@ -9,7 +9,7 @@
 @use './themes/dark' as dark;
 @use './colors' as general;
 
-@import './_mixins.scss';
+@import './mixins';
 
 $general: meta.module-variables('general');
 $light: meta.module-variables('light');

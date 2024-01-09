@@ -1,12 +1,11 @@
-@import '/src/styles/mixins';
-@import '/src/styles/placeholders.scss';
+@import '@styles/mixins';
+@import '@styles/placeholders';
 
 .form-layout {
-    display: flex;
+    @include flexCenterBothAxis;
+
     width: 100vw;
     height: 100vh;
-    align-items: center;
-    justify-content: center;
     background: var(--background-gradient);
 
     &__logo {
@@ -26,10 +25,10 @@
     }
 
     &__title {
-        display: flex;
+        @include flexCenterBothAxis;
+
         flex-direction: column;
         gap: 0.5rem;
-        align-items: center;
 
         p {
             color: var(--primary-200);
@@ -45,10 +44,9 @@
     }
 
     &__content form {
-        display: flex;
+        @include flexCenterBothAxis;
+
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         padding: 2rem;
         gap: 1rem;
     }

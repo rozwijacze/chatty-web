@@ -1,6 +1,6 @@
 import { getUserData } from '@utils/utils';
-import { ReactComponent as UserIcon } from '/src/assets/user.svg';
-import { ReactComponent as EditImageIcon } from '/src/assets/edit-image.svg';
+import { ReactComponent as UserIcon } from '@assets/user.svg';
+import { ReactComponent as EditImageIcon } from '@assets/edit-image.svg';
 import './Settings.scss';
 import ButtonItem from '@components/ButtonItem/ButtonItem';
 import { useLabels } from '@hooks/useLabels';

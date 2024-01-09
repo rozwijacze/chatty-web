@@ -5,7 +5,7 @@ import './SideWindow.scss';
 import { ViewType } from '@customTypes/ViewType';
 import { useLabels } from '@hooks/useLabels';
 import { useState } from 'react';
-import Searchbar from './Searchbar/Searchbar';
+import Searchbar from '@components/Searchbar/Searchbar';
 import { valueFoundInKey } from '@helpers/SearchHelper';
 import conversationsData from '@data/mocks/conversationsData';
 import contactsData from '@data/mocks/contactsData';
@@ -47,7 +47,7 @@ export default function SideWindow({ view }: Props) {
     return (
         <div className="side-window">
             <h2 className="side-window__title">{title}</h2>
-            <div className="side-window__wrapper">
+            <div className="side-window__content">
                 {showSearchbar && <Searchbar searchedValue={searchedValue} setSearchedValue={setSearchedValue} />}
                 {viewElement}
             </div>
