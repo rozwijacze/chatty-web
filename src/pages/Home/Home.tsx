@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import SideMenu from '@components/SideMenu/SideMenu';
-import SideWindow from '@components/SideWindow/SideWindow';
-import ChatWindow from '@components/ChatWindow/ChatWindow';
+import SideMenu from './SideMenu/SideMenu';
+import SideWindow from './SideWindow/SideWindow';
+import ChatWindow from './ChatWindow/ChatWindow';
 import { ViewType } from '@customTypes/ViewType';
 import './Home.scss';
 import ConversationContextProvider from '@contexts/ConversationContext';

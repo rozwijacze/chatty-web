@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './ChatControls.scss';
-import ButtonItem from '@components/ButtonItem/ButtonItem';
+import ButtonItem from '@components/common/ButtonItem/ButtonItem';
 import { ReactComponent as SendMessageIcon } from '@assets/send-message.svg';
 import { useLabels } from '@hooks/useLabels';
 

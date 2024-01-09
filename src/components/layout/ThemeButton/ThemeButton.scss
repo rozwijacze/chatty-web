@@ -31,7 +31,7 @@
     }
 
     &::after {
-        content: url('../../assets/sun.png');
+        content: url('@assets/sun.png');
         position: absolute;
         top: 55%;
         left: 14px;
@@ -39,7 +39,7 @@
         transition: all 0.3s ease-in;
 
         .dark & {
-            content: url('../../assets/moon.png');
+            content: url('@assets/moon.png');
             left: 40px;
         }
     }

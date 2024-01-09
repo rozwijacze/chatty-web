@@ -5,7 +5,7 @@ import './SideWindow.scss';
 import { ViewType } from '@customTypes/ViewType';
 import { useLabels } from '@hooks/useLabels';
 import { useState } from 'react';
-import Searchbar from '@components/Searchbar/Searchbar';
+import Searchbar from '@components/layout/Searchbar/Searchbar';
 import { valueFoundInKey } from '@helpers/SearchHelper';
 import conversationsData from '@data/mocks/conversationsData';
 import contactsData from '@data/mocks/contactsData';

@@ -1,5 +1,5 @@
 import { Contact } from '@customTypes/Contact';
-import OptionsList from '@components/OptionsList/OptionsList';
+import OptionsList from '@components/common/OptionsList/OptionsList';
 import { ViewType } from '@customTypes/ViewType';
 
 interface Props {

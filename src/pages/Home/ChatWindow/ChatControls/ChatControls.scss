@@ -1,0 +1,16 @@
+@import '@styles/mixins';
+
+.chat-controls {
+    @include flexCenterBothAxis;
+
+    gap: 0.5rem;
+    padding: 0.75rem;
+
+    input {
+        width: 85%;
+    }
+
+    button svg {
+        fill: var(--accent-200);
+    }
+}

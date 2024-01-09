@@ -1,5 +1,5 @@
-import ThemeButton from '@components/ThemeButton/ThemeButton';
-import ButtonItem from '@components/ButtonItem/ButtonItem';
+import ThemeButton from '@components/layout/ThemeButton/ThemeButton';
+import ButtonItem from '@components/common/ButtonItem/ButtonItem';
 import { ReactComponent as ContactsIcon } from '@assets/contacts.svg';
 import { ReactComponent as MessagesIcon } from '@assets/messages.svg';
 import { ReactComponent as SettingsIcon } from '@assets/settings.svg';

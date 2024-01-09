@@ -22,38 +22,38 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
     const labels: Labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    useLayoutEffect(() => {
-        const checkTokenValidity = async () => {
-            const tokenString = getToken();
+    // useLayoutEffect(() => {
+    //     const checkTokenValidity = async () => {
+    //         const tokenString = getToken();
 
-            if (!tokenString) {
-                setIsAuthenticated(false);
-                return;
-            }
+    //         if (!tokenString) {
+    //             setIsAuthenticated(false);
+    //             return;
+    //         }
 
-            if (!isTokenExpired(tokenString)) {
-                setIsAuthenticated(true);
-                return;
-            }
+    //         if (!isTokenExpired(tokenString)) {
+    //             setIsAuthenticated(true);
+    //             return;
+    //         }
 
-            axios
-                .post(API_URL + 'refresh-token', {
-                    // TODO: Check which token should be passed
-                    refreshToken: tokenString.refreshToken
-                })
-                .then(response => {
-                    const { accessToken } = response.data;
-                    localStorage.setItem('user', JSON.stringify(accessToken));
-                    setIsAuthenticated(true);
-                })
-                .catch(() => logout());
-        };
+    //         axios
+    //             .post(API_URL + 'refresh-token', {
+    //                 // TODO: Check which token should be passed
+    //                 refreshToken: tokenString.refreshToken
+    //             })
+    //             .then(response => {
+    //                 const { accessToken } = response.data;
+    //                 localStorage.setItem('user', JSON.stringify(accessToken));
+    //                 setIsAuthenticated(true);
+    //             })
+    //             .catch(() => logout());
+    //     };
 
-        checkTokenValidity();
-        const intervalId = setInterval(checkTokenValidity, 1000);
+    //     checkTokenValidity();
+    //     const intervalId = setInterval(checkTokenValidity, 1000);
 
-        return () => clearInterval(intervalId);
-    }, [API_URL]);
+    //     return () => clearInterval(intervalId);
+    // }, [API_URL]);
 
     function login(email: string, password: string) {
         return axios

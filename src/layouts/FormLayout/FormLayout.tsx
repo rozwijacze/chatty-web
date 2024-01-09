@@ -3,10 +3,10 @@ import './FormLayout.scss';
 import { ViewType } from '@customTypes/ViewType';
 import Login from '@pages/Login/Login';
 import Register from '@pages/Register/Register';
-import ThemeButton from '@components/ThemeButton/ThemeButton';
+import ThemeButton from '@components/layout/ThemeButton/ThemeButton';
 import { ViteEnv } from '@customTypes/ViteEnv';
 import { useLabels } from '@hooks/useLabels';
-import LocaleButton from '@components/LocaleButton/LocaleButton';
+import LocaleButton from '@components/layout/LocaleButton/LocaleButton';
 import Labels from '@data/translations/Labels';
 
 type Props = {
