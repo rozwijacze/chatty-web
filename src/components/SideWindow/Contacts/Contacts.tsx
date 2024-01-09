@@ -8,7 +8,7 @@ interface Props {
 
 export default function Contacts({ data }: Props) {
     // TODO: Should create chatroom with that user if it doesnt exits.
-    // const { handleChatSelect }: ChatContext = useChatContext();
+    // const { handleConversationSelect }: ConversationContext = useConversationContext();
 
     return (
         <ul className="side-window-list">
@@ -20,7 +20,7 @@ export default function Contacts({ data }: Props) {
                     <li key={contact.id} className="side-window-item side-window-item--contact" title={username}>
                         <div className="side-window-item__wrapper" onClick={() => {}}>
                             <div className="side-window-item__profile">
-                                <img src={contact.img_src} alt="profile image" />
+                                <img src={contact.img} alt="profile image" />
                                 <div className={`side-window-item__status ${statusModifierClass}`}></div>
                             </div>
                             <p className="side-window-item__username">{username}</p>

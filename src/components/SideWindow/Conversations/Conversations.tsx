@@ -1,6 +1,6 @@
 import OptionsList from '@components/OptionsList/OptionsList';
 import { ViewType } from '@customTypes/ViewType';
-import { ChatContext, useChatContext } from '@contexts/ChatContext';
+import { ConversationContext, useConversationContext } from '@contexts/ConversationContext';
 import { Conversation } from '@customTypes/Conversation';
 
 interface Props {
@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function Conversations({ data }: Props) {
-    const { handleChatSelect }: ChatContext = useChatContext();
+    const { handleConversationSelect }: ConversationContext = useConversationContext();
 
     return (
         <ul className="side-window-list">
@@ -19,14 +19,14 @@ export default function Conversations({ data }: Props) {
 
                 return (
                     <li key={conversation.id} className="side-window-item" title={username}>
-                        <div className="side-window-item__wrapper" onClick={() => handleChatSelect(conversation)}>
+                        <div className="side-window-item__wrapper" onClick={() => handleConversationSelect(conversation)}>
                             <div className="side-window-item__profile">
                                 <img src={conversation.img} alt="profile image" />
                                 {/* <div className={`side-window-item__status ${statusModifierClass}`}></div> */}
                             </div>
                             <div className="side-window-item__content">
                                 <p>{username}</p>
-                                <span>{conversation.lastMessage}</span>
+                                <span>{conversation.lastMessage?.content}</span>
                             </div>
                         </div>
 

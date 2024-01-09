@@ -4,18 +4,18 @@ import SideWindow from '@components/SideWindow/SideWindow';
 import ChatWindow from '@components/ChatWindow/ChatWindow';
 import { ViewType } from '@customTypes/ViewType';
 import './Home.scss';
-import ChatContextProvider from '@contexts/ChatContext';
+import ConversationContextProvider from '@contexts/ConversationContext';
 
 export default function Home() {
     const [view, setView] = useState<ViewType>(ViewType.CONVERSATIONS);
 
     return (
         <main className="home">
-            <ChatContextProvider>
-                <SideMenu view={view} setView={setView} />
+            <SideMenu view={view} setView={setView} />
+            <ConversationContextProvider>
                 <SideWindow view={view} />
                 <ChatWindow />
-            </ChatContextProvider>
+            </ConversationContextProvider>
         </main>
     );
 }
