@@ -4,15 +4,14 @@ import { FieldValues, useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
-import { useLabels } from '@hooks/useLabels';
-import { AuthContext, useAuthContext } from '@contexts/AuthContext';
-import Labels from '@data/translations/Labels';
+import useLabels from '@hooks/useLabels';
+import { useAuthContext } from '@contexts/AuthContext';
 
 export default function Register() {
     const [isRegistered, setIsRegistered] = useState(false);
     const [serverError, setServerError] = useState('');
-    const labels: Labels = useLabels();
-    const authContextValues: AuthContext = useAuthContext();
+    const labels = useLabels();
+    const authContextValues = useAuthContext();
 
     const registerSchema = yup.object().shape({
         name: yup.string().min(3).required(),

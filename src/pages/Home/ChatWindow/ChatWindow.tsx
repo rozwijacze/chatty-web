@@ -1,13 +1,12 @@
+import { useConversationContext } from '@contexts/ConversationContext';
 import './ChatWindow.scss';
-import { ConversationContext, useConversationContext } from '@contexts/ConversationContext';
-import { useLabels } from '@hooks/useLabels';
-import Labels from '@data/translations/Labels';
+import useLabels from '@hooks/useLabels';
 import ChatControls from './ChatControls/ChatControls';
 import Messages from './Messages/Messages';
 
 export default function ChatWindow() {
-    const labels: Labels = useLabels();
-    const { selectedConversation }: ConversationContext = useConversationContext();
+    const labels = useLabels();
+    const { selectedConversation } = useConversationContext();
 
     return (
         <div className="chat-window">

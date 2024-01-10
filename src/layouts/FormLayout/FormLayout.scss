@@ -8,14 +8,6 @@
     height: 100vh;
     background: var(--background-gradient);
 
-    &__logo {
-        @extend %logo-title;
-
-        font-size: 3rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        transition: all 0.2s ease-out;
-    }
-
     &__wrapper {
         padding: 2rem;
         border-radius: 8px;
@@ -30,13 +22,19 @@
         flex-direction: column;
         gap: 0.5rem;
 
+        h1 {
+            @extend %logo-title;
+
+            font-size: 3rem;
+        }
+
         p {
             color: var(--primary-200);
 
             a {
                 text-decoration: underline;
 
-                @include for-link {
+                @include forLink {
                     color: var(--primary-200);
                 }
             }

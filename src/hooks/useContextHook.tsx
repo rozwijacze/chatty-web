@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 
-export function useContextHook<T>(context: React.Context<T>) {
+export default function useContextHook<T>(context: React.Context<T>) {
     const contextValues = useContext(context);
     const contextVariableName = Object.keys({ context })[0];
 

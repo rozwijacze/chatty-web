@@ -1,8 +1,8 @@
 import { useState } from 'react';
+import { ReactComponent as SendMessageIcon } from '@assets/send-message.svg';
 import './ChatControls.scss';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
-import { ReactComponent as SendMessageIcon } from '@assets/send-message.svg';
-import { useLabels } from '@hooks/useLabels';
+import useLabels from '@hooks/useLabels';
 
 export default function ChatControls() {
     const labels = useLabels();

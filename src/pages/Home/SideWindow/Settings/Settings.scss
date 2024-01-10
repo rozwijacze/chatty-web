@@ -75,13 +75,13 @@
     }
 
     &__preferences {
-        @include reset;
+        @include resetListStyles;
 
         margin-bottom: 2rem;
     }
 
     &__account {
-        @include reset;
+        @include resetListStyles;
 
         background: var(--bg-300);
         border-radius: 8px;

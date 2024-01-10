@@ -64,6 +64,8 @@ export default interface Labels {
         register: string;
         back: string;
         edit: string;
+        locale: string;
+        theme: string;
     };
     optionsList: {
         close: string;

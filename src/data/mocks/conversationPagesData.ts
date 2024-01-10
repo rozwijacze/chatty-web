@@ -1,4 +1,4 @@
-import { ConversationPage } from '@customTypes/ConversationPage';
+import ConversationPage from '@customTypes/ConversationPage';
 import contactsData from './contactsData';
 
 const conversationPagesData: ConversationPage[] = [

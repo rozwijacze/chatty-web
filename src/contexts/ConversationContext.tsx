@@ -1,8 +1,8 @@
 import { createContext, useState } from 'react';
-import { useContextHook } from '@hooks/useContextHook';
-import { Conversation } from '@customTypes/Conversation';
+import useContextHook from '@hooks/useContextHook';
+import Conversation from '@customTypes/Conversation';
 
-export interface ConversationContext {
+interface ConversationContext {
     selectedConversation: Conversation | null;
     handleConversationSelect: (conversation: Conversation) => void;
 }

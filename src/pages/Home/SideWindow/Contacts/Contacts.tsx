@@ -1,6 +1,6 @@
-import { Contact } from '@customTypes/Contact';
+import Contact from '@customTypes/Contact';
 import OptionsList from '@components/common/OptionsList/OptionsList';
-import { ViewType } from '@customTypes/ViewType';
+import ViewType from '@customTypes/ViewType';
 
 interface Props {
     data: Contact[];
@@ -12,7 +12,7 @@ export default function Contacts({ data }: Props) {
 
     return (
         <ul className="side-window-list">
-            {data.map((contact: Contact) => {
+            {data.map(contact => {
                 const username = contact.name + ' ' + contact.surname;
                 const statusModifierClass = contact.online ? 'side-window-item__status--online' : '';
 

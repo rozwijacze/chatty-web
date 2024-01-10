@@ -1,6 +1,6 @@
 import Labels from './Labels';
 
-export const labels_EN: Labels = {
+const labels_EN: Labels = {
     authContext: {
         login: {
             invalidToken: 'Invalid token.',
@@ -71,7 +71,9 @@ export const labels_EN: Labels = {
         logout: 'Logout',
         register: 'Register',
         back: 'Back',
-        edit: 'Edit'
+        edit: 'Edit',
+        locale: 'Toggle locale',
+        theme: 'Toggle theme'
     },
     optionsList: {
         close: 'Close',
@@ -91,3 +93,5 @@ export const labels_EN: Labels = {
         buttonTitle: 'Send message'
     }
 };
+
+export default labels_EN;

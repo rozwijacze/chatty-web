@@ -3,7 +3,7 @@ import { ReactComponent as UserIcon } from '@assets/user.svg';
 import { ReactComponent as EditImageIcon } from '@assets/edit-image.svg';
 import './Settings.scss';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
-import { useLabels } from '@hooks/useLabels';
+import useLabels from '@hooks/useLabels';
 
 export default function Settings() {
     const labels = useLabels();

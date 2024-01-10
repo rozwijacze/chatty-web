@@ -22,7 +22,7 @@
     }
 
     &-list {
-        @include reset;
+        @include resetListStyles;
 
         display: flex;
         flex-direction: column;

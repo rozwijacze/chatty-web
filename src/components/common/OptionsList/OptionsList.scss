@@ -39,7 +39,7 @@
     }
 
     &__content {
-        @include reset;
+        @include resetListStyles;
 
         display: none;
         flex-direction: column;

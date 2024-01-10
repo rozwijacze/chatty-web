@@ -1,6 +1,6 @@
 import { ReactComponent as SearchIcon } from '@assets/search.svg';
 import './Searchbar.scss';
-import { useLabels } from '@hooks/useLabels';
+import useLabels from '@hooks/useLabels';
 
 interface Props {
     searchedValue: string;

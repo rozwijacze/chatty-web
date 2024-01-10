@@ -1,21 +1,23 @@
 import { Link } from 'react-router-dom';
+import { useLocaleContext } from '@contexts/LocaleContext';
 import './FormLayout.scss';
-import { ViewType } from '@customTypes/ViewType';
+import ViewType from '@customTypes/ViewType';
 import Login from '@pages/Login/Login';
 import Register from '@pages/Register/Register';
-import ThemeButton from '@components/layout/ThemeButton/ThemeButton';
-import { ViteEnv } from '@customTypes/ViteEnv';
-import { useLabels } from '@hooks/useLabels';
+import useLabels from '@hooks/useLabels';
 import LocaleButton from '@components/layout/LocaleButton/LocaleButton';
-import Labels from '@data/translations/Labels';
+import ButtonItem from '@components/common/ButtonItem/ButtonItem';
+import useTheme from '@hooks/useTheme';
 
 type Props = {
     view: ViewType;
 };
 
 export default function FormLayout({ view }: Props) {
-    const labels: Labels = useLabels();
-    const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
+    const { toggleTheme } = useTheme();
+    const { toggleLocale } = useLocaleContext();
+    const labels = useLabels();
+
     let formEl: JSX.Element;
     let showRegisterLink = false;
 
@@ -34,7 +36,7 @@ export default function FormLayout({ view }: Props) {
         <main className="form-layout">
             <div className="form-layout__wrapper">
                 <div className="form-layout__title">
-                    <h1 className="form-layout__logo">{APP_NAME}</h1>
+                    <h1>{import.meta.env.VITE_APP_NAME}</h1>
                     <h2>{labels.formLayout.subtitle}</h2>
                     {showRegisterLink && (
                         <p>
@@ -48,8 +50,12 @@ export default function FormLayout({ view }: Props) {
             </div>
 
             <div className="form-layout__buttons">
-                <LocaleButton />
-                <ThemeButton />
+                <ButtonItem
+                    clickHandler={toggleLocale}
+                    title={labels.buttons.locale}
+                    children={<LocaleButton />}
+                    modificators={['locale']}></ButtonItem>
+                <ButtonItem clickHandler={toggleTheme} title={labels.buttons.theme} modificators={['theme']}></ButtonItem>
             </div>
         </main>
     );

@@ -1,8 +1,8 @@
 import './Messages.scss';
-import { ConversationContext, useConversationContext } from '@contexts/ConversationContext';
+import { useConversationContext } from '@contexts/ConversationContext';
 
 export default function Messages() {
-    const { selectedConversation }: ConversationContext = useConversationContext();
+    const { selectedConversation } = useConversationContext();
 
     return (
         <ul className="messages">

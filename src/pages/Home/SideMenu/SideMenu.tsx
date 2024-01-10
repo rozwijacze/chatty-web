@@ -1,16 +1,16 @@
-import ThemeButton from '@components/layout/ThemeButton/ThemeButton';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
 import { ReactComponent as ContactsIcon } from '@assets/contacts.svg';
 import { ReactComponent as MessagesIcon } from '@assets/messages.svg';
 import { ReactComponent as SettingsIcon } from '@assets/settings.svg';
 import { ReactComponent as LogoutIcon } from '@assets/logout.svg';
 import { ReactComponent as UserIcon } from '@assets/user.svg';
-import { ViewType } from '@customTypes/ViewType';
-import { ViteEnv } from '@customTypes/ViteEnv';
+import ViewType from '@customTypes/ViewType';
+import ViteEnv from '@customTypes/ViteEnv';
 import './SideMenu.scss';
 import { getUserData } from '@utils/utils';
-import { AuthContext, useAuthContext } from '@contexts/AuthContext';
-import { useLabels } from '@hooks/useLabels';
+import { useAuthContext } from '@contexts/AuthContext';
+import useTheme from '@hooks/useTheme';
+import useLabels from '@hooks/useLabels';
 
 interface Props {
     view: ViewType;
@@ -21,7 +21,8 @@ export default function SideMenu({ view, setView }: Props) {
     const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
     const labels = useLabels();
     const userData = getUserData();
-    const { logout }: AuthContext = useAuthContext();
+    const { logout } = useAuthContext();
+    const { toggleTheme } = useTheme();
 
     return (
         <div className="side-menu">
@@ -58,7 +59,7 @@ export default function SideMenu({ view, setView }: Props) {
 
                 <div className="side-menu__buttons">
                     <ButtonItem clickHandler={logout} title={labels.buttons.logout} children={<LogoutIcon />} />
-                    <ThemeButton />
+                    <ButtonItem clickHandler={toggleTheme} title={labels.buttons.theme} modificators={['theme']}></ButtonItem>
                 </div>
             </div>
         </div>
