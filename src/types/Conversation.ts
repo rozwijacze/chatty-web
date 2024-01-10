@@ -1,8 +1,8 @@
-import { Contact } from './Contact';
-import { ConversationPage } from './ConversationPage';
-import { Message } from './Message';
+import Contact from './Contact';
+import ConversationPage from './ConversationPage';
+import Message from './Message';
 
-export interface Conversation {
+export default interface Conversation {
     id: number;
     users: Contact[];
     name: string;
