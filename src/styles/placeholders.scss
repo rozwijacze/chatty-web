@@ -5,6 +5,8 @@
     margin: 0;
     letter-spacing: 1.4px;
     color: var(--accent-100);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    transition: all 0.2s ease-out;
 }
 
 %window-title {
@@ -21,4 +23,62 @@
     border: 3px solid var(--primary-200);
     border-radius: 100px;
     object-fit: cover;
+}
+
+%theme-btn {
+    position: relative;
+    border-radius: 100px;
+    height: 40px;
+    width: 70px;
+
+    &::before {
+        content: '';
+        position: absolute;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        top: 50%;
+        left: 8px;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in;
+        background-color: var(--primary-200);
+
+        @include forTheme('dark') {
+            left: 50%;
+            background-color: var(--primary-200);
+        }
+    }
+
+    &::after {
+        content: url('@assets/sun.png');
+        position: absolute;
+        top: 55%;
+        left: 14px;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in;
+
+        @include forTheme('dark') {
+            content: url('@assets/moon.png');
+            left: 40px;
+        }
+    }
+}
+
+%locale-btn {
+    @include flexCenterBothAxis;
+
+    gap: 0.25rem;
+    border-radius: 100px;
+    height: 40px;
+    width: 70px;
+    text-transform: uppercase;
+
+    &:hover {
+        color: var(--text-100);
+    }
+
+    .locale--active {
+        font-weight: bold;
+        color: var(--primary-200);
+    }
 }
