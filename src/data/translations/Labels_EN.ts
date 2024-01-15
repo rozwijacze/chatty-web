@@ -1,6 +1,6 @@
 import Labels from './Labels';
 
-export const labels_EN: Labels = {
+const labels_EN: Labels = {
     authContext: {
         login: {
             invalidToken: 'Invalid token.',
@@ -14,13 +14,14 @@ export const labels_EN: Labels = {
         title: 'We are sorry, this page does not exist.'
     },
     chatWindow: {
-        title: 'Chat window'
+        title: 'Chat window',
+        placeholder: 'Select chat from the list.'
     },
     sideContacts: {
         title: 'Contacts'
     },
     sideConversations: {
-        title: 'Chats'
+        title: 'Conversations'
     },
     sideSettings: {
         title: 'Settings',
@@ -71,7 +72,9 @@ export const labels_EN: Labels = {
         logout: 'Logout',
         register: 'Register',
         back: 'Back',
-        edit: 'Edit'
+        edit: 'Edit',
+        locale: 'Toggle locale',
+        theme: 'Toggle theme'
     },
     optionsList: {
         close: 'Close',
@@ -91,3 +94,5 @@ export const labels_EN: Labels = {
         buttonTitle: 'Send message'
     }
 };
+
+export default labels_EN;

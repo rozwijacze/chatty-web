@@ -1,5 +1,5 @@
 import { jwtDecode } from 'jwt-decode';
-import { JwtData } from '../types/JwtData';
+import JwtData from '@customTypes/JwtData';
 
 export function isTokenExpired(token: string) {
     try {

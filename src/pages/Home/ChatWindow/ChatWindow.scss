@@ -1,0 +1,26 @@
+@import '@styles/variables';
+
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &__title {
+        @extend %window-title;
+
+        color: var(--bg-200);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100% - $windowTitleHeight);
+        overflow: hidden;
+
+        h3 {
+            margin: auto auto;
+            opacity: 0.5;
+        }
+    }
+}

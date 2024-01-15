@@ -1,10 +1,10 @@
 import { createContext, useEffect, useState } from 'react';
-import { Locale } from '@customTypes/Locale';
-import { useContextHook } from '@helpers/ContextHelper';
+import Locale from '@customTypes/Locale';
+import useContextHook from '@hooks/useContextHook';
 
-export interface LocaleContext {
+interface LocaleContext {
     locale: string;
-    toggle: () => void;
+    toggleLocale: () => void;
 }
 
 const LocaleContext = createContext<LocaleContext | null>(null);
@@ -17,7 +17,7 @@ export default function LocaleContextProvider({ children }: React.PropsWithChild
 
     useEffect(() => localStorage.setItem('locale', locale), [locale]);
 
-    const toggle = () => setLocale(locale === Locale.ENGLISH ? Locale.POLISH : Locale.ENGLISH);
+    const toggleLocale = () => setLocale(locale === Locale.ENGLISH ? Locale.POLISH : Locale.ENGLISH);
 
-    return <LocaleContext.Provider value={{ locale, toggle }}>{children}</LocaleContext.Provider>;
+    return <LocaleContext.Provider value={{ locale, toggleLocale }}>{children}</LocaleContext.Provider>;
 }

@@ -1,0 +1,133 @@
+@import '@styles/mixins';
+@import '@styles/variables';
+
+.side-window {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    flex-shrink: 0;
+
+    &__title {
+        @extend %window-title;
+
+        color: var(--bg-200);
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - $windowTitleHeight);
+        background: var(--bg-400);
+        padding-right: 0.5rem;
+    }
+
+    &-list {
+        @include resetListStyles;
+
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        touch-action: pan-y;
+        padding: 1rem 0;
+    }
+
+    &-item {
+        @include disableUserSelect;
+
+        $c: &;
+
+        display: flex;
+        gap: 1rem;
+        cursor: pointer;
+        margin-right: 0.5rem;
+        padding: 1rem 0.5rem;
+        transition: all 0.3s ease-out;
+
+        &:hover {
+            background-color: var(--bg-100);
+        }
+
+        &:not(:last-of-type) {
+            border-bottom: 1px solid var(--primary-200);
+        }
+
+        &--contact {
+            padding: 0.5rem;
+        }
+
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+        }
+
+        &__profile {
+            position: relative;
+            padding-right: 0.5rem;
+
+            img {
+                @extend %profile-image;
+
+                #{$c}--contact & {
+                    width: 42px;
+                    height: 42px;
+                    border-width: 2px;
+                }
+            }
+        }
+
+        &__status {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            height: 12px;
+            width: 12px;
+            border: 1px solid var(--primary-100);
+            border-radius: 100px;
+            background-color: var(--primary-red);
+
+            &--online {
+                background-color: var(--primary-green);
+            }
+
+            #{$c}--contact & {
+                height: 10px;
+                width: 10px;
+            }
+        }
+
+        &__content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            width: 100%;
+
+            p {
+                @include lineClamp(1);
+
+                font-family: Roboto-Bold;
+                color: var(--text-100);
+            }
+
+            span {
+                @include lineClamp(2);
+
+                font-style: italic;
+                font-size: 0.9rem;
+            }
+        }
+
+        &__username {
+            @include lineClamp(1);
+
+            font-family: Roboto-Bold;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            color: var(--text-100);
+        }
+    }
+}

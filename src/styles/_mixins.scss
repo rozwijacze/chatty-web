@@ -1,5 +1,5 @@
 // Creates css variables from scss variables
-@mixin add-css-variables($module) {
+@mixin addCssVariables($module) {
     :root {
         @each $name, $value in $module {
             --#{$name}: #{$value};
@@ -8,7 +8,7 @@
 }
 
 // Creates css variables from scss variables depending on mode
-@mixin add-theme-css-variables($module, $mode) {
+@mixin addThemeCssVariables($module, $mode) {
     :root .#{$mode} {
         @each $name, $value in $module {
             --#{$name}: #{$value};
@@ -16,7 +16,7 @@
     }
 }
 
-@mixin for-link {
+@mixin forLink {
     &:active,
     &:link,
     &:visited {
@@ -24,14 +24,13 @@
     }
 }
 
-// resets initial styles for list
-@mixin reset {
+@mixin resetListStyles {
     padding: 0;
     margin: 0;
     list-style: none;
 }
 
-@function icon-url($icon) {
+@function iconUrl($icon) {
     @return url('/src/assets/#{$icon}.svg');
 }
 
@@ -65,5 +64,17 @@
         background: var(--accent-200);
         background-clip: content-box;
         border-radius: 100px;
+    }
+}
+
+@mixin flexCenterBothAxis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin forTheme($theme) {
+    .#{$theme} & {
+        @content;
     }
 }

@@ -1,0 +1,59 @@
+@import '@styles/variables';
+@import '@styles/mixins';
+
+.messages {
+    @include resetListStyles;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 0.75rem;
+    padding: 0.75rem;
+    overflow-y: auto;
+
+    &-item {
+        $c: &;
+
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 0.5rem;
+        align-items: center;
+
+        img {
+            @extend %profile-image;
+        }
+
+        &__wrapper {
+            display: flex;
+            flex-direction: column;
+            max-width: 60%;
+            padding: 0.5rem;
+            gap: 0.25rem;
+            border-radius: 12px;
+            border: 2px solid var(--primary-100);
+            text-align: right;
+            background: var(--primary-200);
+            color: var(--primary-300);
+        }
+
+        &__author {
+            font-weight: bold;
+            color: var(--text-100);
+        }
+
+        &--received {
+            flex-direction: row;
+
+            #{$c}__wrapper {
+                text-align: left;
+                border-color: var(--primary-200);
+                color: var(--text-200);
+                background: none;
+            }
+
+            #{$c}__author {
+                color: var(--accent-200);
+            }
+        }
+    }
+}

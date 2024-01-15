@@ -1,0 +1,60 @@
+/* font definition */
+@use './font';
+
+/* global classes and styles definitions */
+@use 'sass:meta';
+@use './themes/light' as light;
+@use './themes/dark' as dark;
+@use './colors' as general;
+
+@import './mixins';
+@import './variables';
+
+$general: meta.module-variables('general');
+$light: meta.module-variables('light');
+$dark: meta.module-variables('dark');
+
+@include addCssVariables($general);
+@include addThemeCssVariables($light, 'light');
+@include addThemeCssVariables($dark, 'dark');
+
+.button {
+    font-family: Roboto-Bold;
+    font-size: 1rem;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--primary-200);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    background: var(--bg-100);
+    color: var(--text-100);
+    transition: all 0.2s;
+
+    &:hover {
+        background: var(--bg-200);
+        border-color: var(--primary-100);
+        color: var(--accent-100);
+        box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    &.active {
+        background: var(--primary-200);
+    }
+
+    &.button--theme {
+        @extend %theme-btn;
+    }
+
+    &.button--locale {
+        @extend %locale-btn;
+    }
+
+    &--text-large {
+        font-size: 1.1rem;
+    }
+
+    &--flat {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
+}

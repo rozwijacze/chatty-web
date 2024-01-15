@@ -1,7 +1,7 @@
-export interface Contact {
+export default interface Contact {
     id: number;
     name: string;
     surname: string;
-    img_src: string;
+    img: string;
     online: boolean;
 }

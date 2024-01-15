@@ -1,21 +1,12 @@
-@import '/src/styles/mixins';
-@import '/src/styles/placeholders.scss';
+@import '@styles/mixins';
+@import '@styles/variables';
 
 .form-layout {
-    display: flex;
+    @include flexCenterBothAxis;
+
     width: 100vw;
     height: 100vh;
-    align-items: center;
-    justify-content: center;
     background: var(--background-gradient);
-
-    &__logo {
-        @extend %logo-title;
-
-        font-size: 3rem;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        transition: all 0.2s ease-out;
-    }
 
     &__wrapper {
         padding: 2rem;
@@ -26,10 +17,16 @@
     }
 
     &__title {
-        display: flex;
+        @include flexCenterBothAxis;
+
         flex-direction: column;
         gap: 0.5rem;
-        align-items: center;
+
+        h1 {
+            @extend %logo-title;
+
+            font-size: 3rem;
+        }
 
         p {
             color: var(--primary-200);
@@ -37,7 +34,7 @@
             a {
                 text-decoration: underline;
 
-                @include for-link {
+                @include forLink {
                     color: var(--primary-200);
                 }
             }
@@ -45,10 +42,9 @@
     }
 
     &__content form {
-        display: flex;
+        @include flexCenterBothAxis;
+
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
         padding: 2rem;
         gap: 1rem;
     }

@@ -1,6 +1,6 @@
-import { Message } from './Message';
+import Message from './Message';
 
-export interface ConversationPage {
+export default interface ConversationPage {
     guid: number;
     messages: Message[];
 }

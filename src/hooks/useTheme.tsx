@@ -1,12 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Theme } from '@customTypes/Theme';
+import Theme from '@customTypes/Theme';
 
-export interface ThemeHook {
-    themeClass: string;
-    toggle: () => void;
-}
-
-export default function useTheme(): ThemeHook {
+export default function useTheme() {
     const storageTheme = localStorage.getItem('theme');
     const [themeClass, setThemeClass] = useState(storageTheme ? storageTheme : Theme.LIGHT);
 
@@ -16,7 +11,7 @@ export default function useTheme(): ThemeHook {
         localStorage.setItem('theme', themeClass);
     }, [themeClass]);
 
-    const toggle = () => setThemeClass(themeClass === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
+    const toggleTheme = () => setThemeClass(themeClass === Theme.LIGHT ? Theme.DARK : Theme.LIGHT);
 
-    return { themeClass, toggle };
+    return { themeClass, toggleTheme };
 }

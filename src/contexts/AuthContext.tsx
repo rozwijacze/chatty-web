@@ -1,12 +1,11 @@
 import { createContext, useLayoutEffect, useState } from 'react';
 import { getToken, isTokenExpired } from '@utils/utils';
 import axios from 'axios';
-import { ViteEnv } from '@customTypes/ViteEnv';
-import { useLabels } from '@hooks/useLabels';
-import { useContextHook } from '@helpers/ContextHelper';
-import Labels from '@data/translations/Labels';
+import ViteEnv from '@customTypes/ViteEnv';
+import useLabels from '@hooks/useLabels';
+import useContextHook from '@hooks/useContextHook';
 
-export interface AuthContext {
+interface AuthContext {
     isAuthenticated: boolean;
     logout: () => void;
     login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
@@ -19,7 +18,7 @@ export const useAuthContext = () => useContextHook(AuthContext);
 
 export default function AuthContextProvider({ children }: React.PropsWithChildren) {
     const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
-    const labels: Labels = useLabels();
+    const labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useLayoutEffect(() => {
