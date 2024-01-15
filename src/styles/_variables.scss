@@ -1,5 +1,7 @@
 @import './mixins';
 
+$windowTitleHeight: 50px;
+
 %logo-title {
     font-style: italic;
     margin: 0;
@@ -12,7 +14,7 @@
 %window-title {
     @include flexCenterBothAxis;
 
-    height: 5%;
+    height: $windowTitleHeight;
     background: var(--accent-200);
     transition: all 0.2s ease-out;
 }

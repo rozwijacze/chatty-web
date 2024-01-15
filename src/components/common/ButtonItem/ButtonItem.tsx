@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 
 interface Props {
-    children?: ReactElement | string;
+    children?: ReactElement | ReactElement[] | string;
     clickHandler?: () => void;
     title?: string;
     isActive?: boolean;

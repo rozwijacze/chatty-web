@@ -1,4 +1,4 @@
-@import '@styles/placeholders';
+@import '@styles/variables';
 
 .chat-window {
     display: flex;
@@ -15,7 +15,12 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 95%;
+        height: calc(100% - $windowTitleHeight);
         overflow: hidden;
+
+        h3 {
+            margin: auto auto;
+            opacity: 0.5;
+        }
     }
 }

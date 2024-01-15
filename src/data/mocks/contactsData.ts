@@ -1,4 +1,4 @@
-import { Contact } from '../../types/Contact';
+import Contact from '@customTypes/Contact';
 
 const contactsData: Contact[] = [
     {

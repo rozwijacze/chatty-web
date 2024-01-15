@@ -1,4 +1,4 @@
-import { Conversation } from '@customTypes/Conversation';
+import Conversation from '@customTypes/Conversation';
 import conversationPagesData from './conversationPagesData';
 import contactsData from './contactsData';
 

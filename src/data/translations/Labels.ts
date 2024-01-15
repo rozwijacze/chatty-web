@@ -11,6 +11,7 @@ export default interface Labels {
     error: { title: string };
     chatWindow: {
         title: string;
+        placeholder: string;
     };
     sideContacts: { title: string };
     sideConversations: { title: string };

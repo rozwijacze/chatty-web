@@ -14,7 +14,8 @@ const labels_PL: Labels = {
         title: 'Przepraszamy, ta strona nie istnieje.'
     },
     chatWindow: {
-        title: 'Okno czatu'
+        title: 'Okno czatu',
+        placeholder: 'Wybierz czat z listy.'
     },
     sideContacts: {
         title: 'Kontakty'

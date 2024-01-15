@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import { useLocaleContext } from '@contexts/LocaleContext';
 import './FormLayout.scss';
 import ViewType from '@customTypes/ViewType';
 import Login from '@pages/Login/Login';
@@ -15,7 +14,6 @@ type Props = {
 
 export default function FormLayout({ view }: Props) {
     const { toggleTheme } = useTheme();
-    const { toggleLocale } = useLocaleContext();
     const labels = useLabels();
 
     let formEl: JSX.Element;
@@ -50,11 +48,7 @@ export default function FormLayout({ view }: Props) {
             </div>
 
             <div className="form-layout__buttons">
-                <ButtonItem
-                    clickHandler={toggleLocale}
-                    title={labels.buttons.locale}
-                    children={<LocaleButton />}
-                    modificators={['locale']}></ButtonItem>
+                <LocaleButton />
                 <ButtonItem clickHandler={toggleTheme} title={labels.buttons.theme} modificators={['theme']}></ButtonItem>
             </div>
         </main>

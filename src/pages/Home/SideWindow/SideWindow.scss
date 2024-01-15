@@ -1,5 +1,5 @@
 @import '@styles/mixins';
-@import '@styles/placeholders';
+@import '@styles/variables';
 
 .side-window {
     display: flex;
@@ -16,7 +16,7 @@
     &__content {
         display: flex;
         flex-direction: column;
-        height: 95%;
+        height: calc(100% - $windowTitleHeight);
         background: var(--bg-400);
         padding-right: 0.5rem;
     }
