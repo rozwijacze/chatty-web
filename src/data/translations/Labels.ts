@@ -17,7 +17,6 @@ export default interface Labels {
     sideConversations: { title: string };
     sideSettings: {
         title: string;
-        details: string;
         image: string;
         preferences: {
             title: string;
@@ -25,6 +24,14 @@ export default interface Labels {
             theme: string;
             locale: string;
             delete: string;
+        };
+        details: {
+            title: string;
+            name: string;
+            surname: string;
+            email: string;
+            password: string;
+            passwordPlaceholder: string;
         };
     };
     formLayout: {
@@ -84,5 +91,10 @@ export default interface Labels {
     chatControls: {
         inputPlaceholder: string;
         buttonTitle: string;
+    };
+    dialog: {
+        submit: string;
+        close: string;
+        cancel: string;
     };
 }

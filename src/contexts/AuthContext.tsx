@@ -21,6 +21,7 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
     const labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+    // TODO add modal close when token is expired
     useLayoutEffect(() => {
         const checkTokenValidity = async () => {
             const tokenString = getToken();

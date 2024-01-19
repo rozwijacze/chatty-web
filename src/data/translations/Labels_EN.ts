@@ -25,14 +25,21 @@ const labels_EN: Labels = {
     },
     sideSettings: {
         title: 'Settings',
-        details: 'Account details',
         image: 'Change your profile picture',
         preferences: {
             title: 'Preferences',
-            offline: 'Always offline',
+            offline: 'Set always offline status',
             theme: 'Set preferred theme',
             locale: 'Set preferred locale',
             delete: 'Delete account'
+        },
+        details: {
+            title: 'User details',
+            name: 'Edit your name',
+            surname: 'Edit your surname',
+            email: 'Edit your email',
+            password: 'Edit your password',
+            passwordPlaceholder: '***'
         }
     },
     formLayout: {
@@ -92,6 +99,11 @@ const labels_EN: Labels = {
     chatControls: {
         inputPlaceholder: 'Aa',
         buttonTitle: 'Send message'
+    },
+    dialog: {
+        submit: 'Submit',
+        close: 'Close',
+        cancel: 'Cancel'
     }
 };
 
