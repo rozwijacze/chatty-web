@@ -1,7 +1,6 @@
 import { createContext, useState } from 'react';
 import useContextHook from '@hooks/useContextHook';
 import Dialog from '@components/layout/Dialog/Dialog';
-import LocaleContextProvider from '@contexts/LocaleContext';
 
 export interface Dialog {
     title: string;
@@ -34,15 +33,13 @@ export default function DialogContextProvider({ children }: React.PropsWithChild
     return (
         <DialogContext.Provider value={{ initDialog }}>
             {children}
-            <LocaleContextProvider>
-                {showDialog && (
-                    <Dialog
-                        closeDialog={toggleDialog}
-                        submitHandler={dialog.submitHandler}
-                        content={dialog.content}
-                        title={dialog.title}></Dialog>
-                )}
-            </LocaleContextProvider>
+            {showDialog && (
+                <Dialog
+                    closeDialog={toggleDialog}
+                    submitHandler={dialog.submitHandler}
+                    content={dialog.content}
+                    title={dialog.title}></Dialog>
+            )}
         </DialogContext.Provider>
     );
 }

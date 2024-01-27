@@ -5,10 +5,10 @@ import React from 'react';
 
 export default function GlobalContextProviders({ children }: React.PropsWithChildren) {
     return (
-        <DialogContextProvider>
-            <LocaleContextProvider>
+        <LocaleContextProvider>
+            <DialogContextProvider>
                 <AuthContextProvider>{children}</AuthContextProvider>
-            </LocaleContextProvider>
-        </DialogContextProvider>
+            </DialogContextProvider>
+        </LocaleContextProvider>
     );
 }
