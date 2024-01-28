@@ -1,50 +1,15 @@
-import { getUserData } from '@utils/utils';
 import { ReactComponent as UserIcon } from '@assets/user.svg';
 import { ReactComponent as EditImageIcon } from '@assets/edit-image.svg';
+import { useDialogContext } from '@contexts/DialogContext';
 import './Settings.scss';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
 import useLabels from '@hooks/useLabels';
+import UserPreferences from './UserPreferences/UserPreferences';
+import UserDetails from './UserDetails/UserDetails';
 
 export default function Settings() {
     const labels = useLabels();
-    const userData = getUserData();
-
-    const PREFS = [
-        {
-            button: <ButtonItem children={labels.sideSettings.preferences.offline} />,
-            value: 'No'
-        },
-        {
-            button: <ButtonItem children={labels.sideSettings.preferences.theme} />,
-            value: 'Light'
-        },
-        {
-            button: <ButtonItem children={labels.sideSettings.preferences.locale} />,
-            value: 'EN'
-        },
-        {
-            button: <ButtonItem children={labels.sideSettings.preferences.delete} />
-        }
-    ];
-
-    const DETAILS = [
-        {
-            label: labels.formLabels.name,
-            value: userData?.name
-        },
-        {
-            label: labels.formLabels.surname,
-            value: userData?.surname
-        },
-        {
-            label: labels.formLabels.email,
-            value: userData?.email
-        },
-        {
-            label: labels.formLabels.password,
-            value: '***'
-        }
-    ];
+    const { initDialog } = useDialogContext();
 
     return (
         <div className="settings">
@@ -56,21 +21,21 @@ export default function Settings() {
             <div className="settings__content">
                 <h4>{labels.sideSettings.preferences.title}</h4>
                 <ul className="settings__preferences">
-                    {PREFS.map((item, key) => (
+                    {UserPreferences().map((pref, key) => (
                         <li key={key}>
-                            {item.button}
-                            {item.value && <span>{item.value}</span>}
+                            <ButtonItem children={pref.buttonLabel} clickHandler={() => initDialog(pref.dialog)} />
+                            {pref.value && <span>{pref.value}</span>}
                         </li>
                     ))}
                 </ul>
 
-                <h4>{labels.sideSettings.details}</h4>
-                <ul className="settings__account">
-                    {DETAILS.map((item, key) => (
+                <h4>{labels.sideSettings.details.title}</h4>
+                <ul className="settings__details">
+                    {UserDetails().map((detail, key) => (
                         <li key={key}>
-                            {item.label}
-                            {item.value && <span>{item.value}</span>}
-                            <ButtonItem children={labels.buttons.edit} />
+                            {detail.label}
+                            {detail.value && <span>{detail.value}</span>}
+                            <ButtonItem children={labels.buttons.edit} clickHandler={() => initDialog(detail.dialog)} />
                         </li>
                     ))}
                 </ul>

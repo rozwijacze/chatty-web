@@ -26,6 +26,14 @@ const conversationsData: Conversation[] = [
         img: '/src/data/mocks/images/Contact_2.jpg',
         page: conversationPagesData[2],
         lastMessage: conversationPagesData[2].messages[conversationPagesData[2].messages.length - 1]
+    },
+    {
+        id: 4,
+        users: [contactsData[2], contactsData[3], contactsData[1]],
+        name: 'Dynamiczone',
+        img: '/src/data/mocks/images/Contact_4.jpg',
+        page: conversationPagesData[3],
+        lastMessage: conversationPagesData[3].messages[conversationPagesData[3].messages.length - 1]
     }
 ];
 

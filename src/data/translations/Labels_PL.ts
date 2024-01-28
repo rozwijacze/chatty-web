@@ -25,14 +25,21 @@ const labels_PL: Labels = {
     },
     sideSettings: {
         title: 'Ustawienia',
-        details: 'Dane konta',
         image: 'Zmień swoje zdjęcie',
         preferences: {
             title: 'Preferencje',
-            offline: 'Zawsze niedostępny',
+            offline: 'Ustaw status na zawsze niedostępny',
             theme: 'Ustaw preferowany motyw',
             locale: 'Ustaw preferowany język',
             delete: 'Usuń konto'
+        },
+        details: {
+            title: 'Dane użytkownika',
+            name: 'Edytuj swoje imię',
+            surname: 'Edytuj swoje nazwisko',
+            email: 'Edytuj swój e-mail',
+            password: 'Edytuj swoje hasło',
+            passwordPlaceholder: '***'
         }
     },
     formLayout: {
@@ -92,6 +99,11 @@ const labels_PL: Labels = {
     chatControls: {
         inputPlaceholder: 'Aa',
         buttonTitle: 'Wyślij wiadomość'
+    },
+    dialog: {
+        submit: 'Zatwierdź',
+        close: 'Zamknij',
+        cancel: 'Anuluj'
     }
 };
 

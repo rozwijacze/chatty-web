@@ -142,6 +142,32 @@ const conversationPagesData: ConversationPage[] = [
                 content: 'Great, we hang today?'
             }
         ]
+    },
+    {
+        guid: 4,
+        messages: [
+            {
+                id: 1,
+                contact: contactsData[1],
+                date_of_send: new Date('1995-12-17T03:24:30'),
+                date_of_receive: new Date(99, 5, 24),
+                content: 'Siemanoou'
+            },
+            {
+                id: 2,
+                contact: contactsData[2],
+                date_of_send: new Date('1995-12-17T03:25:30'),
+                date_of_receive: new Date(99, 5, 24),
+                content: 'Joł mordouu'
+            },
+            {
+                id: 3,
+                contact: contactsData[3],
+                date_of_send: new Date('1995-12-17T03:26:30'),
+                date_of_receive: new Date(99, 5, 24),
+                content: 'Ale dziś będzie dynamiczone.'
+            }
+        ]
     }
 ];
 
