@@ -7,7 +7,7 @@ import Locale from '@customTypes/Locale';
 // custom hook for using labels based on currently selected locale
 export default function useLabels() {
     const { locale } = useLocaleContext();
-    const [labels, setLabels] = useState(labels_EN);
+    const [labels, setLabels] = useState(locale === Locale.ENGLISH ? labels_EN : labels_PL);
 
     useEffect(() => {
         switch (locale) {
