@@ -1,5 +1,5 @@
 import { createContext, useLayoutEffect, useState } from 'react';
-import { getToken, isTokenExpired } from '@utils/utils';
+import { getToken, isTokenExpired } from '@helpers/TokenHelper';
 import axios from 'axios';
 import ViteEnv from '@customTypes/ViteEnv';
 import useLabels from '@hooks/useLabels';

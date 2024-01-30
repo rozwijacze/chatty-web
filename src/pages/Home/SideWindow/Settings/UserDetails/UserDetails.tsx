@@ -1,6 +1,6 @@
 import { Dialog } from '@contexts/DialogContext';
 import useLabels from '@hooks/useLabels';
-import { getUserData } from '@utils/utils';
+import { getUserData } from '@helpers/UserHelper';
 
 interface UserDetails {
     label: string;

@@ -19,7 +19,6 @@
             "@hooks/*": ["hooks/*"],
             "@helpers/*": ["helpers/*"],
             "@styles/*": ["styles/*"],
-            "@utils/*": ["utils/*"],
             "@assets/*": ["assets/*"]
         },
 
