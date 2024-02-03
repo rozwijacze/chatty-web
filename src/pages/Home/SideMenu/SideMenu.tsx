@@ -5,7 +5,6 @@ import { ReactComponent as SettingsIcon } from '@assets/settings.svg';
 import { ReactComponent as LogoutIcon } from '@assets/logout.svg';
 import { ReactComponent as UserIcon } from '@assets/user.svg';
 import ViewType from '@customTypes/ViewType';
-import ViteEnv from '@customTypes/ViteEnv';
 import './SideMenu.scss';
 import { getUserData } from '@utils/utils';
 import { useAuthContext } from '@contexts/AuthContext';
@@ -18,7 +17,6 @@ interface Props {
 }
 
 export default function SideMenu({ view, setView }: Props) {
-    const APP_NAME: ViteEnv['VITE_APP_NAME'] = import.meta.env.VITE_APP_NAME;
     const labels = useLabels();
     const userData = getUserData();
     const { logout } = useAuthContext();
@@ -26,8 +24,8 @@ export default function SideMenu({ view, setView }: Props) {
 
     return (
         <div className="side-menu">
-            <h1 className="side-menu__logo" title={APP_NAME}>
-                {APP_NAME}
+            <h1 className="side-menu__logo" title={labels.appName}>
+                {labels.appName}
             </h1>
 
             <div className="side-menu__content">
