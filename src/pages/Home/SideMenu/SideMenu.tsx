@@ -7,7 +7,7 @@ import { ReactComponent as UserIcon } from '@assets/user.svg';
 import ViewType from '@customTypes/ViewType';
 import ViteEnv from '@customTypes/ViteEnv';
 import './SideMenu.scss';
-import { getUserData } from '@utils/utils';
+import { getUserData } from '@helpers/UserHelper';
 import { useAuthContext } from '@contexts/AuthContext';
 import useTheme from '@hooks/useTheme';
 import useLabels from '@hooks/useLabels';
