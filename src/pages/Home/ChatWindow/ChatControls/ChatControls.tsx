@@ -4,7 +4,7 @@ import './ChatControls.scss';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
 import useLabels from '@hooks/useLabels';
 import useWebSocket from 'react-use-websocket';
-import { getToken } from '@utils/utils';
+import { getToken } from '@helpers/TokenHelper';
 import ViteEnv from '@customTypes/ViteEnv';
 
 const MESSAGE_API_URL: ViteEnv['VITE_MESSAGE_API_URL'] = import.meta.env.VITE_MESSAGE_API_URL;
