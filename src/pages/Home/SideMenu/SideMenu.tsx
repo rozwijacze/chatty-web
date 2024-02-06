@@ -8,7 +8,7 @@ import ViewType from '@customTypes/ViewType';
 import './SideMenu.scss';
 import { getUserData } from '@helpers/UserHelper';
 import { useAuthContext } from '@contexts/AuthContext';
-import useTheme from '@hooks/useTheme';
+import { toggleTheme } from '@helpers/ThemeHelper';
 import useLabels from '@hooks/useLabels';
 
 interface Props {
@@ -20,7 +20,6 @@ export default function SideMenu({ view, setView }: Props) {
     const labels = useLabels();
     const userData = getUserData();
     const { logout } = useAuthContext();
-    const { toggleTheme } = useTheme();
 
     return (
         <div className="side-menu">

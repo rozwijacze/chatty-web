@@ -6,14 +6,13 @@ import Register from '@pages/Register/Register';
 import useLabels from '@hooks/useLabels';
 import LocaleButton from '@components/layout/LocaleButton/LocaleButton';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
-import useTheme from '@hooks/useTheme';
+import { toggleTheme } from '@helpers/ThemeHelper';
 
 type Props = {
     view: ViewType;
 };
 
 export default function FormLayout({ view }: Props) {
-    const { toggleTheme } = useTheme();
     const labels = useLabels();
 
     let formEl: JSX.Element;
