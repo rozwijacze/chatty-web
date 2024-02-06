@@ -34,7 +34,7 @@ export default function FormLayout({ view }: Props) {
         <main className="form-layout">
             <div className="form-layout__wrapper">
                 <div className="form-layout__title">
-                    <h1>{import.meta.env.VITE_APP_NAME}</h1>
+                    <h1>{labels.appName}</h1>
                     <h2>{labels.formLayout.subtitle}</h2>
                     {showRegisterLink && (
                         <p>

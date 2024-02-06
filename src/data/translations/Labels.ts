@@ -1,4 +1,5 @@
 export default interface Labels {
+    appName: string;
     authContext: {
         login: {
             invalidToken: string;

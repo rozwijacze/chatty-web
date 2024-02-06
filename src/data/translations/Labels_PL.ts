@@ -1,6 +1,7 @@
 import Labels from './Labels';
 
 const labels_PL: Labels = {
+    appName: 'Chatty',
     authContext: {
         login: {
             invalidToken: 'Niepoprawny token.',

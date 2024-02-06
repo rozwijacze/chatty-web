@@ -16,8 +16,9 @@ const AuthContext = createContext<AuthContext | null>(null);
 // eslint-disable-next-line react-refresh/only-export-components
 export const useAuthContext = () => useContextHook(AuthContext);
 
+const USER_API_URL: ViteEnv['VITE_USER_API_URL'] = import.meta.env.VITE_USER_API_URL;
+
 export default function AuthContextProvider({ children }: React.PropsWithChildren) {
-    const API_URL: ViteEnv['VITE_API_URL'] = import.meta.env.VITE_API_URL;
     const labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -37,7 +38,7 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
             }
 
             axios
-                .post(API_URL + 'refresh-token', {
+                .post(USER_API_URL + '/refresh-token', {
                     // TODO: Check which token should be passed
                     refreshToken: tokenString.refreshToken
                 })
@@ -53,11 +54,11 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
         const intervalId = setInterval(checkTokenValidity, 1000);
 
         return () => clearInterval(intervalId);
-    }, [API_URL]);
+    }, []);
 
     function login(email: string, password: string) {
         return axios
-            .post(API_URL + 'login', {
+            .post(USER_API_URL + '/login', {
                 email,
                 password
             })
@@ -80,7 +81,7 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
 
     function register(name: string, surname: string, email: string, password: string) {
         return axios
-            .post(API_URL + 'register', {
+            .post(USER_API_URL + '/register', {
                 name,
                 surname,
                 email,

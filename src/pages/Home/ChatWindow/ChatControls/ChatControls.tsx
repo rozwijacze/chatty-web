@@ -3,23 +3,28 @@ import { ReactComponent as SendMessageIcon } from '@assets/send-message.svg';
 import './ChatControls.scss';
 import ButtonItem from '@components/common/ButtonItem/ButtonItem';
 import useLabels from '@hooks/useLabels';
+import useWebSocket from 'react-use-websocket';
+import { getToken } from '@utils/utils';
+import ViteEnv from '@customTypes/ViteEnv';
+
+const MESSAGE_API_URL: ViteEnv['VITE_MESSAGE_API_URL'] = import.meta.env.VITE_MESSAGE_API_URL;
 
 export default function ChatControls() {
     const labels = useLabels();
-    const [messageValue, setMessageValue] = useState('');
 
+    const { sendMessage } = useWebSocket(MESSAGE_API_URL + '/api/connect', {
+        queryParams: { token: getToken() }
+    });
+
+    const [messageValue, setMessageValue] = useState('');
     const handleInputChange = (event: React.FormEvent<HTMLInputElement>) => setMessageValue(event.currentTarget.value);
     const handleMessageSend = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+
         if (messageValue) {
             sendMessage(messageValue);
         }
     };
-
-    // TODO: Send message through websocket and display on current chatroom.
-    function sendMessage(message: string) {
-        console.log(message);
-    }
 
     return (
         <form className="chat-controls" onSubmit={event => handleMessageSend(event)}>
