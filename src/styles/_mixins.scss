@@ -14,6 +14,10 @@
             --#{$name}: #{$value};
         }
     }
+
+    .#{$mode} #root {
+        display: block;
+    }
 }
 
 @mixin forLink {

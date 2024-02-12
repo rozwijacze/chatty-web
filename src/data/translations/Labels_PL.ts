@@ -105,7 +105,8 @@ const labels_PL: Labels = {
         submit: 'Zatwierdź',
         close: 'Zamknij',
         cancel: 'Anuluj'
-    }
+    },
+    loadingText: 'Wczytywanie aplikacji...'
 };
 
 export default labels_PL;

@@ -1,0 +1,24 @@
+@import '@styles/mixins';
+@import '@styles/variables';
+
+.loading-layout {
+    @include flexCenterBothAxis;
+
+    width: 100vw;
+    background: var(--background-gradient);
+
+    &__wrapper {
+        @include flexCenterBothAxis;
+
+        flex-direction: column;
+        gap: 2rem;
+        width: 50%;
+        color: var(--primary-logo);
+
+        h1 {
+            @extend %logo-title;
+
+            font-size: 3rem;
+        }
+    }
+}
