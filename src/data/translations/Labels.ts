@@ -98,4 +98,5 @@ export default interface Labels {
         close: string;
         cancel: string;
     };
+    loadingText: string;
 }

@@ -105,7 +105,8 @@ const labels_EN: Labels = {
         submit: 'Submit',
         close: 'Close',
         cancel: 'Cancel'
-    }
+    },
+    loadingText: 'Application is loading...'
 };
 
 export default labels_EN;

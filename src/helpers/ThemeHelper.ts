@@ -1,7 +1,7 @@
 import Theme from '@customTypes/Theme';
 
 export function setThemeOnBody() {
-    const storageTheme = localStorage.getItem('theme');
+    const storageTheme: Theme | null = localStorage.getItem('theme') as Theme;
     const themeClass = storageTheme ? storageTheme : Theme.LIGHT;
 
     document.body.classList.value = '';
@@ -9,8 +9,8 @@ export function setThemeOnBody() {
 }
 
 export function toggleTheme() {
-    const storageTheme = localStorage.getItem('theme');
-    let themeClass;
+    const storageTheme: Theme | null = localStorage.getItem('theme') as Theme;
+    let themeClass: Theme;
 
     switch (storageTheme) {
         case Theme.DARK:
@@ -21,6 +21,6 @@ export function toggleTheme() {
             break;
     }
 
-    localStorage.setItem('theme', String(themeClass));
+    localStorage.setItem('theme', themeClass);
     setThemeOnBody();
 }
