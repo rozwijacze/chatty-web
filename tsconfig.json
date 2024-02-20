@@ -19,7 +19,8 @@
             "@hooks/*": ["hooks/*"],
             "@helpers/*": ["helpers/*"],
             "@styles/*": ["styles/*"],
-            "@assets/*": ["assets/*"]
+            "@assets/*": ["assets/*"],
+            "@redux/*": ["redux/*"]
         },
 
         /* Bundler mode */
