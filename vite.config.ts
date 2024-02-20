@@ -20,7 +20,8 @@ export default defineConfig({
             '@hooks': path.resolve(__dirname, 'src/hooks'),
             '@helpers': path.resolve(__dirname, 'src/helpers'),
             '@styles': path.resolve(__dirname, 'src/styles'),
-            '@assets': path.resolve(__dirname, 'src/assets')
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@redux': path.resolve(__dirname, 'src/redux')
         }
     },
     test: {
