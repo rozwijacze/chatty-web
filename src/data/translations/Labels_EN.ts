@@ -104,7 +104,12 @@ const labels_EN: Labels = {
     dialog: {
         submit: 'Submit',
         close: 'Close',
-        cancel: 'Cancel'
+        cancel: 'Cancel',
+        profilePicture: {
+            title: 'Select profile picture',
+            button: 'Pick image',
+            selected: 'Image selected'
+        }
     },
     loadingText: 'Application is loading...'
 };

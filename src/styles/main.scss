@@ -135,3 +135,17 @@ input {
         box-shadow: none;
     }
 }
+
+.dialog-content {
+    @include flexCenterBothAxis;
+
+    gap: 0.5rem;
+
+    &--column {
+        flex-direction: column;
+    }
+
+    &--row {
+        flex-direction: row;
+    }
+}

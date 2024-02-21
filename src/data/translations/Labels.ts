@@ -97,6 +97,11 @@ export default interface Labels {
         submit: string;
         close: string;
         cancel: string;
+        profilePicture: {
+            title: string;
+            button: string;
+            selected: string;
+        };
     };
     loadingText: string;
 }
