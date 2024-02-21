@@ -21,7 +21,8 @@ export default defineConfig({
             '@helpers': path.resolve(__dirname, 'src/helpers'),
             '@styles': path.resolve(__dirname, 'src/styles'),
             '@assets': path.resolve(__dirname, 'src/assets'),
-            '@redux': path.resolve(__dirname, 'src/redux')
+            '@redux': path.resolve(__dirname, 'src/redux'),
+            '@test': path.resolve(__dirname, 'src/test')
         }
     },
     test: {

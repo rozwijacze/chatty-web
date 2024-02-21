@@ -20,7 +20,8 @@
             "@helpers/*": ["helpers/*"],
             "@styles/*": ["styles/*"],
             "@assets/*": ["assets/*"],
-            "@redux/*": ["redux/*"]
+            "@redux/*": ["redux/*"],
+            "@test/*": ["test/*"]
         },
 
         /* Bundler mode */
