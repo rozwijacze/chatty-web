@@ -1,18 +1,14 @@
-import { render, screen, fireEvent } from '@testing-library/react';
+import { screen, fireEvent } from '@testing-library/react';
 import LocaleButton from './LocaleButton';
-import LocaleContextProvider from '@contexts/LocaleContext';
 import labels_EN from '@data/translations/Labels_EN';
 import labels_PL from '@data/translations/Labels_PL';
+import { renderWithProviders } from '@test/utils/RenderWithProviders';
 
 describe('LocaleButton component test', () => {
     let localeButton: HTMLButtonElement;
 
     beforeEach(() => {
-        render(
-            <LocaleContextProvider>
-                <LocaleButton />
-            </LocaleContextProvider>
-        );
+        renderWithProviders(<LocaleButton />);
 
         localeButton = screen.getByRole('button');
     });
