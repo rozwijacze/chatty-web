@@ -10,6 +10,11 @@
             font-weight: bold;
             font-size: 0.7rem;
         }
+
+        &:has(input[required]) label::before {
+            content: '* ';
+            color: red;
+        }
     }
 
     &__buttons {
@@ -27,7 +32,7 @@
         }
 
         &--fail {
-            color:red;
+            color: red;
         }
     }
 

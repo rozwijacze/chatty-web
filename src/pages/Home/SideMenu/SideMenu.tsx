@@ -19,7 +19,7 @@ interface Props {
 export default function SideMenu({ view, setView }: Props) {
     const labels = useLabels();
     const userData = getUserData();
-    const { logout } = useAuthContext();
+    const { logout, isLoggingOut } = useAuthContext();
 
     return (
         <div className="side-menu">
@@ -55,7 +55,7 @@ export default function SideMenu({ view, setView }: Props) {
                 </nav>
 
                 <div className="side-menu__buttons">
-                    <ButtonItem clickHandler={logout} title={labels.buttons.logout} children={<LogoutIcon />} />
+                    <ButtonItem disabled={isLoggingOut} clickHandler={logout} title={labels.buttons.logout} children={<LogoutIcon />} />
                     <ButtonItem clickHandler={toggleTheme} title={labels.buttons.theme} modificators={['theme']}></ButtonItem>
                 </div>
             </div>

@@ -9,7 +9,10 @@ const labels_PL: Labels = {
         },
         register: {
             resultError: 'Wystąpił błąd podczas rejestracji.'
-        }
+        },
+        logout: {
+            resultError: "Wystąpił błąd podczas połączenia z bazą danych",
+        },
     },
     error: {
         title: 'Przepraszamy, ta strona nie istnieje.'
@@ -51,6 +54,7 @@ const labels_PL: Labels = {
         }
     },
     formLabels: {
+        nickname: "Pseudonim",
         name: 'Imię:',
         surname: 'Nazwisko:',
         email: 'E-mail:',

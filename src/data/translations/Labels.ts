@@ -8,6 +8,9 @@ export default interface Labels {
         register: {
             resultError: string;
         };
+        logout: {
+            resultError: string,
+        },
     };
     error: { title: string };
     chatWindow: {
@@ -43,6 +46,7 @@ export default interface Labels {
         };
     };
     formLabels: {
+        nickname: string;
         name: string;
         surname: string;
         email: string;

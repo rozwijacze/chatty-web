@@ -9,7 +9,10 @@ const labels_EN: Labels = {
         },
         register: {
             resultError: 'An error occured while signing up.'
-        }
+        },
+        logout: {
+            resultError: "No connection with database",
+        },
     },
     error: {
         title: 'We are sorry, this page does not exist.'
@@ -51,6 +54,7 @@ const labels_EN: Labels = {
         }
     },
     formLabels: {
+        nickname: 'Nickname',
         name: 'Name:',
         surname: 'Surname:',
         email: 'E-mail:',
