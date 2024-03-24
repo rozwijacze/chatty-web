@@ -14,9 +14,16 @@ export default function Register() {
     const authContextValues = useAuthContext();
 
     const registerSchema = yup.object().shape({
-        name: yup.string().min(3).required(),
-        surname: yup.string().min(3).required(),
-        email: yup.string().email().required(),
+        nickname: yup.string().min(3).max(16).required(),
+        name: yup
+            .string()
+            .test('empty-check', 'Name must be at least 2 characters', name => (name ? name.length >= 2 || name.length == 0 : true)),
+        surname: yup
+            .string()
+            .test('empty-check', 'Surname must be at least 3 characters', surname =>
+                surname ? surname.length >= 3 || surname.length == 0 : true
+            ),
+        email: yup.string().max(64).email().required(),
         password: yup.string().min(7).max(32).required(),
         repeatPassword: yup.string().oneOf([yup.ref('password')], labels.register.formErrors.repeatPassword)
     });
@@ -32,9 +39,9 @@ export default function Register() {
 
     function onSubmit(data: FieldValues) {
         resetStatus();
-        const { name, surname, email, password } = data;
+        const { nickname, name, surname, email, password } = data;
 
-        authContextValues.register(name, surname, email, password).then(response => {
+        authContextValues.register(nickname, name, surname, email, password).then(response => {
             if (response.success) {
                 setIsRegistered(true);
                 reset();
@@ -53,33 +60,46 @@ export default function Register() {
         <>
             <form className="register" onSubmit={handleSubmit(onSubmit)}>
                 <div className="register__input">
+                    <label htmlFor="nickname">{labels.formLabels.nickname}</label>
+                    <p>{errors.nickname?.message}</p>
+                    <input {...register('nickname')} required type="text" id="nickname" name="nickname" autoComplete="nickname" />
+                </div>
+                <div className="register__input">
                     <label htmlFor="name">{labels.formLabels.name}</label>
                     <p>{errors.name?.message}</p>
-                    <input {...register('name')} required type="text" id="name" name="name" autoComplete="given-name" />
+                    <input {...register('name')} type="text" id="name" name="name" autoComplete="given-name" />
                 </div>
 
                 <div className="register__input">
                     <label htmlFor="surname">{labels.formLabels.surname}</label>
                     <p>{errors.surname?.message}</p>
-                    <input {...register('surname')} required type="text" id="surname" name="surname" autoComplete="given-name" />
+                    <input {...register('surname')} type="text" id="surname" name="surname" autoComplete="family-name" />
                 </div>
 
                 <div className="register__input">
                     <label htmlFor="email">{labels.formLabels.email}</label>
-                    <p>{errors.email?.message?.toUpperCase()}</p>
-                    <input {...register('email')} type="email" id="email" name="email" autoComplete="email" />
+                    <p>{errors.email?.message}</p>
+                    <input {...register('email')} required type="email" id="email" name="email" autoComplete="email" />
                 </div>
 
                 <div className="register__input">
                     <label htmlFor="password">{labels.formLabels.password}</label>
-                    <p>{errors.password?.message?.toUpperCase()}</p>
-                    <input {...register('password')} type="password" id="password" name="password" autoComplete="current-password" />
+                    <p>{errors.password?.message}</p>
+                    <input
+                        {...register('password')}
+                        required
+                        type="password"
+                        id="password"
+                        name="password"
+                        autoComplete="current-password"
+                    />
                 </div>
 
                 <div className="register__input">
                     <label htmlFor="repeatPassword">{labels.formLabels.repeatPassword}</label>
-                    <p>{errors.repeatPassword?.message?.toUpperCase()}</p>
+                    <p>{errors.repeatPassword?.message}</p>
                     <input
+                        required
                         {...register('repeatPassword')}
                         type="password"
                         id="repeatPassword"

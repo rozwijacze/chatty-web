@@ -9,10 +9,18 @@ const labels_PL: Labels = {
         },
         register: {
             resultError: 'Wystąpił błąd podczas rejestracji.'
+        },
+        logout: {
+            resultError: 'Wystąpił błąd podczas wylogowywania.'
         }
     },
-    error: {
-        title: 'Przepraszamy, ta strona nie istnieje.'
+    errors: {
+        page: {
+            title: 'Przepraszamy, ta strona nie istnieje.'
+        },
+        dbConnection: {
+            title: 'Brak połączenia z bazą danych.'
+        }
     },
     chatWindow: {
         title: 'Okno czatu',
@@ -51,6 +59,7 @@ const labels_PL: Labels = {
         }
     },
     formLabels: {
+        nickname: 'Pseudonim',
         name: 'Imię:',
         surname: 'Nazwisko:',
         email: 'E-mail:',

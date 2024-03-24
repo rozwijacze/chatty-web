@@ -6,9 +6,18 @@
         gap: 0.5rem;
 
         p {
-            color: red;
+            color: var(--primary-red);
             font-weight: bold;
             font-size: 0.7rem;
+
+            &::first-letter {
+                text-transform: capitalize;
+            }
+        }
+
+        &:has(input[required]) label::before {
+            content: '* ';
+            color: var(--primary-red);
         }
     }
 
@@ -27,7 +36,7 @@
         }
 
         &--fail {
-            color:red;
+            color: var(--primary-red);
         }
     }
 

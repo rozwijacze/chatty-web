@@ -7,9 +7,16 @@ import useContextHook from '@hooks/useContextHook';
 
 interface AuthContext {
     isAuthenticated: boolean;
+    isLoggingOut: boolean;
     logout: () => void;
     login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
-    register: (name: string, surname: string, email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+    register: (
+        nickname: string,
+        name: string,
+        surname: string,
+        email: string,
+        password: string
+    ) => Promise<{ success: boolean; error?: string }>;
 }
 
 const AuthContext = createContext<AuthContext | null>(null);
@@ -21,6 +28,7 @@ const USER_API_URL: ViteEnv['VITE_USER_API_URL'] = import.meta.env.VITE_USER_API
 export default function AuthContextProvider({ children }: React.PropsWithChildren) {
     const labels = useLabels();
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
 
     // TODO add modal close when token is expired
     useLayoutEffect(() => {
@@ -75,13 +83,22 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
     }
 
     function logout() {
-        setIsAuthenticated(false);
-        localStorage.removeItem('user');
+        setIsLoggingOut(true);
+        axios
+            .post(USER_API_URL + '/logout', {})
+            .then(() => {
+                localStorage.removeItem('user');
+            })
+            .catch(() => {
+                console.error(labels.authContext.logout.resultError.concat(' ' + labels.errors.dbConnection.title));
+            })
+            .finally(() => setIsLoggingOut(false));
     }
 
-    function register(name: string, surname: string, email: string, password: string) {
+    function register(nickname: string, name: string, surname: string, email: string, password: string) {
         return axios
             .post(USER_API_URL + '/register', {
+                nickname,
                 name,
                 surname,
                 email,
@@ -91,5 +108,5 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
             .catch(() => ({ success: false, error: labels.authContext.register.resultError }));
     }
 
-    return <AuthContext.Provider value={{ isAuthenticated, logout, login, register }}>{children}</AuthContext.Provider>;
+    return <AuthContext.Provider value={{ isAuthenticated, isLoggingOut, logout, login, register }}>{children}</AuthContext.Provider>;
 }

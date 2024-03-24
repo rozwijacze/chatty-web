@@ -8,8 +8,18 @@ export default interface Labels {
         register: {
             resultError: string;
         };
+        logout: {
+            resultError: string;
+        };
     };
-    error: { title: string };
+    errors: {
+        page: {
+            title: string;
+        };
+        dbConnection: {
+            title: string;
+        };
+    };
     chatWindow: {
         title: string;
         placeholder: string;
@@ -43,6 +53,7 @@ export default interface Labels {
         };
     };
     formLabels: {
+        nickname: string;
         name: string;
         surname: string;
         email: string;

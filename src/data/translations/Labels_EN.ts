@@ -9,10 +9,18 @@ const labels_EN: Labels = {
         },
         register: {
             resultError: 'An error occured while signing up.'
+        },
+        logout: {
+            resultError: 'Logging out failed.'
         }
     },
-    error: {
-        title: 'We are sorry, this page does not exist.'
+    errors: {
+        page: {
+            title: 'We are sorry, this page does not exist.'
+        },
+        dbConnection: {
+            title: 'No connection with database.'
+        }
     },
     chatWindow: {
         title: 'Chat window',
@@ -51,6 +59,7 @@ const labels_EN: Labels = {
         }
     },
     formLabels: {
+        nickname: 'Nickname',
         name: 'Name:',
         surname: 'Surname:',
         email: 'E-mail:',
