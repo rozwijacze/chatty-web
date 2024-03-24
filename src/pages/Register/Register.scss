@@ -6,7 +6,7 @@
         gap: 0.5rem;
 
         p {
-            color: red;
+            color: var(--primary-red);
             font-weight: bold;
             font-size: 0.7rem;
 
@@ -36,7 +36,7 @@
         }
 
         &--fail {
-            color: red;
+            color: var(--primary-red);
         }
     }
 
