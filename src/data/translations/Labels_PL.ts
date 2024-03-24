@@ -113,7 +113,12 @@ const labels_PL: Labels = {
     dialog: {
         submit: 'Zatwierdź',
         close: 'Zamknij',
-        cancel: 'Anuluj'
+        cancel: 'Anuluj',
+        profilePicture: {
+            title: 'Wybierz zdjęcie profilowe',
+            button: 'Wybierz plik',
+            selected: 'Plik wybrany'
+        }
     },
     loadingText: 'Wczytywanie aplikacji...'
 };
