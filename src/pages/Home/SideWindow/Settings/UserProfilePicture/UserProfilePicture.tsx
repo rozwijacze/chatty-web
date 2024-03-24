@@ -12,7 +12,7 @@ interface Props {
 
 export default function UserProfilePicture({ className }: Props) {
     const labels = useLabels();
-    const { initDialog } = useDialogContext();
+    const { initDialog, setDialogContent, dialogContent } = useDialogContext();
 
     const { openFilePicker, filesContent } = useFilePicker({
         accept: '.jpg, .png',
@@ -32,17 +32,18 @@ export default function UserProfilePicture({ className }: Props) {
         },
         onFilesSuccessfullySelected: ({ plainFiles }: SelectedFiles<ArrayBuffer>) => {
             const fileName = plainFiles[0].name;
+            setDialogContent(<div>{fileName}</div>)
 
-            initDialog({
-                ...dialogConfig,
-                content: (
-                    <div className="dialog-content dialog-content--column">
-                        <h5>{labels.dialog.profilePicture.selected}</h5>
-                        <p>{fileName}</p>
-                        <ButtonItem children={labels.buttons.edit} clickHandler={openFilePicker} />
-                    </div>
-                )
-            });
+            // initDialog({
+            //     ...dialogConfig,
+            //     content: (
+            //         <div className="dialog-content dialog-content--column">
+            //             <h5>{labels.dialog.profilePicture.selected}</h5>
+            //             <p>{data.name}</p>
+            //             <ButtonItem children={labels.buttons.edit} clickHandler={openFilePicker} />
+            //         </div>
+            //     )
+            // });
         }
     });
 
@@ -53,10 +54,11 @@ export default function UserProfilePicture({ className }: Props) {
     const dialogConfig = {
         title: labels.dialog.profilePicture.title,
         content: <ButtonItem children={labels.dialog.profilePicture.button} clickHandler={openFilePicker} />,
-        submitHandler: () =>
-            filesContent.map(file => {
-                console.log(file.name);
-            })
+        submitHandler: () => 
+            console.log(dialogContent)
+            // filesContent.map(file => {
+            //     console.log(data);
+            // })
     };
 
     return <EditImageIcon className={className} onClick={() => initDialog(dialogConfig)} />;

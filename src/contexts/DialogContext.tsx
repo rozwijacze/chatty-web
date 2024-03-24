@@ -4,12 +4,14 @@ import Dialog from '@components/layout/Dialog/Dialog';
 
 export interface Dialog {
     title: string;
-    content?: JSX.Element;
+    content?: any;
     submitHandler: () => void;
 }
 
 interface DialogContext {
     initDialog: (obj: Dialog) => void;
+    setDialogContent: any;
+    dialogContent: any;
 }
 
 const DialogContext = createContext<DialogContext | null>(null);
@@ -18,6 +20,7 @@ export const useDialogContext = () => useContextHook(DialogContext);
 
 export default function DialogContextProvider({ children }: React.PropsWithChildren) {
     const [showDialog, setShowDialog] = useState(false);
+    const [dialogContent, setDialogContent] = useState(<div></div>)
     const toggleDialog = () => setShowDialog(!showDialog);
 
     const [dialog, setDialog] = useState<Dialog>({
@@ -27,17 +30,18 @@ export default function DialogContextProvider({ children }: React.PropsWithChild
 
     function initDialog(obj: Dialog) {
         setDialog(obj);
+        setDialogContent(obj.content)
         toggleDialog();
     }
-
+    
     return (
-        <DialogContext.Provider value={{ initDialog }}>
+        <DialogContext.Provider value={{ initDialog, setDialogContent, dialogContent }}>
             {children}
             {showDialog && (
                 <Dialog
                     closeDialog={toggleDialog}
                     submitHandler={dialog.submitHandler}
-                    content={dialog.content}
+                    content={dialogContent}
                     title={dialog.title}></Dialog>
             )}
         </DialogContext.Provider>
