@@ -9,10 +9,17 @@ export default interface Labels {
             resultError: string;
         };
         logout: {
-            resultError: string,
-        },
+            resultError: string;
+        };
     };
-    error: { title: string };
+    errors: {
+        page: {
+            title: string;
+        };
+        dbConnection: {
+            title: string;
+        };
+    };
     chatWindow: {
         title: string;
         placeholder: string;

@@ -88,12 +88,11 @@ export default function AuthContextProvider({ children }: React.PropsWithChildre
             .post(USER_API_URL + '/logout', {})
             .then(() => {
                 localStorage.removeItem('user');
-                setIsLoggingOut(false);
             })
             .catch(() => {
-                console.error(labels.authContext.logout.resultError);
-                setIsLoggingOut(false);
-            });
+                console.error(labels.authContext.logout.resultError.concat(' ' + labels.errors.dbConnection.title));
+            })
+            .finally(() => setIsLoggingOut(false));
     }
 
     function register(nickname: string, name: string, surname: string, email: string, password: string) {

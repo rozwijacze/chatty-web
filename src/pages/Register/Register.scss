@@ -9,11 +9,15 @@
             color: red;
             font-weight: bold;
             font-size: 0.7rem;
+
+            &::first-letter {
+                text-transform: capitalize;
+            }
         }
 
         &:has(input[required]) label::before {
             content: '* ';
-            color: red;
+            color: var(--primary-red);
         }
     }
 

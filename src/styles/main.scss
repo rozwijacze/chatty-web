@@ -107,7 +107,7 @@ input {
     transition: all 0.2s;
 
     &:disabled svg {
-        opacity: 0.1;
+        opacity: 0.5;
     }
 
     &:hover {
